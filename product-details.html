@@ -55,8 +55,8 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-12 items-start">
         <!-- Gallery Column -->
         <div class="lg:col-span-6 space-y-4">
-          <div class="relative aspect-square rounded-3xl overflow-hidden bg-white border border-cream-200 shadow-warm">
-            <img id="detail-main-img" src="images/piyu-01.jpg" alt="Handcrafted product" class="w-full h-full object-cover transition-all duration-300" />
+          <div class="relative aspect-square rounded-3xl overflow-hidden bg-white border border-cream-200 shadow-warm flex items-center justify-center p-4">
+            <img id="detail-main-img" src="images/piyu-01.jpg" alt="Handcrafted product" class="w-full h-full object-contain filter drop-shadow-md transition-all duration-300" />
             <span id="detail-badge" class="absolute top-4 left-4 text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full bg-cream-50/95 text-terracotta-700 shadow-sm border border-terracotta-200">✨ Bestseller</span>
             <button id="detail-wishlist-btn" class="absolute top-4 right-4 p-3 rounded-full bg-white/90 text-warmcharcoal-600 hover:text-red-500 shadow-md">
               ♥
@@ -205,7 +205,7 @@
       const thumbRow = document.getElementById('detail-thumbnails-row');
       if (product.images.length > 1) {
         thumbRow.innerHTML = product.images.map(img => `
-          <img src="${img}" onclick="document.getElementById('detail-main-img').src='${img}'" class="w-16 h-16 rounded-xl object-cover border border-cream-300 cursor-pointer hover:border-terracotta-600 transition-colors" />
+          <img src="${img}" onclick="document.getElementById('detail-main-img').src='${img}'" class="w-16 h-16 rounded-xl object-contain p-1 bg-white border border-cream-300 cursor-pointer hover:border-terracotta-600 transition-colors" />
         `).join('');
       } else {
         thumbRow.style.display = 'none';
@@ -296,8 +296,8 @@
       const related = window.PIYU_DATA.products.filter(p => p.category === product.category && p.id !== product.id).slice(0, 4);
       relatedGrid.innerHTML = related.map(p => `
         <div class="bg-white rounded-2xl overflow-hidden border border-cream-200 shadow-sm flex flex-col justify-between">
-          <div class="aspect-square bg-cream-100 overflow-hidden">
-            <a href="product-details.html?id=${p.id}"><img src="${p.images[0]}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" /></a>
+          <div class="aspect-square bg-cream-50/80 overflow-hidden flex items-center justify-center p-2">
+            <a href="product-details.html?id=${p.id}" class="w-full h-full flex items-center justify-center"><img src="${p.images[0]}" class="w-full h-full object-contain hover:scale-105 transition-transform duration-500 filter drop-shadow-sm" /></a>
           </div>
           <div class="p-4">
             <h4 class="font-serif font-bold text-sm text-warmcharcoal-900 truncate"><a href="product-details.html?id=${p.id}">${p.title}</a></h4>

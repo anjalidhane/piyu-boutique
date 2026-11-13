@@ -621,13 +621,13 @@ window.PIYU_UI = (function() {
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
         <div class="space-y-3">
-          <div class="aspect-square rounded-2xl overflow-hidden bg-cream-50 border border-cream-200 shadow-sm">
-            <img id="qv-main-img" src="${product.images[0]}" alt="${product.title}" class="w-full h-full object-cover" />
+          <div class="aspect-square rounded-2xl overflow-hidden bg-cream-50/80 border border-cream-200 shadow-sm flex items-center justify-center p-3">
+            <img id="qv-main-img" src="${product.images[0]}" alt="${product.title}" class="w-full h-full object-contain filter drop-shadow-sm" />
           </div>
           ${product.images.length > 1 ? `
             <div class="flex gap-2 overflow-x-auto pb-1">
               ${product.images.map((img, idx) => `
-                <img src="${img}" onclick="document.getElementById('qv-main-img').src='${img}'" class="w-14 h-14 rounded-lg object-cover border border-cream-300 cursor-pointer hover:border-terracotta-500" />
+                <img src="${img}" onclick="document.getElementById('qv-main-img').src='${img}'" class="w-14 h-14 rounded-lg object-contain p-0.5 bg-white border border-cream-300 cursor-pointer hover:border-terracotta-500" />
               `).join('')}
             </div>
           ` : ''}
