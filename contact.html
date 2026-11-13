@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us – PIHU Boutique</title>
+  <title>Contact Us – PIYU Boutique</title>
   <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,14 +33,14 @@
 </head>
 <body class="bg-cream-50 text-warmcharcoal-800 font-sans antialiased">
 
-  <div id="pihu-header"></div>
+  <div id="piyu-header"></div>
 
   <main class="space-y-16 pb-20">
     <!-- Header -->
     <section class="bg-gradient-to-b from-cream-100 to-cream-50 py-16 border-b border-cream-200 text-center">
       <div class="max-w-4xl mx-auto px-4">
         <span class="text-xs font-bold uppercase tracking-widest text-terracotta-600">Get in Touch</span>
-        <h1 class="font-serif text-4xl sm:text-5xl font-bold text-warmcharcoal-900 mt-2">Connect with PIHU Studio</h1>
+        <h1 class="font-serif text-4xl sm:text-5xl font-bold text-warmcharcoal-900 mt-2">Connect with PIYU Studio</h1>
         <p class="text-sm sm:text-base text-warmcharcoal-600 mt-3 max-w-2xl mx-auto leading-relaxed">
           Have an inquiry about an ongoing custom order, need bulk festive gifting for your family, or wish to discuss a bespoke painted fabric? Sayali is here to help.
         </p>
@@ -76,7 +76,7 @@
                 <span class="text-lg">✉️</span>
                 <div>
                   <strong class="block text-warmcharcoal-900">Email Inquiry:</strong>
-                  <a href="mailto:contact@pihuhandmade.com" class="text-terracotta-700 font-semibold hover:underline">contact@pihuhandmade.com</a>
+                  <a href="mailto:contact@piyuhandmade.com" class="text-terracotta-700 font-semibold hover:underline">contact@piyuhandmade.com</a>
                 </div>
               </div>
 
@@ -196,7 +196,7 @@
     </section>
   </main>
 
-  <div id="pihu-footer"></div>
+  <div id="piyu-footer"></div>
 
   <script src="js/data.js"></script>
   <script src="js/store.js"></script>
@@ -211,12 +211,12 @@
         const subject = document.getElementById('contact-subject').value;
         const msg = document.getElementById('contact-msg').value;
 
-        window.PIHU_UI.showToast(`Thank you, ${name}! Your inquiry has been sent to Sayali.`, 'success');
+        window.PIYU_UI.showToast(`Thank you, ${name}! Your inquiry has been sent to Sayali.`, 'success');
         
         // Also offer to open WhatsApp
         setTimeout(() => {
           if (confirm(`Would you also like to open WhatsApp to chat directly with Sayali right now?`)) {
-            const text = encodeURIComponent(`*Inquiry from PIHU Website*%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Subject:* ${subject}%0A*Message:* ${msg}`);
+            const text = encodeURIComponent(`*Inquiry from PIYU Website*%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Subject:* ${subject}%0A*Message:* ${msg}`);
             window.open(`https://wa.me/919309851833?text=${text}`, '_blank');
           }
         }, 500);

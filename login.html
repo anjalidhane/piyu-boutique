@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Account – PIHU Boutique</title>
+  <title>Account – PIYU Boutique</title>
   <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +33,7 @@
 </head>
 <body class="bg-cream-50 text-warmcharcoal-800 font-sans antialiased">
 
-  <div id="pihu-header"></div>
+  <div id="piyu-header"></div>
 
   <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 pb-24">
     <!-- Container for either Auth Forms or User Profile -->
@@ -42,7 +42,7 @@
     </div>
   </main>
 
-  <div id="pihu-footer"></div>
+  <div id="piyu-footer"></div>
 
   <script src="js/data.js"></script>
   <script src="js/store.js"></script>
@@ -54,12 +54,12 @@
       window.addEventListener('user-updated', renderAccountView);
 
       function renderAccountView() {
-        const user = window.PIHU_STORE.getUser();
+        const user = window.PIYU_STORE.getUser();
         const container = document.getElementById('account-view-container');
 
         if (user) {
           // Render Profile & Orders view
-          const orders = window.PIHU_STORE.getOrders();
+          const orders = window.PIYU_STORE.getOrders();
           container.innerHTML = `
             <div class="space-y-8">
               <!-- Profile Header Card -->
@@ -84,7 +84,7 @@
                       📊 Admin Dashboard
                     </a>
                   ` : ''}
-                  <button onclick="window.PIHU_STORE.logout()" class="px-4 py-2 border border-red-300 text-red-600 hover:bg-red-50 rounded-xl text-xs font-semibold">
+                  <button onclick="window.PIYU_STORE.logout()" class="px-4 py-2 border border-red-300 text-red-600 hover:bg-red-50 rounded-xl text-xs font-semibold">
                     Sign Out
                   </button>
                 </div>
@@ -157,7 +157,7 @@
               <form id="login-form" class="p-6 sm:p-8 space-y-4">
                 <div>
                   <label class="block text-xs font-semibold text-warmcharcoal-800 mb-1">Email Address</label>
-                  <input type="email" id="login-email" required placeholder="sayali@pihuhandmade.com" class="w-full text-xs p-3 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-terracotta-500" />
+                  <input type="email" id="login-email" required placeholder="sayali@piyuhandmade.com" class="w-full text-xs p-3 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-terracotta-500" />
                 </div>
                 <div>
                   <label class="block text-xs font-semibold text-warmcharcoal-800 mb-1">Password</label>
@@ -218,8 +218,8 @@
             e.preventDefault();
             const email = document.getElementById('login-email').value;
             const pass = document.getElementById('login-password').value;
-            window.PIHU_STORE.login(email, pass);
-            window.PIHU_UI.showToast('Logged in successfully!', 'success');
+            window.PIYU_STORE.login(email, pass);
+            window.PIYU_UI.showToast('Logged in successfully!', 'success');
           });
 
           // Register submission
@@ -229,15 +229,15 @@
             const email = document.getElementById('reg-email').value;
             const phone = document.getElementById('reg-phone').value;
             const city = document.getElementById('reg-city').value;
-            window.PIHU_STORE.register({ name, email, phone, city });
-            window.PIHU_UI.showToast('Account created successfully!', 'success');
+            window.PIYU_STORE.register({ name, email, phone, city });
+            window.PIYU_UI.showToast('Account created successfully!', 'success');
           });
         }
       }
 
       window.fillAdminDemo = function() {
         const email = document.getElementById('login-email');
-        if (email) email.value = 'sayali@pihuhandmade.com';
+        if (email) email.value = 'sayali@piyuhandmade.com';
       };
 
       window.fillCustomerDemo = function() {

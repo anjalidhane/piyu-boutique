@@ -1,15 +1,15 @@
 /**
- * PIHU – Global State & Store Manager (Vanilla JS + LocalStorage)
+ * PIYU – Global State & Store Manager (Vanilla JS + LocalStorage)
  */
 
-window.PIHU_STORE = (function() {
-  const CART_KEY = 'pihu_cart_v1';
-  const WISHLIST_KEY = 'pihu_wishlist_v1';
-  const USER_KEY = 'pihu_user_v1';
-  const ORDERS_KEY = 'pihu_orders_v1';
-  const REQUESTS_KEY = 'pihu_requests_v1';
-  const COUPON_KEY = 'pihu_coupon_v1';
-  const GIFTWRAP_KEY = 'pihu_giftwrap_v1';
+window.PIYU_STORE = (function() {
+  const CART_KEY = 'piyu_cart_v1';
+  const WISHLIST_KEY = 'piyu_wishlist_v1';
+  const USER_KEY = 'piyu_user_v1';
+  const ORDERS_KEY = 'piyu_orders_v1';
+  const REQUESTS_KEY = 'piyu_requests_v1';
+  const COUPON_KEY = 'piyu_coupon_v1';
+  const GIFTWRAP_KEY = 'piyu_giftwrap_v1';
 
   // Helper safe storage
   function getStorage(key, fallback) {
@@ -28,11 +28,11 @@ window.PIHU_STORE = (function() {
   }
 
   // Initial setup if empty
-  if (!localStorage.getItem(ORDERS_KEY) && window.PIHU_DATA) {
-    setStorage(ORDERS_KEY, window.PIHU_DATA.orders);
+  if (!localStorage.getItem(ORDERS_KEY) && window.PIYU_DATA) {
+    setStorage(ORDERS_KEY, window.PIYU_DATA.orders);
   }
-  if (!localStorage.getItem(REQUESTS_KEY) && window.PIHU_DATA) {
-    setStorage(REQUESTS_KEY, window.PIHU_DATA.customRequests);
+  if (!localStorage.getItem(REQUESTS_KEY) && window.PIYU_DATA) {
+    setStorage(REQUESTS_KEY, window.PIYU_DATA.customRequests);
   }
   if (!localStorage.getItem(CART_KEY)) {
     // Initial demo items
@@ -58,7 +58,7 @@ window.PIHU_STORE = (function() {
     setStorage(USER_KEY, {
       id: "usr-01",
       name: "Sayali Shinde (Artisan / Admin)",
-      email: "sayali@pihuhandmade.com",
+      email: "sayali@piyuhandmade.com",
       phone: "+91 9309851833",
       city: "Kherade Vangi",
       state: "Maharashtra",
@@ -70,8 +70,8 @@ window.PIHU_STORE = (function() {
   return {
     // PRODUCTS HELPER
     getProductById: function(id) {
-      if (!window.PIHU_DATA) return null;
-      return window.PIHU_DATA.products.find(p => p.id === id) || null;
+      if (!window.PIYU_DATA) return null;
+      return window.PIYU_DATA.products.find(p => p.id === id) || null;
     },
 
     // CART OPERATIONS
@@ -86,7 +86,7 @@ window.PIHU_STORE = (function() {
           id: item.productId,
           title: "Artisan Handcrafted Item",
           price: 999,
-          images: ["images/pihu-01.jpg"]
+          images: ["images/piyu-01.jpg"]
         };
         return {
           ...item,
@@ -146,7 +146,7 @@ window.PIHU_STORE = (function() {
     applyCoupon: function(code) {
       const clean = (code || '').trim().toUpperCase();
       let coupon = null;
-      if (clean === 'PIHUFIRST10') {
+      if (clean === 'PIYUFIRST10') {
         coupon = { code: clean, type: 'percent', value: 10, label: '10% First Order Discount' };
       } else if (clean === 'HANDMADE15') {
         coupon = { code: clean, type: 'percent', value: 15, label: '15% Handcrafted Special' };
@@ -159,7 +159,7 @@ window.PIHU_STORE = (function() {
         window.dispatchEvent(new CustomEvent('cart-updated'));
         return { success: true, message: `Coupon ${coupon.code} applied successfully!` };
       }
-      return { success: false, message: 'Invalid coupon code. Try PIHUFIRST10 or HANDMADE15.' };
+      return { success: false, message: 'Invalid coupon code. Try PIYUFIRST10 or HANDMADE15.' };
     },
 
     removeCoupon: function() {
@@ -329,3 +329,6 @@ window.PIHU_STORE = (function() {
     }
   };
 })();
+
+// Backward-compatibility alias
+window.PIHU_STORE = window.PIYU_STORE;

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shopping Cart – PIHU Boutique</title>
+  <title>Shopping Cart – PIYU Boutique</title>
   <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +33,7 @@
 </head>
 <body class="bg-cream-50 text-warmcharcoal-800 font-sans antialiased">
 
-  <div id="pihu-header"></div>
+  <div id="piyu-header"></div>
 
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8 pb-20">
     <div class="flex flex-col sm:flex-row sm:items-end justify-between border-b border-cream-200 pb-5 gap-2">
@@ -41,7 +41,7 @@
         <span class="text-xs font-bold tracking-widest uppercase text-terracotta-600">Review Your Bag</span>
         <h1 id="cart-page-title" class="font-serif text-3xl sm:text-4xl font-bold text-warmcharcoal-900 mt-1">Shopping Cart</h1>
       </div>
-      <button onclick="window.PIHU_STORE.clearCart()" class="text-xs text-warmcharcoal-400 hover:text-red-600 underline">
+      <button onclick="window.PIYU_STORE.clearCart()" class="text-xs text-warmcharcoal-400 hover:text-red-600 underline">
         Clear entire cart
       </button>
     </div>
@@ -82,7 +82,7 @@
     </div>
   </main>
 
-  <div id="pihu-footer"></div>
+  <div id="piyu-footer"></div>
 
   <script src="js/data.js"></script>
   <script src="js/store.js"></script>
@@ -94,8 +94,8 @@
       window.addEventListener('cart-updated', renderFullCart);
 
       function renderFullCart() {
-        const items = window.PIHU_STORE.getCartDetailed();
-        const totals = window.PIHU_STORE.getCartTotals();
+        const items = window.PIYU_STORE.getCartDetailed();
+        const totals = window.PIYU_STORE.getCartTotals();
         const titleEl = document.getElementById('cart-page-title');
         const shippingBox = document.getElementById('cart-page-shipping-box');
         const itemsList = document.getElementById('cart-page-items-list');
@@ -151,9 +151,9 @@
 
             <div class="flex items-center justify-between sm:justify-end gap-6 w-full sm:w-auto pt-2 sm:pt-0 border-t sm:border-t-0 border-cream-100">
               <div class="flex items-center border border-cream-300 rounded-xl bg-cream-50 p-1">
-                <button onclick="window.PIHU_STORE.updateQuantity('${item.cartItemId}', ${item.quantity - 1})" class="w-7 h-7 flex items-center justify-center font-bold text-warmcharcoal-700 hover:text-terracotta-600 text-xs">-</button>
+                <button onclick="window.PIYU_STORE.updateQuantity('${item.cartItemId}', ${item.quantity - 1})" class="w-7 h-7 flex items-center justify-center font-bold text-warmcharcoal-700 hover:text-terracotta-600 text-xs">-</button>
                 <span class="w-8 text-center text-xs font-bold text-warmcharcoal-900">${item.quantity}</span>
-                <button onclick="window.PIHU_STORE.updateQuantity('${item.cartItemId}', ${item.quantity + 1})" class="w-7 h-7 flex items-center justify-center font-bold text-warmcharcoal-700 hover:text-terracotta-600 text-xs">+</button>
+                <button onclick="window.PIYU_STORE.updateQuantity('${item.cartItemId}', ${item.quantity + 1})" class="w-7 h-7 flex items-center justify-center font-bold text-warmcharcoal-700 hover:text-terracotta-600 text-xs">+</button>
               </div>
 
               <div class="text-right min-w-[110px]">
@@ -161,7 +161,7 @@
                 <span class="text-[10px] text-emerald-600 font-semibold">Proof on WhatsApp</span>
               </div>
 
-              <button onclick="window.PIHU_STORE.removeFromCart('${item.cartItemId}')" class="p-2 text-warmcharcoal-400 hover:text-red-500 transition-colors" title="Remove">✕</button>
+              <button onclick="window.PIYU_STORE.removeFromCart('${item.cartItemId}')" class="p-2 text-warmcharcoal-400 hover:text-red-500 transition-colors" title="Remove">✕</button>
             </div>
           </div>
         `).join('');
@@ -199,8 +199,8 @@
       window.applyCartCoupon = function() {
         const inp = document.getElementById('cart-coupon-input');
         if (!inp) return;
-        const res = window.PIHU_STORE.applyCoupon(inp.value);
-        window.PIHU_UI.showToast(res.message, res.success ? 'success' : 'error');
+        const res = window.PIYU_STORE.applyCoupon(inp.value);
+        window.PIYU_UI.showToast(res.message, res.success ? 'success' : 'error');
       };
     });
   </script>

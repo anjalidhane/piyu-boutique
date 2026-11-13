@@ -1,9 +1,9 @@
 /**
- * PIHU – Customize Fabric & Handmade Jewellery
+ * PIYU – Customize Fabric & Handmade Jewellery
  * Global Data Repository (Vanilla JS)
  */
 
-window.PIHU_DATA = {
+window.PIYU_DATA = {
   // PRODUCTS DATASET
   products: [
     // FABRIC PAINTING PRODUCTS
@@ -20,9 +20,9 @@ window.PIHU_DATA = {
       featured: true,
       badge: "Bestseller",
       images: [
-        "images/pihu-19.jpg",
-        "images/pihu-01.jpg",
-        "images/pihu-30.jpg"
+        "images/piyu-19.jpg",
+        "images/piyu-01.jpg",
+        "images/piyu-30.jpg"
       ],
       shortDesc: "Authentic hand-painted baby shower fabric backdrop featuring Yashoda Mata & Bal Krishna with custom mom and family names.",
       description: "Celebrate the joyous occasion of Dohale Jevan (Baby Shower) with this heirloom-quality, hand-painted fabric banner handcrafted by artisan Sayali. Painted on premium pure white cotton canvas using non-toxic, wash-fast fabric paints, and bordered with delicate gold and sequin trims. Each banner is personalized with the mom-to-be's name and auspicious blessings.",
@@ -47,7 +47,7 @@ window.PIHU_DATA = {
       featured: true,
       badge: "Artisan Choice",
       images: [
-        "images/pihu-02.jpg"
+        "images/piyu-02.jpg"
       ],
       shortDesc: "Charming hand-illustrated cradle welcome ring with customized family portrait sketch, beadwork, and handcrafted tassels.",
       description: "Welcome your newborn angel with our signature Baby Welcome Hoop! Featuring a hand-drawn illustration of the proud parents and baby, pearl bead border, blue silk roses on top, and lush hanging pearl strands with dual-toned wool tassels. Hang this in the nursery, above the cradle (Paalna), or on your entryway door.",
@@ -72,7 +72,7 @@ window.PIHU_DATA = {
       featured: true,
       badge: "Festive Special",
       images: [
-        "images/pihu-17.jpg"
+        "images/piyu-17.jpg"
       ],
       shortDesc: "Handcrafted pure cotton white kurta featuring devotional Vitthal Rakhumai silhouette and halo painting.",
       description: "Immerse yourself in traditional Marathi devotion with this bespoke Vitthal kurta. Made from 100% fine handloom cotton, each kurta is hand-painted individually with Lord Vitthal standing on the brick in Pandharpur, adorned with pearl garland and saffron sun halo.",
@@ -97,7 +97,7 @@ window.PIHU_DATA = {
       featured: true,
       badge: "Trending Gift",
       images: [
-        "images/pihu-18.jpg"
+        "images/piyu-18.jpg"
       ],
       shortDesc: "Crisp white Oxford cotton shirt with discreet custom hand embroidery along the button placket and collar heart.",
       description: "The ultimate romantic anniversary or birthday surprise. We hand-embroider your custom words (like 'I ♥ YOU', initials, or anniversary date) subtly along the button placket in satin embroidery thread, accented with a delicate scarlet heart nestled near the collar button.",
@@ -122,7 +122,7 @@ window.PIHU_DATA = {
       featured: false,
       badge: "100% Bespoke",
       images: [
-        "images/pihu-25.jpg"
+        "images/piyu-25.jpg"
       ],
       shortDesc: "Turn your favorite photo into an artistic hand-painted fabric canvas portrait with custom calligraphy caption.",
       description: "Send us a picture of your mother, sister, wife, or child, and our master artist Sayali will render a breathtaking hand-painted portrait on pure organic cotton cloth. Includes custom font calligraphy (such as 'Chakuli', 'Aai', 'Tai') with signature flourish.",
@@ -146,7 +146,7 @@ window.PIHU_DATA = {
       featured: false,
       badge: "Devotional",
       images: [
-        "images/pihu-29.jpg"
+        "images/piyu-29.jpg"
       ],
       shortDesc: "Pure white full-sleeve cotton tee hand-painted with Swami Samarth silhouette, glowing sun, and reassuring quote.",
       description: "Carry divine faith and protection with you. Features the iconic 'भिऊ नकोस मी तुझ्या पाठीशी आहे...' shloka with Shri Swami Samarth in peaceful meditation against a sunburst horizon on the back.",
@@ -170,7 +170,7 @@ window.PIHU_DATA = {
       featured: false,
       badge: "Heritage Craft",
       images: [
-        "images/pihu-27.jpg"
+        "images/piyu-27.jpg"
       ],
       shortDesc: "Striking hand-painted hoop art honoring Maharashtra's majestic Khillari bull with authentic halter ropes.",
       description: "A tribute to rural Maharashtra's farming heritage and Bail Pola tradition. Masterfully sketched and shaded on canvas in a 10-inch wooden hoop, finished with traditional red halter thread detailing.",
@@ -191,7 +191,7 @@ window.PIHU_DATA = {
       featured: true,
       badge: "Bestseller",
       images: [
-        "images/pihu-08.jpg"
+        "images/piyu-08.jpg"
       ],
       shortDesc: "Adorable hand-painted Bal Ganesha sharing a playful wink with Mooshak on pure white canvas hoop.",
       description: "Bring auspicious sweetness and cheer to your home with cute Bal Ganesha and his dear friend Mooshak. Perfectly painted with warm ochre and saffron tones, enclosed in an 8-inch hoop. A cherished gift for housewarmings and newborn arrivals.",
@@ -212,8 +212,8 @@ window.PIHU_DATA = {
       featured: false,
       badge: "Pocket Keepsake",
       images: [
-        "images/pihu-07.jpg",
-        "images/pihu-03.jpg"
+        "images/piyu-07.jpg",
+        "images/piyu-03.jpg"
       ],
       shortDesc: "Set of 2 pure cotton hankies with custom message, hand-embroidered Turkish Evil Eye, and infinity hearts.",
       description: "Handcrafted personalized pocket handkerchiefs crafted with hand-stitched hemstitching, custom hand-embroidered calligraphy ('Mr. Handsome Love u forever' or your chosen words), protected by an embroidered blue Evil Eye charm.",
@@ -238,7 +238,7 @@ window.PIHU_DATA = {
       featured: false,
       badge: "Bridal Couture",
       images: [
-        "images/pihu-14.jpg"
+        "images/piyu-14.jpg"
       ],
       shortDesc: "Rich crimson raw silk blouse piece with opulent handmade gold bullion beads, moti, and leaf motifs.",
       description: "Make your bridal or festival saree look regal with this custom hand-embroidered blouse piece. Intricately beaded with antique gold cutdana, pearls, and zari leaves framing the U-neckline.",
@@ -262,7 +262,7 @@ window.PIHU_DATA = {
       featured: false,
       badge: "Traditional",
       images: [
-        "images/pihu-21.jpg"
+        "images/piyu-21.jpg"
       ],
       shortDesc: "Pack of 3 pure white khadi Gandhi topis hand-painted with '॥ रामकृष्ण हरी ॥' and bright saffron Chandan Tilak.",
       description: "Express your devotion during Wari, Haripath, and family festivals. Each topi is hand-lettered with sacred Devanagari calligraphy and vibrant orange/black tilak.",
@@ -283,7 +283,7 @@ window.PIHU_DATA = {
       featured: false,
       badge: "Artisan Choice",
       images: [
-        "images/pihu-15.jpg"
+        "images/piyu-15.jpg"
       ],
       shortDesc: "Delicate needlework hoop with hundreds of hand-stitched pink French knots creating a cascading floral ballroom gown.",
       description: "A testament to patient slow embroidery. A beautiful lady figure with braided hair and hair garland, draped in an ombre pink French knot floral dress that gracefully trails off the canvas.",
@@ -306,7 +306,7 @@ window.PIHU_DATA = {
       featured: true,
       badge: "Bestseller",
       images: [
-        "images/pihu-10.jpg"
+        "images/piyu-10.jpg"
       ],
       shortDesc: "Royal dual-flower Maharashtrian Nath with lustrous basra pearl petals, kundan mirror center, and ruby red crystal drop.",
       description: "Every Maharashtrian bride's and festival lover's crowning ornament. This handmade clip-on/pierced Nath features two blossoming floral clusters woven with gleaming teardrop pearls, an authentic faceted kundan stone in the center, and a ruby drop at the base. Curved comfortably with smooth non-allergic gold wire.",
@@ -331,8 +331,8 @@ window.PIHU_DATA = {
       featured: true,
       badge: "Trending",
       images: [
-        "images/pihu-06.jpg",
-        "images/pihu-11.jpg"
+        "images/piyu-06.jpg",
+        "images/piyu-11.jpg"
       ],
       shortDesc: "Exquisite handmade gold choker featuring a ruby-petal lotus pendant, micro gold bead clusters, and matching drop earrings.",
       description: "Indulge in royal Marathi royalty. Handcrafted with fine gold-finish wire strung with clustered faceted gold beads, leading to a glorious carved lotus flower set with deep pink ruby stones. Accompanied by coordinating lotus dangle earrings with slender gold hook pins.",
@@ -356,8 +356,8 @@ window.PIHU_DATA = {
       featured: true,
       badge: "Handcrafted Luxury",
       images: [
-        "images/pihu-11.jpg",
-        "images/pihu-16.jpg"
+        "images/piyu-11.jpg",
+        "images/piyu-16.jpg"
       ],
       shortDesc: "Gleaming faceted gold-beaded textured collar necklace with a sparkling cz floral centerpiece and matching linear earrings.",
       description: "Modern elegance meets age-old Indian goldsmith techniques. Layers of geometric faceted brass beads create dazzling light reflection with every movement, centered by a six-petal diamond-cz blossom with ruby heart.",
@@ -378,7 +378,7 @@ window.PIHU_DATA = {
       featured: true,
       badge: "Sayali Special",
       images: [
-        "images/pihu-13.jpg"
+        "images/piyu-13.jpg"
       ],
       shortDesc: "Majestic bridal necklace set with lustrous pearl floral florets, ruby centers, and matching floral stud earrings.",
       description: "The pride of our workshop in Kherade Vangi. Ten blossoming pearl rosettes each centered by a fiery red ruby cabochon, tied together with golden zari work and adjustable dori. Comes sealed in Sayali Shoppy authentic boutique packaging.",
@@ -402,7 +402,7 @@ window.PIHU_DATA = {
       featured: false,
       badge: "Minimalist Chic",
       images: [
-        "images/pihu-16.jpg"
+        "images/piyu-16.jpg"
       ],
       shortDesc: "Sleek and contemporary ear drop pins featuring stacked gold-faceted beads with elongated needle stems.",
       description: "Versatile statement ear accessories that can be styled as dangling needle ear pins or upper-ear bugadi accents. Carefully hand-wrapped with geometric golden cubes and beads on sturdy gold-toned wire.",
@@ -423,8 +423,8 @@ window.PIHU_DATA = {
       featured: false,
       badge: "Peshwai Classic",
       images: [
-        "images/pihu-09.jpg",
-        "images/pihu-10.jpg"
+        "images/piyu-09.jpg",
+        "images/piyu-10.jpg"
       ],
       shortDesc: "Classic Peshwai clip-on nose ring with rice pearls, red crystal briolette, and emerald accent stone.",
       description: "Embody the timeless grace of Mastani with this handcrafted Peshwai Nath. Features tiny pearl seed beads woven into a paisley crescent crowned with shimmering stones.",
@@ -448,8 +448,8 @@ window.PIHU_DATA = {
       featured: false,
       badge: "Heirloom Edition",
       images: [
-        "images/pihu-12.jpg",
-        "images/pihu-06.jpg"
+        "images/piyu-12.jpg",
+        "images/piyu-06.jpg"
       ],
       shortDesc: "Kolhapuri Saaj inspired handcrafted necklace with embossed auspicious leaves, kundan flower, and hanging jhumki accents.",
       description: "Kolhapuri Saaj is an iconic Maharashtrian cultural heritage necklace. This artisan interpretation features handcrafted beads representing ancient good-luck charms, strung with golden thread and centered by a radiant lotus.",
@@ -470,8 +470,8 @@ window.PIHU_DATA = {
       featured: false,
       badge: "Daily Festive",
       images: [
-        "images/pihu-04.jpg",
-        "images/pihu-13.jpg"
+        "images/piyu-04.jpg",
+        "images/piyu-13.jpg"
       ],
       shortDesc: "Dainty flower stud earrings with natural sheen pearls surrounding a ruby crystal center.",
       description: "Effortlessly elegant stud earrings for daily traditional wear, office ethnic days, and festive gatherings. Gentle on ears with screw-back closures.",
@@ -491,7 +491,7 @@ window.PIHU_DATA = {
       date: "2 days ago",
       productTitle: "Custom Hand-Painted Yashoda Krishna Dohale Jevan Banner",
       review: "Sayali did an absolute wonder with our Dohale Jevan banner! The colors of Bal Krishna and Yashoda Mata were so soft and divine. All our guests took photos in front of it. Delivered securely to Pune within 4 days. Highly recommended boutique!",
-      avatar: "images/pihu-19.jpg"
+      avatar: "images/piyu-19.jpg"
     },
     {
       id: "rev-2",
@@ -501,7 +501,7 @@ window.PIHU_DATA = {
       date: "1 week ago",
       productTitle: "Traditional Maharashtrian Kundan & Pearl Floral Nath",
       review: "The Nath is exquisite! Lightweight, sits comfortably on the nose without painful pinching, and the pearls have a rich luster. It gave my Nauvari saree the exact royal Peshwai touch I wanted for Diwali.",
-      avatar: "images/pihu-10.jpg"
+      avatar: "images/piyu-10.jpg"
     },
     {
       id: "rev-3",
@@ -511,7 +511,7 @@ window.PIHU_DATA = {
       date: "2 weeks ago",
       productTitle: "Custom Baby Cradle Welcome Hoop with Pearl Tassels",
       review: "Ordered this for our niece's naming ceremony. Sayali personalized our family sketch and added the prettiest hanging pearls and pink tassels. Truly a heirloom keepsake to cherish forever.",
-      avatar: "images/pihu-02.jpg"
+      avatar: "images/piyu-02.jpg"
     },
     {
       id: "rev-4",
@@ -521,7 +521,7 @@ window.PIHU_DATA = {
       date: "3 weeks ago",
       productTitle: "Royal Lotus Ruby & Antique Gold Choker Set",
       review: "Such fine craftsmanship in the gold beading and lotus centerpiece! Packaging was so premium with a handwritten thank-you card. It feels like wearing fine bridal jewellery without paying exorbitant gold prices.",
-      avatar: "images/pihu-06.jpg"
+      avatar: "images/piyu-06.jpg"
     },
     {
       id: "rev-5",
@@ -531,7 +531,7 @@ window.PIHU_DATA = {
       date: "1 month ago",
       productTitle: "Hand-Painted Vitthal Pure Cotton Kurta",
       review: "Wore this for our Pandharpur Wari yatra. The fabric paint didn't fade even after two gentle washes. 100% breathable cotton and the Vitthal silhouette attracted compliments from everyone.",
-      avatar: "images/pihu-17.jpg"
+      avatar: "images/piyu-17.jpg"
     },
     {
       id: "rev-6",
@@ -541,7 +541,7 @@ window.PIHU_DATA = {
       date: "1 month ago",
       productTitle: "Custom Hand-Embroidered Love Message Shirt",
       review: "Gifted this customized shirt with 'I Love You' embroidered on the placket and a little heart on the collar to my fiancé for our anniversary. He loved the discreet and thoughtful gesture!",
-      avatar: "images/pihu-18.jpg"
+      avatar: "images/piyu-18.jpg"
     }
   ],
 
@@ -608,7 +608,7 @@ window.PIHU_DATA = {
       category: "Customize Fabric Painting",
       itemType: "Wedding Welcome Paithani Fabric Wall Art",
       details: "Need a 4-feet Paithani border wall hanging with bride & groom names 'Swapnil & Meenakshi' and wedding date 15 Dec 2026.",
-      referenceImage: "images/pihu-01.jpg",
+      referenceImage: "images/piyu-01.jpg",
       budget: "₹2,500 - ₹3,500",
       status: "Under Artisan Review",
       quotedPrice: "₹3,200"
@@ -622,10 +622,13 @@ window.PIHU_DATA = {
       category: "Handmade Jewellery",
       itemType: "Bridal Saaj with matching customized nath & hair pins",
       details: "Matching jewellery set in antique matte gold finish with emerald green accents for green Paithani saree.",
-      referenceImage: "images/pihu-13.jpg",
+      referenceImage: "images/piyu-13.jpg",
       budget: "₹4,000 - ₹5,000",
       status: "Quote Sent",
       quotedPrice: "₹4,500"
     }
   ]
 };
+
+// Backward-compatibility alias
+window.PIHU_DATA = window.PIYU_DATA;

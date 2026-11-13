@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Product Details – PIHU Boutique</title>
+  <title>Product Details – PIYU Boutique</title>
   <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +33,7 @@
 </head>
 <body class="bg-cream-50 text-warmcharcoal-800 font-sans antialiased">
 
-  <div id="pihu-header"></div>
+  <div id="piyu-header"></div>
 
   <!-- Breadcrumb Bar -->
   <div class="bg-cream-100/60 border-b border-cream-200 py-3 text-xs text-warmcharcoal-500">
@@ -56,7 +56,7 @@
         <!-- Gallery Column -->
         <div class="lg:col-span-6 space-y-4">
           <div class="relative aspect-square rounded-3xl overflow-hidden bg-white border border-cream-200 shadow-warm">
-            <img id="detail-main-img" src="images/pihu-01.jpg" alt="Handcrafted product" class="w-full h-full object-cover transition-all duration-300" />
+            <img id="detail-main-img" src="images/piyu-01.jpg" alt="Handcrafted product" class="w-full h-full object-cover transition-all duration-300" />
             <span id="detail-badge" class="absolute top-4 left-4 text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full bg-cream-50/95 text-terracotta-700 shadow-sm border border-terracotta-200">✨ Bestseller</span>
             <button id="detail-wishlist-btn" class="absolute top-4 right-4 p-3 rounded-full bg-white/90 text-warmcharcoal-600 hover:text-red-500 shadow-md">
               ♥
@@ -169,7 +169,7 @@
     </section>
   </main>
 
-  <div id="pihu-footer"></div>
+  <div id="piyu-footer"></div>
 
   <script src="js/data.js"></script>
   <script src="js/store.js"></script>
@@ -179,12 +179,12 @@
     document.addEventListener('DOMContentLoaded', () => {
       const urlParams = new URLSearchParams(window.location.search);
       const prodId = urlParams.get('id') || 'fabric-01';
-      const product = window.PIHU_STORE.getProductById(prodId) || window.PIHU_DATA.products[0];
+      const product = window.PIYU_STORE.getProductById(prodId) || window.PIYU_DATA.products[0];
 
       let currentQty = 1;
 
       // Populate elements
-      document.title = `${product.title} – PIHU Boutique`;
+      document.title = `${product.title} – PIYU Boutique`;
       document.getElementById('breadcrumb-title').textContent = product.title;
       document.getElementById('breadcrumb-cat').textContent = product.category === 'fabric' ? 'Fabric Painting' : 'Handmade Jewellery';
       document.getElementById('breadcrumb-cat').href = product.category === 'fabric' ? 'fabric-painting.html' : 'jewellery.html';
@@ -212,7 +212,7 @@
       }
 
       // WhatsApp link
-      const waMsg = encodeURIComponent(`Namaste Sayali! I am looking at "${product.title}" on PIHU and would like to ask about customization and pricing.`);
+      const waMsg = encodeURIComponent(`Namaste Sayali! I am looking at "${product.title}" on PIYU and would like to ask about customization and pricing.`);
       document.getElementById('detail-whatsapp-btn').href = `https://wa.me/919309851833?text=${waMsg}`;
 
       // Custom fields
@@ -259,19 +259,19 @@
 
       // Add to cart
       document.getElementById('detail-add-to-cart').addEventListener('click', () => {
-        window.PIHU_STORE.addToCart(product.id, currentQty, compileCustomNotes());
-        window.PIHU_UI.openCartDrawer();
+        window.PIYU_STORE.addToCart(product.id, currentQty, compileCustomNotes());
+        window.PIYU_UI.openCartDrawer();
       });
 
       // Buy now
       document.getElementById('detail-buy-now').addEventListener('click', () => {
-        window.PIHU_STORE.addToCart(product.id, currentQty, compileCustomNotes());
+        window.PIYU_STORE.addToCart(product.id, currentQty, compileCustomNotes());
         window.location.href = 'checkout.html';
       });
 
       // Wishlist
       document.getElementById('detail-wishlist-btn').addEventListener('click', () => {
-        window.PIHU_STORE.toggleWishlist(product.id);
+        window.PIYU_STORE.toggleWishlist(product.id);
       });
 
       // Tabs
@@ -293,7 +293,7 @@
 
       // Related Products
       const relatedGrid = document.getElementById('detail-related-grid');
-      const related = window.PIHU_DATA.products.filter(p => p.category === product.category && p.id !== product.id).slice(0, 4);
+      const related = window.PIYU_DATA.products.filter(p => p.category === product.category && p.id !== product.id).slice(0, 4);
       relatedGrid.innerHTML = related.map(p => `
         <div class="bg-white rounded-2xl overflow-hidden border border-cream-200 shadow-sm flex flex-col justify-between">
           <div class="aspect-square bg-cream-100 overflow-hidden">

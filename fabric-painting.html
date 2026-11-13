@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Customize Fabric Painting – PIHU Boutique</title>
+  <title>Customize Fabric Painting – PIYU Boutique</title>
   <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +33,7 @@
 </head>
 <body class="bg-cream-50 text-warmcharcoal-800 font-sans antialiased">
 
-  <div id="pihu-header"></div>
+  <div id="piyu-header"></div>
 
   <main class="space-y-12 pb-20">
     <!-- Category Hero Banner -->
@@ -115,7 +115,7 @@
     </section>
   </main>
 
-  <div id="pihu-footer"></div>
+  <div id="piyu-footer"></div>
 
   <script src="js/data.js"></script>
   <script src="js/store.js"></script>
@@ -166,7 +166,7 @@
       });
 
       function renderProducts() {
-        let items = window.PIHU_DATA.products.filter(p => p.category === 'fabric');
+        let items = window.PIYU_DATA.products.filter(p => p.category === 'fabric');
 
         if (currentSubcat !== 'All') {
           items = items.filter(p => p.subcategory === currentSubcat);
@@ -204,7 +204,7 @@
                 <img src="${p.images[0]}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               </a>
               ${p.badge ? `<span class="absolute top-2.5 left-2.5 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-cream-50/95 text-terracotta-700 shadow-sm border border-terracotta-200">✨ ${p.badge}</span>` : ''}
-              <button onclick="window.PIHU_STORE.toggleWishlist('${p.id}')" class="absolute top-2.5 right-2.5 p-2 rounded-full bg-white/90 text-warmcharcoal-600 hover:text-red-500 shadow-sm transition-colors" title="Save">
+              <button onclick="window.PIYU_STORE.toggleWishlist('${p.id}')" class="absolute top-2.5 right-2.5 p-2 rounded-full bg-white/90 text-warmcharcoal-600 hover:text-red-500 shadow-sm transition-colors" title="Save">
                 ♥
               </button>
             </div>

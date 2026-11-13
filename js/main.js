@@ -1,8 +1,8 @@
 /**
- * PIHU – Main UI Engine & Component Injector (Vanilla JS)
+ * PIYU – Main UI Engine & Component Injector (Vanilla JS)
  */
 
-window.PIHU_UI = (function() {
+window.PIYU_UI = (function() {
   // DOM Ready
   document.addEventListener('DOMContentLoaded', () => {
     initHeader();
@@ -65,10 +65,10 @@ window.PIHU_UI = (function() {
 
   // HEADER INJECTION & LOGIC
   function initHeader() {
-    const headerPlaceholder = document.getElementById('pihu-header');
+    const headerPlaceholder = document.getElementById('piyu-header');
     if (!headerPlaceholder) return;
 
-    const user = window.PIHU_STORE.getUser();
+    const user = window.PIYU_STORE.getUser();
     let currentPath = window.location.pathname.split('/').pop() || 'index.html';
     if (!currentPath.endsWith('.html')) currentPath = 'index.html';
 
@@ -129,7 +129,7 @@ window.PIHU_UI = (function() {
               </div>
               <div class="flex flex-col text-left">
                 <div class="flex items-baseline gap-1.5">
-                  <span class="font-display tracking-[0.22em] font-semibold text-2xl uppercase leading-tight text-warmcharcoal-900">PIHU</span>
+                  <span class="font-display tracking-[0.22em] font-semibold text-2xl uppercase leading-tight text-warmcharcoal-900">PIYU</span>
                   <span class="inline-block w-1.5 h-1.5 rounded-full bg-terracotta-500"></span>
                 </div>
                 <span class="tracking-[0.18em] uppercase font-medium font-sans text-[9px] text-terracotta-600">
@@ -193,7 +193,7 @@ window.PIHU_UI = (function() {
           <div class="fixed inset-y-0 left-0 max-w-xs w-full bg-cream-50 shadow-2xl p-6 overflow-y-auto flex flex-col justify-between border-r border-cream-200 z-10">
             <div>
               <div class="flex items-center justify-between pb-4 border-b border-cream-200">
-                <span class="font-display font-bold text-lg text-warmcharcoal-900">PIHU BOUTIQUE</span>
+                <span class="font-display font-bold text-lg text-warmcharcoal-900">PIYU BOUTIQUE</span>
                 <button id="close-mobile-nav" class="p-1 text-warmcharcoal-600 hover:text-terracotta-600">✕</button>
               </div>
               <nav class="mt-6 space-y-2">
@@ -210,7 +210,7 @@ window.PIHU_UI = (function() {
               </nav>
             </div>
             <div class="pt-6 border-t border-cream-200 text-xs text-warmcharcoal-600 space-y-1">
-              <p class="font-bold text-warmcharcoal-800">PIHU Boutique Studio</p>
+              <p class="font-bold text-warmcharcoal-800">PIYU Boutique Studio</p>
               <p>Kherade Vangi, Maharashtra</p>
               <p class="text-terracotta-600 font-semibold">+91 9309851833</p>
             </div>
@@ -248,7 +248,7 @@ window.PIHU_UI = (function() {
 
   // FOOTER INJECTION
   function initFooter() {
-    const footerPlaceholder = document.getElementById('pihu-footer');
+    const footerPlaceholder = document.getElementById('piyu-footer');
     if (!footerPlaceholder) return;
 
     footerPlaceholder.innerHTML = `
@@ -284,12 +284,12 @@ window.PIHU_UI = (function() {
             <!-- Brand Column -->
             <div class="lg:col-span-2 space-y-4">
               <div class="flex items-center gap-3">
-                <span class="font-display tracking-[0.2em] font-semibold text-2xl uppercase text-cream-50">PIHU</span>
+                <span class="font-display tracking-[0.2em] font-semibold text-2xl uppercase text-cream-50">PIYU</span>
                 <span class="w-1.5 h-1.5 rounded-full bg-gold-400"></span>
               </div>
               <p class="text-xs tracking-wider uppercase text-gold-300">CUSTOMIZE FABRIC & HANDMADE JEWELLERY</p>
               <p class="text-xs text-cream-300/80 leading-relaxed pr-6">
-                PIHU is an authentic handmade boutique by artisan Sayali Shinde, specializing in customized fabric painting, devotional apparel, ceremonial baby shower banners, and traditional Maharashtrian jewellery.
+                PIYU is an authentic handmade boutique by artisan Sayali Shinde, specializing in customized fabric painting, devotional apparel, ceremonial baby shower banners, and traditional Maharashtrian jewellery.
               </p>
               <div class="pt-2">
                 <a href="https://wa.me/919309851833" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-emerald-700 hover:bg-emerald-600 text-white rounded-full text-xs font-semibold shadow-sm transition-colors">
@@ -328,18 +328,18 @@ window.PIHU_UI = (function() {
               <h3 class="text-xs font-bold uppercase tracking-wider text-gold-300">Studio Location</h3>
               <p>Sayali Shoppy, Kherade Vangi, Kadegaon, Sangli, Maharashtra 415305</p>
               <p>📞 +91 9309851833</p>
-              <p>✉️ contact@pihuhandmade.com</p>
+              <p>✉️ contact@piyuhandmade.com</p>
               <div class="pt-2">
                 <p class="text-cream-200 font-semibold mb-1">Use First Order Code:</p>
                 <div class="p-2 bg-warmcharcoal-800 border border-warmcharcoal-700 rounded-lg text-gold-300 text-center font-bold tracking-widest">
-                  PIHUFIRST10
+                  PIYUFIRST10
                 </div>
               </div>
             </div>
           </div>
 
           <div class="mt-12 pt-6 border-t border-warmcharcoal-800 flex flex-col sm:flex-row items-center justify-between text-xs text-cream-400/60 gap-4">
-            <p>© ${new Date().getFullYear()} PIHU – Customize Fabric & Handmade Jewellery. Handcrafted with Love in Maharashtra.</p>
+            <p>© ${new Date().getFullYear()} PIYU – Customize Fabric & Handmade Jewellery. Handcrafted with Love in Maharashtra.</p>
             <div class="flex items-center gap-4">
               <span>Slow Fashion</span>
               <span>•</span>
@@ -416,8 +416,8 @@ window.PIHU_UI = (function() {
     const countBadge = document.getElementById('cart-drawer-count');
     if (!itemsContainer || !footerContainer) return;
 
-    const detailedItems = window.PIHU_STORE.getCartDetailed();
-    const totals = window.PIHU_STORE.getCartTotals();
+    const detailedItems = window.PIYU_STORE.getCartDetailed();
+    const totals = window.PIYU_STORE.getCartTotals();
 
     countBadge.textContent = totals.itemsCount;
 
@@ -459,16 +459,16 @@ window.PIHU_UI = (function() {
           <div>
             <div class="flex items-start justify-between">
               <h4 class="text-xs font-bold text-warmcharcoal-900 font-serif leading-snug line-clamp-1">${item.product.title}</h4>
-              <button onclick="window.PIHU_STORE.removeFromCart('${item.cartItemId}')" class="text-warmcharcoal-400 hover:text-red-500 text-xs p-1" title="Remove">✕</button>
+              <button onclick="window.PIYU_STORE.removeFromCart('${item.cartItemId}')" class="text-warmcharcoal-400 hover:text-red-500 text-xs p-1" title="Remove">✕</button>
             </div>
             ${item.customizationNotes ? `<p class="mt-0.5 text-[10px] text-terracotta-700 bg-terracotta-50 px-1.5 py-0.5 rounded border border-terracotta-200/60 truncate">✨ ${item.customizationNotes}</p>` : ''}
           </div>
           <div class="mt-2 flex items-center justify-between">
             <span class="text-[11px] font-bold text-terracotta-700 bg-terracotta-50 px-2 py-0.5 rounded-md border border-terracotta-200">Quote on Request</span>
             <div class="flex items-center border border-cream-300 rounded-lg bg-white">
-              <button onclick="window.PIHU_STORE.updateQuantity('${item.cartItemId}', ${item.quantity - 1})" class="w-6 h-6 flex items-center justify-center text-xs font-bold text-warmcharcoal-700 hover:text-terracotta-600">-</button>
+              <button onclick="window.PIYU_STORE.updateQuantity('${item.cartItemId}', ${item.quantity - 1})" class="w-6 h-6 flex items-center justify-center text-xs font-bold text-warmcharcoal-700 hover:text-terracotta-600">-</button>
               <span class="w-6 text-center text-xs font-bold">${item.quantity}</span>
-              <button onclick="window.PIHU_STORE.updateQuantity('${item.cartItemId}', ${item.quantity + 1})" class="w-6 h-6 flex items-center justify-center text-xs font-bold text-warmcharcoal-700 hover:text-terracotta-600">+</button>
+              <button onclick="window.PIYU_STORE.updateQuantity('${item.cartItemId}', ${item.quantity + 1})" class="w-6 h-6 flex items-center justify-center text-xs font-bold text-warmcharcoal-700 hover:text-terracotta-600">+</button>
             </div>
           </div>
         </div>
@@ -507,7 +507,7 @@ window.PIHU_UI = (function() {
   window.applyDrawerCoupon = function() {
     const input = document.getElementById('drawer-coupon-input');
     if (!input) return;
-    const res = window.PIHU_STORE.applyCoupon(input.value);
+    const res = window.PIYU_STORE.applyCoupon(input.value);
     showToast(res.message, res.success ? 'success' : 'error');
   };
 
@@ -524,7 +524,7 @@ window.PIHU_UI = (function() {
         <div class="flex items-center justify-between pb-3 border-b border-cream-200">
           <div class="flex items-center gap-2 text-warmcharcoal-800">
             <span class="text-lg">🔍</span>
-            <h3 class="font-serif text-lg font-bold">Search PIHU Collections</h3>
+            <h3 class="font-serif text-lg font-bold">Search PIYU Collections</h3>
           </div>
           <button id="close-search-btn" class="p-1 text-warmcharcoal-500 hover:text-warmcharcoal-800">✕</button>
         </div>
@@ -550,7 +550,7 @@ window.PIHU_UI = (function() {
         return;
       }
 
-      const matches = window.PIHU_DATA.products.filter(p => 
+      const matches = window.PIYU_DATA.products.filter(p => 
         p.title.toLowerCase().includes(q) || 
         p.subcategory.toLowerCase().includes(q) ||
         p.description.toLowerCase().includes(q)
@@ -610,14 +610,14 @@ window.PIHU_UI = (function() {
   }
 
   window.openQuickView = function(productId) {
-    const product = window.PIHU_STORE.getProductById(productId);
+    const product = window.PIYU_STORE.getProductById(productId);
     if (!product) return;
 
     const container = document.getElementById('quick-view-content');
     const modal = document.getElementById('quick-view-modal');
 
     container.innerHTML = `
-      <button onclick="window.PIHU_UI.closeQuickViewModal()" class="absolute top-4 right-4 p-2 rounded-full bg-cream-100 text-warmcharcoal-700 hover:bg-cream-200">✕</button>
+      <button onclick="window.PIYU_UI.closeQuickViewModal()" class="absolute top-4 right-4 p-2 rounded-full bg-cream-100 text-warmcharcoal-700 hover:bg-cream-200">✕</button>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
         <div class="space-y-3">
@@ -684,7 +684,7 @@ window.PIHU_UI = (function() {
   }
 
   window.handleQuickViewAddToCart = function(productId) {
-    const product = window.PIHU_STORE.getProductById(productId);
+    const product = window.PIYU_STORE.getProductById(productId);
     if (!product) return;
 
     let notes = '';
@@ -697,7 +697,7 @@ window.PIHU_UI = (function() {
       notes = 'Standard Handcrafted Edition';
     }
 
-    window.PIHU_STORE.addToCart(productId, 1, notes);
+    window.PIYU_STORE.addToCart(productId, 1, notes);
     closeQuickViewModal();
     showToast(`Added ${product.title} to bag!`, 'success');
   };
@@ -710,7 +710,7 @@ window.PIHU_UI = (function() {
     floatDiv.id = 'whatsapp-float-btn';
     floatDiv.className = 'fixed bottom-6 right-6 z-40';
     floatDiv.innerHTML = `
-      <a href="https://wa.me/919309851833?text=${encodeURIComponent('Namaste Sayali! I am exploring PIHU website and would like to inquire about a custom order.')}" target="_blank" class="group flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-emerald-600 to-teal-700 text-white rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all border-2 border-white/80" aria-label="WhatsApp Artisan Sayali">
+      <a href="https://wa.me/919309851833?text=${encodeURIComponent('Namaste Sayali! I am exploring PIYU website and would like to inquire about a custom order.')}" target="_blank" class="group flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-emerald-600 to-teal-700 text-white rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all border-2 border-white/80" aria-label="WhatsApp Artisan Sayali">
         <span class="text-lg">💬</span>
         <span class="text-xs font-bold tracking-wide hidden sm:inline">Chat with Artisan Sayali</span>
       </a>
@@ -720,7 +720,7 @@ window.PIHU_UI = (function() {
 
   // UPDATE BADGES
   function updateCartBadges() {
-    const totals = window.PIHU_STORE.getCartTotals();
+    const totals = window.PIYU_STORE.getCartTotals();
     const badges = document.querySelectorAll('#cart-badge');
     badges.forEach(b => {
       b.textContent = totals.itemsCount;
@@ -731,7 +731,7 @@ window.PIHU_UI = (function() {
   }
 
   function updateWishlistBadges() {
-    const list = window.PIHU_STORE.getWishlist();
+    const list = window.PIYU_STORE.getWishlist();
     const badge = document.getElementById('wishlist-badge');
     if (badge) {
       badge.textContent = list.length;
@@ -752,3 +752,7 @@ window.PIHU_UI = (function() {
     closeQuickViewModal
   };
 })();
+
+// Backward-compatibility alias
+window.PIHU_UI = window.PIYU_UI;
+window.openQuickView = window.openQuickView || function(id) { if (window.PIYU_UI && window.PIYU_UI.openQuickView) window.PIYU_UI.openQuickView(id); };

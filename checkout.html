@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Checkout – PIHU Boutique</title>
+  <title>Checkout – PIYU Boutique</title>
   <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +34,7 @@
 </head>
 <body class="bg-cream-50 text-warmcharcoal-800 font-sans antialiased">
 
-  <div id="pihu-header"></div>
+  <div id="piyu-header"></div>
 
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 pb-20 space-y-8">
     <div class="border-b border-cream-200 pb-4">
@@ -254,7 +254,7 @@
     </div>
   </main>
 
-  <div id="pihu-footer"></div>
+  <div id="piyu-footer"></div>
 
   <script src="js/data.js"></script>
   <script src="js/store.js"></script>
@@ -263,7 +263,7 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       let selectedPayMethod = 'UPI (QR Code)';
-      const user = window.PIHU_STORE.getUser();
+      const user = window.PIYU_STORE.getUser();
 
       // Autofill if user is logged in
       if (user) {
@@ -276,8 +276,8 @@
 
       // Render items summary
       function renderCheckoutSummary() {
-        const items = window.PIHU_STORE.getCartDetailed();
-        const totals = window.PIHU_STORE.getCartTotals();
+        const items = window.PIYU_STORE.getCartDetailed();
+        const totals = window.PIYU_STORE.getCartTotals();
         const itemsContainer = document.getElementById('checkout-items-summary');
         const totalsContainer = document.getElementById('checkout-totals-summary');
 
@@ -338,10 +338,10 @@
         const email = document.getElementById('ship-email').value;
         const address = `${document.getElementById('ship-street').value}, ${document.getElementById('ship-city').value}, ${document.getElementById('ship-state').value} ${document.getElementById('ship-pin').value}`;
 
-        const totals = window.PIHU_STORE.getCartTotals();
-        const items = window.PIHU_STORE.getCartDetailed();
+        const totals = window.PIYU_STORE.getCartTotals();
+        const items = window.PIYU_STORE.getCartDetailed();
 
-        const newOrder = window.PIHU_STORE.placeOrder({
+        const newOrder = window.PIYU_STORE.placeOrder({
           customerName: name,
           customerEmail: email,
           customerPhone: phone,
@@ -394,7 +394,7 @@
             </div>
 
             <div class="pt-3 flex flex-wrap items-center justify-center gap-4">
-              <a href="https://wa.me/919309851833?text=${encodeURIComponent(`Namaste Sayali! I just submitted custom order ${newOrder.id} on PIHU website for ${totals.itemsCount} creation(s). Client: ${name}, WhatsApp: ${phone}`)}" target="_blank" class="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full text-xs font-bold flex items-center gap-2 shadow-sm">
+              <a href="https://wa.me/919309851833?text=${encodeURIComponent(`Namaste Sayali! I just submitted custom order ${newOrder.id} on PIYU website for ${totals.itemsCount} creation(s). Client: ${name}, WhatsApp: ${phone}`)}" target="_blank" class="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full text-xs font-bold flex items-center gap-2 shadow-sm">
                 <span>💬 WhatsApp Order Confirmation</span>
               </a>
               <a href="index.html" class="px-6 py-3 bg-cream-100 hover:bg-cream-200 text-warmcharcoal-800 rounded-full text-xs font-semibold">

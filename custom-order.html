@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Custom Order Wizard – PIHU Boutique</title>
+  <title>Custom Order Wizard – PIYU Boutique</title>
   <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +33,7 @@
 </head>
 <body class="bg-cream-50 text-warmcharcoal-800 font-sans antialiased">
 
-  <div id="pihu-header"></div>
+  <div id="piyu-header"></div>
 
   <main class="space-y-12 pb-20">
     <!-- Header -->
@@ -173,7 +173,7 @@
             <!-- Upload dropzone -->
             <div class="p-6 rounded-2xl border-2 border-dashed border-terracotta-300 bg-cream-50/60 text-center">
               <div id="photo-preview-wrap" class="flex flex-col items-center gap-2">
-                <img id="wizard-photo-preview" src="images/pihu-19.jpg" alt="Preview" class="w-28 h-28 rounded-2xl object-cover border-2 border-white shadow-md" />
+                <img id="wizard-photo-preview" src="images/piyu-19.jpg" alt="Preview" class="w-28 h-28 rounded-2xl object-cover border-2 border-white shadow-md" />
                 <label class="px-4 py-1.5 rounded-full bg-white border border-cream-300 text-xs font-semibold cursor-pointer hover:bg-cream-100 transition-colors">
                   Change / Upload Photo
                   <input type="file" id="wizard-file-input" accept="image/*" class="hidden" />
@@ -239,7 +239,7 @@
     </section>
   </main>
 
-  <div id="pihu-footer"></div>
+  <div id="piyu-footer"></div>
 
   <script src="js/data.js"></script>
   <script src="js/store.js"></script>
@@ -250,7 +250,7 @@
       let currentStep = 1;
       let selectedCraft = 'Customize Fabric Painting';
       let selectedProductBase = 'Dohale Jevan Baby Shower Banner';
-      let previewPhotoUrl = 'images/pihu-19.jpg';
+      let previewPhotoUrl = 'images/piyu-19.jpg';
 
       const step1El = document.getElementById('wizard-step-1');
       const step2El = document.getElementById('wizard-step-2');
@@ -279,20 +279,20 @@
       function populateBaseOptions() {
         const isJewel = selectedCraft === 'Handmade Jewellery';
         const items = isJewel ? [
-          { title: 'Traditional Maharashtrian Floral Nath', img: 'images/pihu-10.jpg', tag: 'Handcrafted to Order' },
-          { title: 'Royal Lotus Ruby Choker Set', img: 'images/pihu-06.jpg', tag: 'Handcrafted to Order' },
-          { title: 'Handcrafted Golden Beaded Choker', img: 'images/pihu-11.jpg', tag: 'Handcrafted to Order' },
-          { title: 'Sayali Special Pearl & Ruby Bridal Choker', img: 'images/pihu-13.jpg', tag: 'Handcrafted to Order' },
-          { title: 'Gold Beaded Linear Drop Pins / Bugadi', img: 'images/pihu-16.jpg', tag: 'Handcrafted to Order' },
-          { title: 'Bespoke Complete Bridal Suite', img: 'images/pihu-13.jpg', tag: 'Custom Bridal Suite' }
+          { title: 'Traditional Maharashtrian Floral Nath', img: 'images/piyu-10.jpg', tag: 'Handcrafted to Order' },
+          { title: 'Royal Lotus Ruby Choker Set', img: 'images/piyu-06.jpg', tag: 'Handcrafted to Order' },
+          { title: 'Handcrafted Golden Beaded Choker', img: 'images/piyu-11.jpg', tag: 'Handcrafted to Order' },
+          { title: 'Sayali Special Pearl & Ruby Bridal Choker', img: 'images/piyu-13.jpg', tag: 'Handcrafted to Order' },
+          { title: 'Gold Beaded Linear Drop Pins / Bugadi', img: 'images/piyu-16.jpg', tag: 'Handcrafted to Order' },
+          { title: 'Bespoke Complete Bridal Suite', img: 'images/piyu-13.jpg', tag: 'Custom Bridal Suite' }
         ] : [
-          { title: 'Dohale Jevan Baby Shower Banner', img: 'images/pihu-19.jpg', tag: 'Handcrafted to Order' },
-          { title: 'Baby Naming (Barse) Cradle Welcome Hoop', img: 'images/pihu-02.jpg', tag: 'Handcrafted to Order' },
-          { title: 'Vitthal / Devotional Cotton Kurta', img: 'images/pihu-17.jpg', tag: 'Handcrafted to Order' },
-          { title: 'Personalized Portrait Painting on Fabric', img: 'images/pihu-25.jpg', tag: 'Custom Portrait Art' },
-          { title: 'Custom Embroidered Love Message Shirt', img: 'images/pihu-18.jpg', tag: 'Handcrafted to Order' },
-          { title: 'Bal Ganesha Nursery Hoop Art', img: 'images/pihu-08.jpg', tag: 'Handcrafted to Order' },
-          { title: 'Hand-Embroidered Couple Pocket Hankies', img: 'images/pihu-07.jpg', tag: 'Handcrafted to Order' }
+          { title: 'Dohale Jevan Baby Shower Banner', img: 'images/piyu-19.jpg', tag: 'Handcrafted to Order' },
+          { title: 'Baby Naming (Barse) Cradle Welcome Hoop', img: 'images/piyu-02.jpg', tag: 'Handcrafted to Order' },
+          { title: 'Vitthal / Devotional Cotton Kurta', img: 'images/piyu-17.jpg', tag: 'Handcrafted to Order' },
+          { title: 'Personalized Portrait Painting on Fabric', img: 'images/piyu-25.jpg', tag: 'Custom Portrait Art' },
+          { title: 'Custom Embroidered Love Message Shirt', img: 'images/piyu-18.jpg', tag: 'Handcrafted to Order' },
+          { title: 'Bal Ganesha Nursery Hoop Art', img: 'images/piyu-08.jpg', tag: 'Handcrafted to Order' },
+          { title: 'Hand-Embroidered Couple Pocket Hankies', img: 'images/piyu-07.jpg', tag: 'Handcrafted to Order' }
         ];
 
         selectedProductBase = items[0].title;
@@ -371,7 +371,7 @@
         const date = document.getElementById('cust-date').value || 'Flexible';
         const notes = document.getElementById('cust-notes').value || 'None';
 
-        const text = `*New Custom Order Request - PIHU Boutique*%0A%0A` +
+        const text = `*New Custom Order Request - PIYU Boutique*%0A%0A` +
           `*Client:* ${client}%0A` +
           `*Phone:* ${phone}%0A` +
           `*Category:* ${selectedCraft}%0A` +
@@ -395,7 +395,7 @@
         const budget = document.getElementById('cust-budget').value;
         const notes = document.getElementById('cust-notes').value;
 
-        const newReq = window.PIHU_STORE.addCustomRequest({
+        const newReq = window.PIYU_STORE.addCustomRequest({
           clientName: client,
           phone: phone,
           email: 'custom@customer.com',

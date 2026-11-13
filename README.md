@@ -1,4 +1,4 @@
-# PIHU – Customize Fabric & Handmade Jewellery
+# PIYU – Customize Fabric & Handmade Jewellery
 
 A premium, modern, responsive Indian handmade boutique e-commerce website built purely with **HTML5, Tailwind CSS, and Vanilla JavaScript**.
 
@@ -6,7 +6,7 @@ A premium, modern, responsive Indian handmade boutique e-commerce website built 
 
 ## 🌸 Business Concept
 
-**PIHU** is an online boutique by artisan **Sayali Shinde** (Sayali Shoppy, Kherade Vangi, Maharashtra), celebrating traditional Indian craftsmanship, customized fabric painting (baby shower banners, devotional kurtas, personalized portraits, custom embroidery), and authentic handmade jewellery (Maharashtrian Naths, lotus ruby chokers, beaded necklace suites, bugadi ear drop pins).
+**PIYU** is an online boutique by artisan **Sayali Shinde** (Sayali Shoppy, Kherade Vangi, Maharashtra), celebrating traditional Indian craftsmanship, customized fabric painting (baby shower banners, devotional kurtas, personalized portraits, custom embroidery), and authentic handmade jewellery (Maharashtrian Naths, lotus ruby chokers, beaded necklace suites, bugadi ear drop pins).
 
 ---
 
@@ -44,7 +44,7 @@ c:\Sayali customize gifting/
 │   ├── data.js              # Complete products catalog (with all 30 photos), reviews, initial orders
 │   ├── store.js             # Global state manager for Cart, Wishlist, User & Orders (LocalStorage)
 │   └── main.js              # Header, Footer, Slide-over Cart Drawer, Search Modal, Toasts, WhatsApp
-└── images/                  # All 30 authentic artisan photos (pihu-01.jpg - pihu-30.jpg)
+└── images/                  # All 30 authentic artisan photos (piyu-01.jpg - piyu-30.jpg)
 ```
 
 ---
