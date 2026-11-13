@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PIHU – Customize Fabric & Handmade Jewellery</title>
+  <meta name="description" content="Explore and order customized hand-painted fabric products and handcrafted traditional jewellery by artisan Sayali in Maharashtra." />
+  <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: { 50: '#FDFAF6', 100: '#F8F3EB', 200: '#F2E8DC', 300: '#E7D8C5', 400: '#D8C3AB' },
+            blush: { 50: '#FDF6F6', 100: '#FBECEB', 200: '#F7D7D6', 300: '#EEB5B3', 400: '#E28E8C', 500: '#D26765' },
+            terracotta: { 50: '#FAF2EE', 100: '#F4E0D7', 200: '#E8C0B2', 300: '#DA9E8A', 400: '#CA7860', 500: '#B8583E', 600: '#9E442D', 700: '#803420' },
+            gold: { 50: '#FAF7EE', 100: '#F3ECD2', 200: '#E6D79E', 300: '#D7BF64', 400: '#C8A736', 500: '#B8921C', 600: '#967414' },
+            warmcharcoal: { 600: '#52433F', 700: '#3D322E', 800: '#2C2320', 900: '#1B1513' }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            display: ['"Cinzel"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-cream-50 text-warmcharcoal-800 font-sans antialiased selection:bg-terracotta-200 selection:text-terracotta-800">
+
+  <!-- Navigation Injection Target -->
+  <div id="pihu-header"></div>
+
+  <!-- MAIN HOMEPAGE CONTENT -->
+  <main class="space-y-16 sm:space-y-24 pb-16">
+
+    <!-- HERO SECTION -->
+    <section class="relative overflow-hidden bg-gradient-to-b from-cream-100 via-cream-50 to-cream-50 pt-8 pb-16 md:py-20 border-b border-cream-200">
+      <div class="absolute top-10 left-10 w-72 h-72 bg-blush-200/40 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute top-20 right-10 w-96 h-96 bg-gold-200/30 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Left Text Column -->
+          <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cream-50 border border-terracotta-300 text-terracotta-700 text-xs font-semibold shadow-sm">
+              <span class="text-gold-500">✨</span>
+              <span>Handcrafted Indian Boutique by Artisan Sayali</span>
+            </div>
+
+            <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-warmcharcoal-900 tracking-tight leading-[1.12]">
+              Custom Fabric Art & <br />
+              <span class="text-terracotta-600 italic font-normal">Handmade Jewellery</span> <br />
+              Crafted with Soul.
+            </h1>
+
+            <p class="text-base sm:text-lg text-warmcharcoal-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-sans">
+              Welcome to <strong>PIHU</strong> — where intimate family milestones, devotional art, and Peshwai elegance come to life on pure handlooms and handcrafted ornaments in Maharashtra.
+            </p>
+
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
+              <a href="fabric-painting.html" class="px-6 py-3.5 bg-terracotta-600 hover:bg-terracotta-700 text-white rounded-full font-semibold text-xs sm:text-sm shadow-warm transition-all flex items-center gap-2">
+                <span>🎨 Customize Fabric Painting</span>
+                <span>→</span>
+              </a>
+
+              <a href="jewellery.html" class="px-6 py-3.5 bg-cream-100 hover:bg-cream-200 text-terracotta-800 rounded-full font-semibold text-xs sm:text-sm border border-cream-300 shadow-sm transition-colors flex items-center gap-2">
+                <span>💎 Shop Handmade Jewellery</span>
+              </a>
+
+              <a href="custom-order.html" class="px-5 py-3.5 bg-gold-50 hover:bg-gold-100 text-gold-900 rounded-full font-semibold text-xs sm:text-sm border border-gold-300 shadow-sm transition-colors flex items-center gap-1.5">
+                <span>✨ Custom Order Form</span>
+              </a>
+            </div>
+
+            <div class="pt-6 border-t border-cream-200 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-warmcharcoal-600">
+              <div class="flex items-center gap-2">
+                <span class="text-emerald-600 font-bold">✓</span>
+                <span>Personalized Family Names</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-emerald-600 font-bold">✓</span>
+                <span>Wash-Fast Fabric Pigments</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-emerald-600 font-bold">✓</span>
+                <span>4.9★ Customer Love</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Showcase Hero Collage -->
+          <div class="lg:col-span-5 relative">
+            <div class="relative mx-auto max-w-md">
+              <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-cream-100 transform -rotate-1 hover:rotate-0 transition-transform duration-500">
+                <img src="images/pihu-19.jpg" alt="Hand-painted Yashoda Krishna Dohale Jevan Banner by PIHU" class="w-full h-80 sm:h-96 object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-warmcharcoal-900/80 via-transparent to-transparent flex items-end p-5 text-white">
+                  <div>
+                    <span class="text-[10px] uppercase font-bold tracking-widest text-gold-300">Signature Masterpiece</span>
+                    <p class="font-serif text-lg font-bold">Yashoda Krishna Baby Shower Banner</p>
+                    <p class="text-xs text-cream-200">Hand-painted pure cotton with lace borders</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Floating Secondary Card (Lotus Ruby Choker) -->
+              <div class="absolute -bottom-8 -left-6 sm:-left-10 w-44 sm:w-52 rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                <img src="images/pihu-06.jpg" alt="Lotus Ruby Choker Handmade Jewellery" class="w-full h-36 sm:h-44 object-cover" />
+                <div class="p-2.5 bg-white text-center">
+                  <p class="font-serif text-xs font-bold text-warmcharcoal-900 truncate">Lotus Ruby Choker Set</p>
+                  <p class="text-[10px] text-terracotta-600 font-semibold">Handcrafted • Antique Gold</p>
+                </div>
+              </div>
+
+              <!-- Floating Rating Badge -->
+              <div class="absolute -top-4 -right-4 sm:-right-6 bg-white/95 backdrop-blur-md p-3 rounded-2xl shadow-xl border border-gold-200 text-center flex flex-col items-center">
+                <div class="w-9 h-9 rounded-full bg-gold-100 text-gold-700 flex items-center justify-center font-serif font-bold text-sm">
+                  4.9★
+                </div>
+                <span class="text-[10px] font-bold text-warmcharcoal-800 mt-1 uppercase tracking-wider">350+ Orders</span>
+                <span class="text-[9px] text-warmcharcoal-500">Across India</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- DUAL CATEGORY SPOTLIGHT -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-bold tracking-widest uppercase text-terracotta-600">Curated Artisanal Collections</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-warmcharcoal-900 mt-1">Explore What We Create</h2>
+        <p class="text-sm text-warmcharcoal-600 mt-2">Every piece is made slowly, mindfully, and individually by hand in our studio in Kherade Vangi.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Fabric Painting Card -->
+        <div class="group relative rounded-3xl overflow-hidden shadow-warm border border-cream-200 bg-white flex flex-col justify-between">
+          <div class="relative h-64 sm:h-72 overflow-hidden bg-cream-100">
+            <img src="images/pihu-01.jpg" alt="Customize Fabric Painting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-warmcharcoal-900/80 via-warmcharcoal-900/30 to-transparent flex items-end p-6">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-gold-300">Hand-Painted Elegance</span>
+                <h3 class="font-serif text-2xl font-bold text-white mt-1">Customize Fabric Painting</h3>
+                <p class="text-xs text-cream-200 mt-1">Baby naming ceremony banners, Vitthal devotional kurtas, personalized portraits, and embroidered shirts.</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 bg-white flex items-center justify-between">
+            <div>
+              <span class="text-xs font-semibold text-warmcharcoal-500">12 Unique Custom Styles</span>
+              <p class="text-xs text-terracotta-700 font-bold">Personalized with Names & Dates</p>
+            </div>
+            <a href="fabric-painting.html" class="px-5 py-2.5 rounded-full bg-terracotta-600 hover:bg-terracotta-700 text-white text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-sm">
+              <span>Browse Fabric →</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Jewellery Card -->
+        <div class="group relative rounded-3xl overflow-hidden shadow-warm border border-cream-200 bg-white flex flex-col justify-between">
+          <div class="relative h-64 sm:h-72 overflow-hidden bg-cream-100">
+            <img src="images/pihu-10.jpg" alt="Handmade Jewellery" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-warmcharcoal-900/80 via-warmcharcoal-900/30 to-transparent flex items-end p-6">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-gold-300">Traditional Peshwai Craft</span>
+                <h3 class="font-serif text-2xl font-bold text-white mt-1">Handmade Jewellery</h3>
+                <p class="text-xs text-cream-200 mt-1">Basra-style pearl floral naths, lotus ruby choker sets, solid gold-beaded necklaces, and linear ear pins.</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 bg-white flex items-center justify-between">
+            <div>
+              <span class="text-xs font-semibold text-warmcharcoal-500">8 Bespoke Ornaments</span>
+              <p class="text-xs text-gold-700 font-bold">Anti-Tarnish 18K Polish & Pure Pearls</p>
+            </div>
+            <a href="jewellery.html" class="px-5 py-2.5 rounded-full bg-gold-500 hover:bg-gold-600 text-warmcharcoal-950 text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-sm">
+              <span>Browse Jewellery →</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BESTSELLER CREATIONS GRID -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest uppercase text-terracotta-600">Customer Favorites</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-warmcharcoal-900 mt-1">Bestseller Handcrafted Creations</h2>
+        </div>
+        <div class="flex items-center gap-4 text-xs font-semibold text-terracotta-700">
+          <a href="fabric-painting.html" class="hover:underline">View All Fabric</a>
+          <span>•</span>
+          <a href="jewellery.html" class="hover:underline">View All Jewellery</a>
+        </div>
+      </div>
+
+      <!-- Injected Product Grid -->
+      <div id="home-bestsellers-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <!-- Rendered by inline script -->
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS SECTION -->
+    <section class="bg-gradient-to-r from-cream-100 via-blush-50 to-cream-100 py-16 border-y border-cream-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-xs font-bold tracking-widest uppercase text-terracotta-600">Simple 4-Step Process</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-warmcharcoal-900 mt-1">How Custom Ordering Works</h2>
+          <p class="text-xs sm:text-sm text-warmcharcoal-600 mt-2">
+            Transforming your cherished memories and special requests into physical handcrafted keepsakes.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white p-6 rounded-2xl shadow-sm border border-cream-200">
+            <span class="w-10 h-10 rounded-xl bg-terracotta-50 text-terracotta-600 font-serif font-bold text-base flex items-center justify-center mb-3">01</span>
+            <h3 class="font-serif text-base font-bold text-warmcharcoal-900 mb-1">Choose Your Craft</h3>
+            <p class="text-xs text-warmcharcoal-600 leading-relaxed">Select from ceremonial banners, cotton kurtas, embroidery hoops, or traditional naths.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-2xl shadow-sm border border-cream-200">
+            <span class="w-10 h-10 rounded-xl bg-gold-50 text-gold-600 font-serif font-bold text-base flex items-center justify-center mb-3">02</span>
+            <h3 class="font-serif text-base font-bold text-warmcharcoal-900 mb-1">Share Idea / Photo</h3>
+            <p class="text-xs text-warmcharcoal-600 leading-relaxed">Fill our Custom Order Form with family names, ceremony dates, colors, or upload a reference portrait.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-2xl shadow-sm border border-cream-200">
+            <span class="w-10 h-10 rounded-xl bg-blush-100 text-blush-500 font-serif font-bold text-base flex items-center justify-center mb-3">03</span>
+            <h3 class="font-serif text-base font-bold text-warmcharcoal-900 mb-1">Handcrafted with Love</h3>
+            <p class="text-xs text-warmcharcoal-600 leading-relaxed">Artisan Sayali paints or beads your piece with fine care, sharing work-in-progress proofs on WhatsApp.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-2xl shadow-sm border border-cream-200">
+            <span class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 font-serif font-bold text-base flex items-center justify-center mb-3">04</span>
+            <h3 class="font-serif text-base font-bold text-warmcharcoal-900 mb-1">Delivered to Doorstep</h3>
+            <p class="text-xs text-warmcharcoal-600 leading-relaxed">Safely boxed in signature boutique packaging with tracking, ready for your celebration.</p>
+          </div>
+        </div>
+
+        <div class="text-center mt-10">
+          <a href="custom-order.html" class="inline-flex items-center gap-2 px-8 py-3.5 bg-terracotta-600 hover:bg-terracotta-700 text-white rounded-full font-bold text-xs sm:text-sm shadow-warm transition-all">
+            <span>Start Your Custom Order Now →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARTISAN SPOTLIGHT: SAYALI -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-3xl border border-cream-200 shadow-warm overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 items-center">
+          <div class="lg:col-span-5 h-80 lg:h-full relative overflow-hidden bg-cream-100">
+            <img src="images/pihu-29.jpg" alt="Artisan Sayali at PIHU Studio" class="w-full h-full object-cover object-top" />
+            <div class="absolute inset-0 bg-gradient-to-t from-warmcharcoal-900/60 to-transparent flex items-end p-6 text-white">
+              <div>
+                <span class="text-[10px] uppercase font-bold tracking-widest text-gold-300">The Artisan</span>
+                <h4 class="font-serif text-xl font-bold">Sayali Shinde</h4>
+                <p class="text-xs text-cream-200">Founder & Craft Artist • Kherade Vangi</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 p-8 sm:p-12 space-y-4">
+            <span class="text-xs uppercase font-bold tracking-widest text-terracotta-600">The Story of PIHU</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-warmcharcoal-900 leading-tight">
+              "Every brushstroke carries a prayer, every bead reflects a tradition."
+            </h2>
+            <p class="text-xs sm:text-sm text-warmcharcoal-600 leading-relaxed">
+              Started in Kherade Vangi, Maharashtra, <strong>PIHU</strong> was born to revive slow, heartfelt gifting. In an era of mass plastic prints, we believe milestones like baby showers, naming ceremonies, and weddings deserve the warmth of authentic handwork.
+            </p>
+
+            <div class="grid grid-cols-3 gap-3 pt-2 text-center">
+              <div class="p-3 rounded-xl bg-cream-50 border border-cream-200">
+                <span class="font-serif text-xl font-bold text-terracotta-600">300+</span>
+                <p class="text-[11px] text-warmcharcoal-600">Custom Banners</p>
+              </div>
+              <div class="p-3 rounded-xl bg-cream-50 border border-cream-200">
+                <span class="font-serif text-xl font-bold text-gold-600">500+</span>
+                <p class="text-[11px] text-warmcharcoal-600">Naths & Sets</p>
+              </div>
+              <div class="p-3 rounded-xl bg-cream-50 border border-cream-200">
+                <span class="font-serif text-xl font-bold text-emerald-600">100%</span>
+                <p class="text-[11px] text-warmcharcoal-600">Handmade</p>
+              </div>
+            </div>
+
+            <div class="pt-2 flex flex-wrap items-center gap-4">
+              <a href="about.html" class="px-6 py-2.5 rounded-full bg-warmcharcoal-900 hover:bg-terracotta-600 text-white text-xs font-semibold transition-colors">
+                Read Full Story & Philosophy →
+              </a>
+              <a href="tel:9309851833" class="text-xs font-semibold text-terracotta-700 hover:underline">
+                📞 Call Sayali: +91 9309851833
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CUSTOMER REVIEWS PREVIEW -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest uppercase text-terracotta-600">Verified Buyer Love</span>
+          <h2 class="font-serif text-3xl font-bold text-warmcharcoal-900 mt-1">Words From Happy Families</h2>
+        </div>
+        <a href="reviews.html" class="text-xs font-bold text-terracotta-600 hover:underline">
+          See All 350+ Reviews & Customer Photos →
+        </a>
+      </div>
+
+      <div id="home-reviews-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Injected via script -->
+      </div>
+    </section>
+
+    <!-- INSTAGRAM / STUDIO PHOTO MOSAIC -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8">
+        <span class="text-xs font-bold tracking-widest uppercase text-terracotta-600">Studio Showcase</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-warmcharcoal-900 mt-1">Moments From Our Craft Table</h2>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+        <div class="aspect-square rounded-2xl overflow-hidden border border-cream-200 img-zoom-container">
+          <img src="images/pihu-08.jpg" alt="Bal Ganesha" class="w-full h-full object-cover" />
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-cream-200 img-zoom-container">
+          <img src="images/pihu-16.jpg" alt="Ear Pins" class="w-full h-full object-cover" />
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-cream-200 img-zoom-container">
+          <img src="images/pihu-07.jpg" alt="Hankies" class="w-full h-full object-cover" />
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-cream-200 img-zoom-container">
+          <img src="images/pihu-21.jpg" alt="Warkari Topi" class="w-full h-full object-cover" />
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-cream-200 img-zoom-container">
+          <img src="images/pihu-27.jpg" alt="Khillari Bull" class="w-full h-full object-cover" />
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-cream-200 img-zoom-container">
+          <img src="images/pihu-14.jpg" alt="Aari Blouse" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Injection Target -->
+  <div id="pihu-footer"></div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Page Specific Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Render bestsellers
+      const bestsellersGrid = document.getElementById('home-bestsellers-grid');
+      if (bestsellersGrid && window.PIHU_DATA) {
+        const featured = window.PIHU_DATA.products.filter(p => p.featured).slice(0, 6);
+        bestsellersGrid.innerHTML = featured.map(p => `
+          <div class="group relative bg-white rounded-2xl overflow-hidden border border-cream-200 shadow-sm hover:shadow-warm transition-all flex flex-col justify-between">
+            <div class="relative aspect-square w-full overflow-hidden bg-cream-100">
+              <a href="product-details.html?id=${p.id}" class="block w-full h-full">
+                <img src="${p.images[0]}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              </a>
+              ${p.badge ? `<span class="absolute top-2.5 left-2.5 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-cream-50/95 text-terracotta-700 shadow-sm border border-terracotta-200">✨ ${p.badge}</span>` : ''}
+              <button onclick="window.PIHU_STORE.toggleWishlist('${p.id}')" class="absolute top-2.5 right-2.5 p-2 rounded-full bg-white/90 text-warmcharcoal-600 hover:text-red-500 shadow-sm transition-colors" title="Save">
+                ♥
+              </button>
+            </div>
+            <div class="p-4 flex flex-col flex-1 justify-between">
+              <div>
+                <div class="flex items-center justify-between text-[11px] text-warmcharcoal-500 mb-1">
+                  <span class="font-bold text-terracotta-600 uppercase tracking-wider">${p.subcategory}</span>
+                  <span class="text-gold-500 font-bold">★ ${p.rating} (${p.reviewsCount})</span>
+                </div>
+                <h3 class="font-serif font-bold text-base text-warmcharcoal-900 leading-snug line-clamp-2 hover:text-terracotta-600">
+                  <a href="product-details.html?id=${p.id}">${p.title}</a>
+                </h3>
+              </div>
+              <div class="mt-4 pt-3 border-t border-cream-100 flex items-center justify-between">
+                <span class="text-xs font-semibold text-terracotta-700 bg-terracotta-50 px-2.5 py-1 rounded-full border border-terracotta-200">
+                  Custom Order
+                </span>
+                <button onclick="window.openQuickView('${p.id}')" class="px-3.5 py-1.5 rounded-xl bg-terracotta-600 hover:bg-terracotta-700 text-white text-xs font-bold transition-colors shadow-sm">
+                  ${p.customizable ? 'Customize' : 'View Details'}
+                </button>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // Render reviews
+      const reviewsGrid = document.getElementById('home-reviews-grid');
+      if (reviewsGrid && window.PIHU_DATA) {
+        const topReviews = window.PIHU_DATA.reviews.slice(0, 3);
+        reviewsGrid.innerHTML = topReviews.map(r => `
+          <div class="bg-white p-6 rounded-2xl border border-cream-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-gold-500 font-bold">★★★★★</span>
+                <span class="text-[11px] text-warmcharcoal-400">${r.date}</span>
+              </div>
+              <p class="text-xs text-warmcharcoal-700 leading-relaxed italic font-serif mb-4">"${r.review}"</p>
+            </div>
+            <div class="pt-3 border-t border-cream-100 flex items-center gap-3">
+              <img src="${r.avatar}" alt="${r.author}" class="w-10 h-10 rounded-full object-cover border border-cream-300" />
+              <div>
+                <h4 class="text-xs font-bold text-warmcharcoal-900">${r.author}</h4>
+                <p class="text-[10px] text-warmcharcoal-500">${r.city} • Verified Buyer</p>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+    });
+  </script>
+</body>
+</html>

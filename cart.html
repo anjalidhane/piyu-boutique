@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopping Cart – PIHU Boutique</title>
+  <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: { 50: '#FDFAF6', 100: '#F8F3EB', 200: '#F2E8DC', 300: '#E7D8C5', 400: '#D8C3AB' },
+            blush: { 50: '#FDF6F6', 100: '#FBECEB', 200: '#F7D7D6', 300: '#EEB5B3', 400: '#E28E8C', 500: '#D26765' },
+            terracotta: { 50: '#FAF2EE', 100: '#F4E0D7', 200: '#E8C0B2', 300: '#DA9E8A', 400: '#CA7860', 500: '#B8583E', 600: '#9E442D', 700: '#803420' },
+            gold: { 50: '#FAF7EE', 100: '#F3ECD2', 200: '#E6D79E', 300: '#D7BF64', 400: '#C8A736', 500: '#B8921C', 600: '#967414' },
+            warmcharcoal: { 600: '#52433F', 700: '#3D322E', 800: '#2C2320', 900: '#1B1513' }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            display: ['"Cinzel"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-cream-50 text-warmcharcoal-800 font-sans antialiased">
+
+  <div id="pihu-header"></div>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8 pb-20">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between border-b border-cream-200 pb-5 gap-2">
+      <div>
+        <span class="text-xs font-bold tracking-widest uppercase text-terracotta-600">Review Your Bag</span>
+        <h1 id="cart-page-title" class="font-serif text-3xl sm:text-4xl font-bold text-warmcharcoal-900 mt-1">Shopping Cart</h1>
+      </div>
+      <button onclick="window.PIHU_STORE.clearCart()" class="text-xs text-warmcharcoal-400 hover:text-red-600 underline">
+        Clear entire cart
+      </button>
+    </div>
+
+    <!-- Free Shipping Milestone Alert -->
+    <div id="cart-page-shipping-box" class="p-4 bg-white rounded-2xl border border-cream-200 shadow-sm text-xs">
+      <!-- Populated via script -->
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <!-- Cart Items List -->
+      <div class="lg:col-span-8 space-y-4">
+        <div id="cart-page-items-list" class="bg-white rounded-3xl border border-cream-200 shadow-sm overflow-hidden divide-y divide-cream-100">
+          <!-- Populated dynamically -->
+        </div>
+
+        <!-- Notes for Artisan -->
+        <div class="bg-white p-5 rounded-2xl border border-cream-200 shadow-sm space-y-2">
+          <label class="block text-xs font-bold text-warmcharcoal-800">
+            Special Artisan Notes or Instructions for Sayali:
+          </label>
+          <textarea id="cart-artisan-notes" rows="2" placeholder="e.g. Please use golden cord for the nath, or make the blue sky darker in the baby banner..." class="w-full text-xs p-3 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-terracotta-500"></textarea>
+        </div>
+
+        <div class="flex items-center justify-between text-xs text-warmcharcoal-500 pt-2">
+          <a href="fabric-painting.html" class="flex items-center gap-1.5 hover:text-terracotta-600 font-semibold">
+            <span>← Continue Shopping Collections</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Order Summary Card -->
+      <div class="lg:col-span-4 space-y-5">
+        <div id="cart-page-summary-box" class="bg-white p-6 rounded-3xl border border-cream-200 shadow-warm space-y-5">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="pihu-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderFullCart();
+      window.addEventListener('cart-updated', renderFullCart);
+
+      function renderFullCart() {
+        const items = window.PIHU_STORE.getCartDetailed();
+        const totals = window.PIHU_STORE.getCartTotals();
+        const titleEl = document.getElementById('cart-page-title');
+        const shippingBox = document.getElementById('cart-page-shipping-box');
+        const itemsList = document.getElementById('cart-page-items-list');
+        const summaryBox = document.getElementById('cart-page-summary-box');
+
+        titleEl.textContent = `Shopping Cart (${totals.itemsCount} ${totals.itemsCount === 1 ? 'item' : 'items'})`;
+
+        // Shipping Bar
+        shippingBox.innerHTML = `
+          <div class="flex items-center justify-between font-medium text-warmcharcoal-800">
+            <span class="flex items-center gap-2 font-bold text-terracotta-700">
+              <span>🎨</span> Handcrafted Custom Boutique Bag
+            </span>
+            <span class="text-xs text-emerald-700 font-semibold bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Doorstep Pan-India Courier</span>
+          </div>
+          <p class="text-xs text-warmcharcoal-600 mt-1.5">
+            Every creation is individually personalized with your requested names, motifs, and colors. Sayali will share work-in-progress photos on WhatsApp before dispatch.
+          </p>
+        `;
+
+        if (items.length === 0) {
+          itemsList.innerHTML = `
+            <div class="p-12 text-center space-y-3">
+              <span class="text-4xl block">🛍️</span>
+              <h3 class="font-serif text-xl font-bold">Your Cart is Empty</h3>
+              <p class="text-xs text-warmcharcoal-500 max-w-sm mx-auto">Explore hand-painted fabrics or traditional jewellery to find something special.</p>
+              <div class="pt-2 flex justify-center gap-3">
+                <a href="fabric-painting.html" class="px-5 py-2.5 bg-terracotta-600 text-white rounded-xl text-xs font-bold">Explore Fabric Art</a>
+                <a href="jewellery.html" class="px-5 py-2.5 bg-cream-100 text-warmcharcoal-800 rounded-xl text-xs font-bold">Explore Jewellery</a>
+              </div>
+            </div>
+          `;
+          summaryBox.innerHTML = `
+            <p class="text-xs text-warmcharcoal-400 text-center py-6">Add items to view order request summary.</p>
+          `;
+          return;
+        }
+
+        // Items List
+        itemsList.innerHTML = items.map(item => `
+          <div class="p-4 sm:p-6 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
+            <div class="flex gap-4 items-start min-w-0">
+              <img src="${item.product.images[0]}" alt="${item.product.title}" class="w-20 h-20 rounded-2xl object-cover border border-cream-200 flex-shrink-0 bg-cream-50" />
+              <div class="min-w-0 space-y-1">
+                <span class="text-[10px] uppercase font-bold text-terracotta-600 tracking-wider">${item.product.subcategory || item.product.category}</span>
+                <h3 class="font-serif font-bold text-sm sm:text-base text-warmcharcoal-900 leading-snug line-clamp-2">
+                  <a href="product-details.html?id=${item.product.id}" class="hover:text-terracotta-600">${item.product.title}</a>
+                </h3>
+                <span class="text-xs font-semibold text-terracotta-700 bg-terracotta-50 px-2 py-0.5 rounded border border-terracotta-200 inline-block">✨ Custom Pricing on Request</span>
+                ${item.customizationNotes ? `<p class="text-[11px] text-terracotta-800 bg-terracotta-50 px-2 py-0.5 rounded border border-terracotta-200 block font-medium mt-1">📝 ${item.customizationNotes}</p>` : ''}
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between sm:justify-end gap-6 w-full sm:w-auto pt-2 sm:pt-0 border-t sm:border-t-0 border-cream-100">
+              <div class="flex items-center border border-cream-300 rounded-xl bg-cream-50 p-1">
+                <button onclick="window.PIHU_STORE.updateQuantity('${item.cartItemId}', ${item.quantity - 1})" class="w-7 h-7 flex items-center justify-center font-bold text-warmcharcoal-700 hover:text-terracotta-600 text-xs">-</button>
+                <span class="w-8 text-center text-xs font-bold text-warmcharcoal-900">${item.quantity}</span>
+                <button onclick="window.PIHU_STORE.updateQuantity('${item.cartItemId}', ${item.quantity + 1})" class="w-7 h-7 flex items-center justify-center font-bold text-warmcharcoal-700 hover:text-terracotta-600 text-xs">+</button>
+              </div>
+
+              <div class="text-right min-w-[110px]">
+                <span class="text-xs font-bold text-warmcharcoal-900 block">Made to Order</span>
+                <span class="text-[10px] text-emerald-600 font-semibold">Proof on WhatsApp</span>
+              </div>
+
+              <button onclick="window.PIHU_STORE.removeFromCart('${item.cartItemId}')" class="p-2 text-warmcharcoal-400 hover:text-red-500 transition-colors" title="Remove">✕</button>
+            </div>
+          </div>
+        `).join('');
+
+        // Summary Box
+        summaryBox.innerHTML = `
+          <h2 class="font-serif text-xl font-bold text-warmcharcoal-900 pb-3 border-b border-cream-200">Order Request Summary</h2>
+
+          <!-- Breakdown -->
+          <div class="space-y-2.5 text-xs text-warmcharcoal-700 pt-1">
+            <div class="flex justify-between"><span>Selected Creations:</span><span class="font-bold text-warmcharcoal-900">${totals.itemsCount} ${totals.itemsCount === 1 ? 'item' : 'items'}</span></div>
+            <div class="flex justify-between"><span>Personalization & Proof:</span><span class="font-semibold text-emerald-700">Included Free</span></div>
+            <div class="flex justify-between"><span>Artisan Crafting:</span><span>3-5 Business Days</span></div>
+            <div class="flex justify-between"><span>Packaging:</span><span>Signature Boutique Box</span></div>
+            <div class="flex justify-between"><span>Shipping:</span><span class="font-bold text-emerald-700 uppercase">Pan-India Courier</span></div>
+          </div>
+
+          <div class="p-3.5 bg-cream-50 rounded-2xl border border-cream-200 text-xs space-y-1">
+            <span class="font-bold text-warmcharcoal-900 block">✨ Bespoke Artisan Model:</span>
+            <p class="text-[11px] text-warmcharcoal-600 leading-relaxed">
+              Final quote is tailored to your customization specifications (dimensions, names, fabric choice) and confirmed directly with Sayali on WhatsApp.
+            </p>
+          </div>
+
+          <a href="checkout.html" class="block w-full py-4 bg-terracotta-600 hover:bg-terracotta-700 text-white font-bold text-xs rounded-xl shadow-warm text-center uppercase tracking-wider transition-all">
+            Proceed to Order Request →
+          </a>
+
+          <a href="https://wa.me/919309851833" target="_blank" class="block w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl shadow-sm text-center transition-colors">
+            💬 Quick Order on WhatsApp
+          </a>
+        `;
+      }
+
+      window.applyCartCoupon = function() {
+        const inp = document.getElementById('cart-coupon-input');
+        if (!inp) return;
+        const res = window.PIHU_STORE.applyCoupon(inp.value);
+        window.PIHU_UI.showToast(res.message, res.success ? 'success' : 'error');
+      };
+    });
+  </script>
+</body>
+</html>

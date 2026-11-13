@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details – PIHU Boutique</title>
+  <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: { 50: '#FDFAF6', 100: '#F8F3EB', 200: '#F2E8DC', 300: '#E7D8C5', 400: '#D8C3AB' },
+            blush: { 50: '#FDF6F6', 100: '#FBECEB', 200: '#F7D7D6', 300: '#EEB5B3', 400: '#E28E8C', 500: '#D26765' },
+            terracotta: { 50: '#FAF2EE', 100: '#F4E0D7', 200: '#E8C0B2', 300: '#DA9E8A', 400: '#CA7860', 500: '#B8583E', 600: '#9E442D', 700: '#803420' },
+            gold: { 50: '#FAF7EE', 100: '#F3ECD2', 200: '#E6D79E', 300: '#D7BF64', 400: '#C8A736', 500: '#B8921C', 600: '#967414' },
+            warmcharcoal: { 600: '#52433F', 700: '#3D322E', 800: '#2C2320', 900: '#1B1513' }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            display: ['"Cinzel"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-cream-50 text-warmcharcoal-800 font-sans antialiased">
+
+  <div id="pihu-header"></div>
+
+  <!-- Breadcrumb Bar -->
+  <div class="bg-cream-100/60 border-b border-cream-200 py-3 text-xs text-warmcharcoal-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <a href="index.html" class="hover:text-terracotta-600">Home</a>
+        <span>/</span>
+        <a id="breadcrumb-cat" href="fabric-painting.html" class="hover:text-terracotta-600 capitalize">Collections</a>
+        <span>/</span>
+        <span id="breadcrumb-title" class="text-warmcharcoal-800 font-medium truncate max-w-xs">Product Details</span>
+      </div>
+      <button onclick="window.history.back()" class="hover:text-terracotta-600">← Back</button>
+    </div>
+  </div>
+
+  <main class="space-y-16 pb-20 pt-6">
+    <!-- Showcase Section -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-12 items-start">
+        <!-- Gallery Column -->
+        <div class="lg:col-span-6 space-y-4">
+          <div class="relative aspect-square rounded-3xl overflow-hidden bg-white border border-cream-200 shadow-warm">
+            <img id="detail-main-img" src="images/pihu-01.jpg" alt="Handcrafted product" class="w-full h-full object-cover transition-all duration-300" />
+            <span id="detail-badge" class="absolute top-4 left-4 text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full bg-cream-50/95 text-terracotta-700 shadow-sm border border-terracotta-200">✨ Bestseller</span>
+            <button id="detail-wishlist-btn" class="absolute top-4 right-4 p-3 rounded-full bg-white/90 text-warmcharcoal-600 hover:text-red-500 shadow-md">
+              ♥
+            </button>
+          </div>
+
+          <div id="detail-thumbnails-row" class="flex gap-3 overflow-x-auto pb-1">
+            <!-- Thumbnails injected via script -->
+          </div>
+        </div>
+
+        <!-- Details & Personalization Column -->
+        <div class="lg:col-span-6 space-y-5">
+          <div>
+            <div class="flex items-center justify-between text-xs text-warmcharcoal-500 mb-2">
+              <span id="detail-subcat" class="font-bold text-terracotta-600 uppercase tracking-widest text-[11px]">Category</span>
+              <span id="detail-rating-label" class="text-gold-500 font-bold">★ 5.0 (42 verified reviews)</span>
+            </div>
+            <h1 id="detail-title" class="font-serif text-3xl sm:text-4xl font-bold text-warmcharcoal-900 leading-tight">Product Title</h1>
+            
+            <div class="mt-3 flex flex-wrap items-center gap-2.5">
+              <span class="text-xs font-bold text-terracotta-700 bg-terracotta-50 px-3.5 py-1.5 rounded-full border border-terracotta-200">✨ Custom Pricing on Request</span>
+              <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-full border border-emerald-200">Handcrafted upon Order</span>
+            </div>
+          </div>
+
+          <p id="detail-desc" class="text-xs sm:text-sm text-warmcharcoal-700 leading-relaxed font-sans">Description...</p>
+
+          <!-- Custom Fields Container -->
+          <div id="detail-custom-fields" class="p-5 rounded-2xl bg-cream-50 border border-cream-200 space-y-3">
+            <!-- Populated via script -->
+          </div>
+
+          <!-- Actions -->
+          <div class="space-y-3 pt-2">
+            <div class="flex items-center gap-4">
+              <div class="flex items-center border border-cream-300 rounded-xl bg-white p-1">
+                <button id="qty-minus" class="w-8 h-8 flex items-center justify-center font-bold text-warmcharcoal-700 hover:text-terracotta-600">-</button>
+                <span id="qty-display" class="w-8 text-center text-xs font-bold text-warmcharcoal-900">1</span>
+                <button id="qty-plus" class="w-8 h-8 flex items-center justify-center font-bold text-warmcharcoal-700 hover:text-terracotta-600">+</button>
+              </div>
+
+              <button id="detail-add-to-cart" class="flex-1 py-3.5 px-6 rounded-xl bg-terracotta-600 hover:bg-terracotta-700 text-white font-bold text-xs shadow-warm transition-all flex items-center justify-center gap-2">
+                <span>Add to Shopping Bag</span>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+              <button id="detail-buy-now" class="py-3 px-4 rounded-xl bg-warmcharcoal-900 hover:bg-black text-white font-bold text-xs text-center transition-colors">
+                Buy It Now
+              </button>
+              <a id="detail-whatsapp-btn" href="#" target="_blank" class="py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-colors">
+                <span>💬 Ask on WhatsApp</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Guarantees -->
+          <div class="pt-4 border-t border-cream-200 grid grid-cols-3 gap-2 text-center text-[10px] sm:text-[11px] text-warmcharcoal-600">
+            <div>
+              <strong class="block text-warmcharcoal-900 font-serif">100% Handcrafted</strong>
+              <span>Made by Sayali</span>
+            </div>
+            <div>
+              <strong class="block text-warmcharcoal-900 font-serif">Pan-India Courier</strong>
+              <span>Tracked Delivery</span>
+            </div>
+            <div>
+              <strong class="block text-warmcharcoal-900 font-serif">Gift Packaging</strong>
+              <span>Eco-Boutique Box</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tabs Section -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-3xl border border-cream-200 shadow-sm overflow-hidden">
+        <div class="flex border-b border-cream-200 bg-cream-50/70 text-xs font-bold uppercase tracking-wider overflow-x-auto">
+          <button class="tab-btn py-4 px-6 border-b-2 border-terracotta-600 text-terracotta-700 bg-white" data-tab="tab-craft">Artisan Craft Details</button>
+          <button class="tab-btn py-4 px-6 border-b-2 border-transparent text-warmcharcoal-600 hover:text-terracotta-600" data-tab="tab-materials">Materials & Specs</button>
+          <button class="tab-btn py-4 px-6 border-b-2 border-transparent text-warmcharcoal-600 hover:text-terracotta-600" data-tab="tab-care">Care & Washing</button>
+        </div>
+
+        <div class="p-6 sm:p-8 text-xs sm:text-sm text-warmcharcoal-700 leading-relaxed">
+          <div id="tab-craft" class="tab-panel space-y-3">
+            <h3 class="font-serif text-lg font-bold text-warmcharcoal-900">Slow Handcrafted Heritage</h3>
+            <p id="tab-craft-desc">Craft story details...</p>
+          </div>
+          <div id="tab-materials" class="tab-panel space-y-2 hidden">
+            <h3 class="font-serif text-lg font-bold text-warmcharcoal-900">Materials & Sourcing</h3>
+            <p id="tab-materials-desc">Materials details...</p>
+          </div>
+          <div id="tab-care" class="tab-panel space-y-2 hidden">
+            <h3 class="font-serif text-lg font-bold text-warmcharcoal-900">Care & Maintenance Instructions</h3>
+            <p id="tab-care-desc">Care details...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Creations -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8">
+        <span class="text-xs font-bold uppercase tracking-widest text-terracotta-600">You May Also Love</span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-warmcharcoal-900 mt-1">Matching Handcrafted Creations</h2>
+      </div>
+      <div id="detail-related-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+    </section>
+  </main>
+
+  <div id="pihu-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const prodId = urlParams.get('id') || 'fabric-01';
+      const product = window.PIHU_STORE.getProductById(prodId) || window.PIHU_DATA.products[0];
+
+      let currentQty = 1;
+
+      // Populate elements
+      document.title = `${product.title} – PIHU Boutique`;
+      document.getElementById('breadcrumb-title').textContent = product.title;
+      document.getElementById('breadcrumb-cat').textContent = product.category === 'fabric' ? 'Fabric Painting' : 'Handmade Jewellery';
+      document.getElementById('breadcrumb-cat').href = product.category === 'fabric' ? 'fabric-painting.html' : 'jewellery.html';
+
+      document.getElementById('detail-main-img').src = product.images[0];
+      document.getElementById('detail-title').textContent = product.title;
+      document.getElementById('detail-subcat').textContent = product.subcategory;
+      document.getElementById('detail-desc').textContent = product.description;
+      document.getElementById('detail-rating-label').textContent = `★ ${product.rating} (${product.reviewsCount} verified reviews)`;
+
+      if (product.badge) {
+        document.getElementById('detail-badge').textContent = `✨ ${product.badge}`;
+      } else {
+        document.getElementById('detail-badge').style.display = 'none';
+      }
+
+      // Thumbnails
+      const thumbRow = document.getElementById('detail-thumbnails-row');
+      if (product.images.length > 1) {
+        thumbRow.innerHTML = product.images.map(img => `
+          <img src="${img}" onclick="document.getElementById('detail-main-img').src='${img}'" class="w-16 h-16 rounded-xl object-cover border border-cream-300 cursor-pointer hover:border-terracotta-600 transition-colors" />
+        `).join('');
+      } else {
+        thumbRow.style.display = 'none';
+      }
+
+      // WhatsApp link
+      const waMsg = encodeURIComponent(`Namaste Sayali! I am looking at "${product.title}" on PIHU and would like to ask about customization and pricing.`);
+      document.getElementById('detail-whatsapp-btn').href = `https://wa.me/919309851833?text=${waMsg}`;
+
+      // Custom fields
+      const customContainer = document.getElementById('detail-custom-fields');
+      if (product.customFields && product.customFields.length > 0) {
+        customContainer.innerHTML = `
+          <span class="text-xs font-bold text-terracotta-700 block">✨ Personalization Details:</span>
+          ${product.customFields.map(f => `
+            <div class="text-xs">
+              <label class="block font-medium text-warmcharcoal-700 mb-1">${f.label} ${f.required ? '<span class="text-red-500">*</span>' : ''}:</label>
+              ${f.type === 'select' ? `
+                <select id="prod-field-${f.id}" class="w-full text-xs p-2.5 rounded-xl border border-cream-300 bg-white">
+                  ${f.options.map(o => `<option value="${o}">${o}</option>`).join('')}
+                </select>
+              ` : `
+                <input type="text" id="prod-field-${f.id}" placeholder="Type names, dates, or details..." class="w-full text-xs p-2.5 rounded-xl border border-cream-300 bg-white" />
+              `}
+            </div>
+          `).join('')}
+        `;
+      } else {
+        customContainer.style.display = 'none';
+      }
+
+      // Quantity buttons
+      document.getElementById('qty-plus').addEventListener('click', () => {
+        currentQty++;
+        document.getElementById('qty-display').textContent = currentQty;
+      });
+      document.getElementById('qty-minus').addEventListener('click', () => {
+        if (currentQty > 1) {
+          currentQty--;
+          document.getElementById('qty-display').textContent = currentQty;
+        }
+      });
+
+      function compileCustomNotes() {
+        if (!product.customFields) return 'Standard Handcrafted Edition';
+        return product.customFields.map(f => {
+          const el = document.getElementById(`prod-field-${f.id}`);
+          return `${f.label}: ${el ? el.value : 'Default'}`;
+        }).join(' | ');
+      }
+
+      // Add to cart
+      document.getElementById('detail-add-to-cart').addEventListener('click', () => {
+        window.PIHU_STORE.addToCart(product.id, currentQty, compileCustomNotes());
+        window.PIHU_UI.openCartDrawer();
+      });
+
+      // Buy now
+      document.getElementById('detail-buy-now').addEventListener('click', () => {
+        window.PIHU_STORE.addToCart(product.id, currentQty, compileCustomNotes());
+        window.location.href = 'checkout.html';
+      });
+
+      // Wishlist
+      document.getElementById('detail-wishlist-btn').addEventListener('click', () => {
+        window.PIHU_STORE.toggleWishlist(product.id);
+      });
+
+      // Tabs
+      document.getElementById('tab-craft-desc').textContent = product.description;
+      document.getElementById('tab-materials-desc').textContent = product.materials || '100% Handcrafted artisan materials sourced from Maharashtra.';
+      document.getElementById('tab-care-desc').textContent = product.careInstructions || 'Keep away from moisture and store in original packaging.';
+
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const tabId = e.target.getAttribute('data-tab');
+          document.querySelectorAll('.tab-btn').forEach(b => {
+            b.className = 'tab-btn py-4 px-6 border-b-2 border-transparent text-warmcharcoal-600 hover:text-terracotta-600';
+          });
+          e.target.className = 'tab-btn py-4 px-6 border-b-2 border-terracotta-600 text-terracotta-700 bg-white';
+          document.querySelectorAll('.tab-panel').forEach(p => p.classList.add('hidden'));
+          document.getElementById(tabId).classList.remove('hidden');
+        });
+      });
+
+      // Related Products
+      const relatedGrid = document.getElementById('detail-related-grid');
+      const related = window.PIHU_DATA.products.filter(p => p.category === product.category && p.id !== product.id).slice(0, 4);
+      relatedGrid.innerHTML = related.map(p => `
+        <div class="bg-white rounded-2xl overflow-hidden border border-cream-200 shadow-sm flex flex-col justify-between">
+          <div class="aspect-square bg-cream-100 overflow-hidden">
+            <a href="product-details.html?id=${p.id}"><img src="${p.images[0]}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" /></a>
+          </div>
+          <div class="p-4">
+            <h4 class="font-serif font-bold text-sm text-warmcharcoal-900 truncate"><a href="product-details.html?id=${p.id}">${p.title}</a></h4>
+            <div class="mt-2 flex items-center justify-between">
+              <span class="text-xs font-semibold text-terracotta-700 bg-terracotta-50 px-2 py-0.5 rounded border border-terracotta-200">Custom Order</span>
+              <a href="product-details.html?id=${p.id}" class="text-xs font-semibold text-terracotta-600 underline">View</a>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    });
+  </script>
+</body>
+</html>

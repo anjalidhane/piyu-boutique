@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us – PIHU Boutique</title>
+  <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: { 50: '#FDFAF6', 100: '#F8F3EB', 200: '#F2E8DC', 300: '#E7D8C5', 400: '#D8C3AB' },
+            blush: { 50: '#FDF6F6', 100: '#FBECEB', 200: '#F7D7D6', 300: '#EEB5B3', 400: '#E28E8C', 500: '#D26765' },
+            terracotta: { 50: '#FAF2EE', 100: '#F4E0D7', 200: '#E8C0B2', 300: '#DA9E8A', 400: '#CA7860', 500: '#B8583E', 600: '#9E442D', 700: '#803420' },
+            gold: { 50: '#FAF7EE', 100: '#F3ECD2', 200: '#E6D79E', 300: '#D7BF64', 400: '#C8A736', 500: '#B8921C', 600: '#967414' },
+            warmcharcoal: { 600: '#52433F', 700: '#3D322E', 800: '#2C2320', 900: '#1B1513' }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            display: ['"Cinzel"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-cream-50 text-warmcharcoal-800 font-sans antialiased">
+
+  <div id="pihu-header"></div>
+
+  <main class="space-y-16 pb-20">
+    <!-- Header -->
+    <section class="bg-gradient-to-b from-cream-100 to-cream-50 py-16 border-b border-cream-200 text-center">
+      <div class="max-w-4xl mx-auto px-4">
+        <span class="text-xs font-bold uppercase tracking-widest text-terracotta-600">Get in Touch</span>
+        <h1 class="font-serif text-4xl sm:text-5xl font-bold text-warmcharcoal-900 mt-2">Connect with PIHU Studio</h1>
+        <p class="text-sm sm:text-base text-warmcharcoal-600 mt-3 max-w-2xl mx-auto leading-relaxed">
+          Have an inquiry about an ongoing custom order, need bulk festive gifting for your family, or wish to discuss a bespoke painted fabric? Sayali is here to help.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Details & Form Section -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <!-- Studio Info Box -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="bg-white p-6 sm:p-8 rounded-3xl border border-cream-200 shadow-sm space-y-5">
+            <h2 class="font-serif text-2xl font-bold text-warmcharcoal-900">Boutique Studio Details</h2>
+
+            <div class="space-y-4 text-xs text-warmcharcoal-700">
+              <div class="flex items-start gap-3">
+                <span class="text-lg">📍</span>
+                <div>
+                  <strong class="block text-warmcharcoal-900">Studio & Workshop Address:</strong>
+                  <span>Sayali Shoppy, Kherade Vangi, Taluka Kadegaon, Sangli, Maharashtra 415305</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <span class="text-lg">📞</span>
+                <div>
+                  <strong class="block text-warmcharcoal-900">Direct Contact & WhatsApp:</strong>
+                  <a href="tel:9309851833" class="text-terracotta-700 font-semibold hover:underline">+91 9309851833</a>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <span class="text-lg">✉️</span>
+                <div>
+                  <strong class="block text-warmcharcoal-900">Email Inquiry:</strong>
+                  <a href="mailto:contact@pihuhandmade.com" class="text-terracotta-700 font-semibold hover:underline">contact@pihuhandmade.com</a>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <span class="text-lg">⏰</span>
+                <div>
+                  <strong class="block text-warmcharcoal-900">Studio Working Hours:</strong>
+                  <span>Monday – Saturday: 10:00 AM – 7:00 PM IST</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-2 border-t border-cream-200">
+              <a href="https://wa.me/919309851833" target="_blank" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 shadow-sm transition-colors">
+                <span>💬 Direct WhatsApp Artisan Chat</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form Box -->
+        <div class="lg:col-span-7">
+          <div class="bg-white p-6 sm:p-8 rounded-3xl border border-cream-200 shadow-warm">
+            <h2 class="font-serif text-2xl font-bold text-warmcharcoal-900 mb-2">Send Us an Inquiry</h2>
+            <p class="text-xs text-warmcharcoal-500 mb-6">We typically reply within 2-4 hours during studio hours.</p>
+
+            <form id="contact-inquiry-form" class="space-y-4 text-xs">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block font-semibold text-warmcharcoal-800 mb-1">Your Name *</label>
+                  <input type="text" id="contact-name" required placeholder="e.g. Radhika Joshi" class="w-full p-3 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-terracotta-500" />
+                </div>
+                <div>
+                  <label class="block font-semibold text-warmcharcoal-800 mb-1">Mobile / WhatsApp *</label>
+                  <input type="tel" id="contact-phone" required placeholder="e.g. +91 98220 12345" class="w-full p-3 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-terracotta-500" />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block font-semibold text-warmcharcoal-800 mb-1">Email Address</label>
+                  <input type="email" id="contact-email" placeholder="e.g. radhika@example.com" class="w-full p-3 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-terracotta-500" />
+                </div>
+                <div>
+                  <label class="block font-semibold text-warmcharcoal-800 mb-1">Inquiry Purpose</label>
+                  <select id="contact-subject" class="w-full p-3 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-terracotta-500">
+                    <option value="Custom Design Question">Custom Design Question</option>
+                    <option value="Existing Order Tracking">Existing Order Tracking</option>
+                    <option value="Bulk Wedding / Festival Gifting">Bulk Wedding / Festival Gifting</option>
+                    <option value="Studio Appointment">Studio Appointment</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block font-semibold text-warmcharcoal-800 mb-1">Your Message or Custom Request Details *</label>
+                <textarea id="contact-msg" rows="4" required placeholder="Please describe what you are looking for..." class="w-full p-3 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-terracotta-500 text-xs"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-3.5 bg-terracotta-600 hover:bg-terracotta-700 text-white font-bold text-xs rounded-xl shadow-warm transition-all uppercase tracking-wider">
+                Send Message to Artisan Sayali ✨
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <div class="text-center">
+        <span class="text-xs font-bold uppercase tracking-widest text-terracotta-600">Common Questions</span>
+        <h2 class="font-serif text-3xl font-bold text-warmcharcoal-900 mt-1">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="space-y-3 text-xs">
+        <details class="bg-white p-5 rounded-2xl border border-cream-200 shadow-sm cursor-pointer group" open>
+          <summary class="font-serif font-bold text-sm text-warmcharcoal-900 flex justify-between items-center">
+            <span>How long does a customized fabric painting order take to arrive?</span>
+            <span class="text-terracotta-600 text-lg group-open:rotate-45 transition-transform">+</span>
+          </summary>
+          <p class="mt-2 text-warmcharcoal-600 leading-relaxed">
+            Because each banner, kurta, and hoop is individually hand-painted and heat-set, crafting takes 2-3 business days. Shipping across Maharashtra takes 2-3 days, and 4-6 days for other states in India. Express courier is available if you have an upcoming date.
+          </p>
+        </details>
+
+        <details class="bg-white p-5 rounded-2xl border border-cream-200 shadow-sm cursor-pointer group">
+          <summary class="font-serif font-bold text-sm text-warmcharcoal-900 flex justify-between items-center">
+            <span>Will the fabric paint wash off after a few washes?</span>
+            <span class="text-terracotta-600 text-lg group-open:rotate-45 transition-transform">+</span>
+          </summary>
+          <p class="mt-2 text-warmcharcoal-600 leading-relaxed">
+            No! We use artist-grade textile pigments cured with heat to create a permanent bond with the natural cotton fibers. Simply hand wash in cold water with mild detergent and iron on the reverse side.
+          </p>
+        </details>
+
+        <details class="bg-white p-5 rounded-2xl border border-cream-200 shadow-sm cursor-pointer group">
+          <summary class="font-serif font-bold text-sm text-warmcharcoal-900 flex justify-between items-center">
+            <span>Can I send my own photo for a custom portrait painting?</span>
+            <span class="text-terracotta-600 text-lg group-open:rotate-45 transition-transform">+</span>
+          </summary>
+          <p class="mt-2 text-warmcharcoal-600 leading-relaxed">
+            Yes, absolutely! You can upload your photograph directly via our Custom Order Form or send it to us on WhatsApp (+91 9309851833). Artisan Sayali will render it artistically in Indian folk or modern portrait style.
+          </p>
+        </details>
+
+        <details class="bg-white p-5 rounded-2xl border border-cream-200 shadow-sm cursor-pointer group">
+          <summary class="font-serif font-bold text-sm text-warmcharcoal-900 flex justify-between items-center">
+            <span>Do your Maharashtrian Naths require a nose piercing?</span>
+            <span class="text-terracotta-600 text-lg group-open:rotate-45 transition-transform">+</span>
+          </summary>
+          <p class="mt-2 text-warmcharcoal-600 leading-relaxed">
+            We offer BOTH! Our clip-on style Naths have a smooth non-allergic comfort clamp that sits securely on non-pierced noses without pain. You can also select the pierced wire option when placing your order.
+          </p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <div id="pihu-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('contact-inquiry-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('contact-name').value;
+        const phone = document.getElementById('contact-phone').value;
+        const subject = document.getElementById('contact-subject').value;
+        const msg = document.getElementById('contact-msg').value;
+
+        window.PIHU_UI.showToast(`Thank you, ${name}! Your inquiry has been sent to Sayali.`, 'success');
+        
+        // Also offer to open WhatsApp
+        setTimeout(() => {
+          if (confirm(`Would you also like to open WhatsApp to chat directly with Sayali right now?`)) {
+            const text = encodeURIComponent(`*Inquiry from PIHU Website*%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Subject:* ${subject}%0A*Message:* ${msg}`);
+            window.open(`https://wa.me/919309851833?text=${text}`, '_blank');
+          }
+        }, 500);
+
+        document.getElementById('contact-inquiry-form').reset();
+      });
+    });
+  </script>
+</body>
+</html>

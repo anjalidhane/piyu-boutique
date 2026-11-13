@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout – PIHU Boutique</title>
+  <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: { 50: '#FDFAF6', 100: '#F8F3EB', 200: '#F2E8DC', 300: '#E7D8C5', 400: '#D8C3AB' },
+            blush: { 50: '#FDF6F6', 100: '#FBECEB', 200: '#F7D7D6', 300: '#EEB5B3', 400: '#E28E8C', 500: '#D26765' },
+            terracotta: { 50: '#FAF2EE', 100: '#F4E0D7', 200: '#E8C0B2', 300: '#DA9E8A', 400: '#CA7860', 500: '#B8583E', 600: '#9E442D', 700: '#803420' },
+            gold: { 50: '#FAF7EE', 100: '#F3ECD2', 200: '#E6D79E', 300: '#D7BF64', 400: '#C8A736', 500: '#B8921C', 600: '#967414' },
+            warmcharcoal: { 600: '#52433F', 700: '#3D322E', 800: '#2C2320', 900: '#1B1513' }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            display: ['"Cinzel"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-cream-50 text-warmcharcoal-800 font-sans antialiased">
+
+  <div id="pihu-header"></div>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 pb-20 space-y-8">
+    <div class="border-b border-cream-200 pb-4">
+      <span class="text-xs font-bold tracking-widest uppercase text-terracotta-600">Secure Checkout</span>
+      <h1 class="font-serif text-3xl sm:text-4xl font-bold text-warmcharcoal-900 mt-1">Complete Your Handcrafted Order</h1>
+    </div>
+
+    <!-- Active Form or Order Confirmation Screen -->
+    <div id="checkout-container">
+      <form id="checkout-form" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left Column: Shipping & Payment -->
+        <div class="lg:col-span-8 space-y-6">
+          
+          <!-- 1. Customer Contact & Shipping Address -->
+          <div class="bg-white p-6 sm:p-8 rounded-3xl border border-cream-200 shadow-sm space-y-4">
+            <h2 class="font-serif text-xl font-bold text-warmcharcoal-900 flex items-center gap-2">
+              <span class="w-7 h-7 rounded-full bg-terracotta-600 text-white flex items-center justify-center text-xs font-bold">1</span>
+              <span>Customer Information & Shipping Address</span>
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+              <div class="sm:col-span-2">
+                <label class="block font-semibold text-warmcharcoal-800 mb-1">Full Name *</label>
+                <input type="text" id="ship-name" required placeholder="e.g. Snehal Kulkarni" class="w-full p-3 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-terracotta-500" />
+              </div>
+
+              <div>
+                <label class="block font-semibold text-warmcharcoal-800 mb-1">WhatsApp / Mobile Number *</label>
+                <input type="tel" id="ship-phone" required placeholder="e.g. +91 94231 67890" class="w-full p-3 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-terracotta-500" />
+              </div>
+
+              <div>
+                <label class="block font-semibold text-warmcharcoal-800 mb-1">Email Address *</label>
+                <input type="email" id="ship-email" required placeholder="e.g. snehal.k@example.com" class="w-full p-3 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-terracotta-500" />
+              </div>
+
+              <div class="sm:col-span-2">
+                <label class="block font-semibold text-warmcharcoal-800 mb-1">House / Flat / Street Address *</label>
+                <input type="text" id="ship-street" required placeholder="e.g. Bungalow 12, Tarabai Park" class="w-full p-3 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-terracotta-500" />
+              </div>
+
+              <div>
+                <label class="block font-semibold text-warmcharcoal-800 mb-1">City *</label>
+                <input type="text" id="ship-city" required placeholder="e.g. Kolhapur" class="w-full p-3 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-terracotta-500" />
+              </div>
+
+              <div>
+                <label class="block font-semibold text-warmcharcoal-800 mb-1">State *</label>
+                <select id="ship-state" class="w-full p-3 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-terracotta-500">
+                  <option value="Maharashtra" selected>Maharashtra</option>
+                  <option value="Gujarat">Gujarat</option>
+                  <option value="Karnataka">Karnataka</option>
+                  <option value="Goa">Goa</option>
+                  <option value="Madhya Pradesh">Madhya Pradesh</option>
+                  <option value="Delhi NCR">Delhi NCR</option>
+                  <option value="Other Indian State">Other Indian State</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block font-semibold text-warmcharcoal-800 mb-1">Postal Pincode *</label>
+                <input type="text" id="ship-pin" required placeholder="e.g. 416003" class="w-full p-3 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-terracotta-500" />
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Shipping Delivery Speed -->
+          <div class="bg-white p-6 sm:p-8 rounded-3xl border border-cream-200 shadow-sm space-y-4">
+            <h2 class="font-serif text-xl font-bold text-warmcharcoal-900 flex items-center gap-2">
+              <span class="w-7 h-7 rounded-full bg-terracotta-600 text-white flex items-center justify-center text-xs font-bold">2</span>
+              <span>Delivery Option</span>
+            </h2>
+
+            <div class="space-y-3 text-xs">
+              <label class="delivery-option flex items-center justify-between p-3.5 rounded-2xl border-2 border-terracotta-600 bg-terracotta-50/50 cursor-pointer">
+                <div class="flex items-center gap-3">
+                  <input type="radio" name="deliveryMethod" value="standard" checked class="text-terracotta-600" />
+                  <div>
+                    <strong class="text-warmcharcoal-900 block font-semibold">Standard Safe Courier (4-6 Business Days)</strong>
+                    <p class="text-warmcharcoal-500">Insured Indian Post / Professional Courier with live tracking</p>
+                  </div>
+                </div>
+                <span class="font-bold text-emerald-700">Calculated in Bag</span>
+              </label>
+
+              <label class="delivery-option flex items-center justify-between p-3.5 rounded-2xl border border-cream-200 hover:bg-cream-50 cursor-pointer">
+                <div class="flex items-center gap-3">
+                  <input type="radio" name="deliveryMethod" value="express" class="text-terracotta-600" />
+                  <div>
+                    <strong class="text-warmcharcoal-900 block font-semibold">Express Rush Courier (2-3 Business Days)</strong>
+                    <p class="text-warmcharcoal-500">Priority crafting queue and BlueDart express transit</p>
+                  </div>
+                </div>
+                <span class="font-bold text-warmcharcoal-800">Priority Queue</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- 3. Payment Method -->
+          <div class="bg-white p-6 sm:p-8 rounded-3xl border border-cream-200 shadow-sm space-y-4">
+            <h2 class="font-serif text-xl font-bold text-warmcharcoal-900 flex items-center gap-2">
+              <span class="w-7 h-7 rounded-full bg-terracotta-600 text-white flex items-center justify-center text-xs font-bold">3</span>
+              <span>Payment Method</span>
+            </h2>
+
+            <div class="space-y-4">
+              <!-- Payment Tabs -->
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-semibold">
+                <button type="button" class="pay-tab p-3 rounded-xl border-2 border-terracotta-600 bg-terracotta-50 text-terracotta-800 text-center" data-tab="pay-upi">
+                  📱 UPI / QR Code
+                </button>
+                <button type="button" class="pay-tab p-3 rounded-xl border border-cream-300 text-warmcharcoal-700 text-center hover:bg-cream-50" data-tab="pay-card">
+                  💳 Debit / Card
+                </button>
+                <button type="button" class="pay-tab p-3 rounded-xl border border-cream-300 text-warmcharcoal-700 text-center hover:bg-cream-50" data-tab="pay-net">
+                  🏦 Net Banking
+                </button>
+                <button type="button" class="pay-tab p-3 rounded-xl border border-cream-300 text-warmcharcoal-700 text-center hover:bg-cream-50" data-tab="pay-cod">
+                  💵 Cash on Delivery
+                </button>
+              </div>
+
+              <!-- Payment Panels -->
+              <div id="pay-upi" class="pay-panel p-5 rounded-2xl bg-cream-50 border border-cream-200 text-xs space-y-3">
+                <div class="flex flex-col sm:flex-row items-center gap-4">
+                  <!-- QR Code simulation -->
+                  <div class="w-32 h-32 bg-white p-2 rounded-xl border border-cream-300 flex flex-col items-center justify-center shadow-sm">
+                    <svg viewBox="0 0 100 100" class="w-24 h-24 text-warmcharcoal-900">
+                      <rect x="10" y="10" width="24" height="24" fill="currentColor"/>
+                      <rect x="14" y="14" width="16" height="16" fill="white"/>
+                      <rect x="18" y="18" width="8" height="8" fill="currentColor"/>
+                      <rect x="66" y="10" width="24" height="24" fill="currentColor"/>
+                      <rect x="70" y="14" width="16" height="16" fill="white"/>
+                      <rect x="74" y="18" width="8" height="8" fill="currentColor"/>
+                      <rect x="10" y="66" width="24" height="24" fill="currentColor"/>
+                      <rect x="14" y="70" width="16" height="16" fill="white"/>
+                      <rect x="18" y="74" width="8" height="8" fill="currentColor"/>
+                      <rect x="42" y="20" width="12" height="12" fill="currentColor"/>
+                      <rect x="42" y="44" width="16" height="16" fill="currentColor"/>
+                      <rect x="68" y="55" width="20" height="20" fill="currentColor"/>
+                      <rect x="25" y="45" width="10" height="10" fill="currentColor"/>
+                    </svg>
+                    <span class="text-[9px] font-bold text-terracotta-700 mt-1">UPI ID: 9309851833@upi</span>
+                  </div>
+                  <div class="space-y-2">
+                    <p class="font-bold text-warmcharcoal-900">Instant UPI Payment (0% Convenience Fee)</p>
+                    <p class="text-warmcharcoal-600">Scan this boutique QR code with any UPI app (GPay, PhonePe, Paytm, CRED) or enter UPI VPA below:</p>
+                    <input type="text" id="upi-vpa" placeholder="yourname@okhdfcbank" class="w-full p-2.5 rounded-xl border border-cream-300 bg-white" />
+                  </div>
+                </div>
+              </div>
+
+              <div id="pay-card" class="pay-panel p-5 rounded-2xl bg-cream-50 border border-cream-200 text-xs space-y-3 hidden">
+                <div class="space-y-2">
+                  <label class="block font-semibold">Card Number</label>
+                  <input type="text" placeholder="4111 2222 3333 4444" class="w-full p-2.5 rounded-xl border border-cream-300 bg-white" />
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                  <div>
+                    <label class="block font-semibold">Valid Thru</label>
+                    <input type="text" placeholder="MM/YY" class="w-full p-2.5 rounded-xl border border-cream-300 bg-white" />
+                  </div>
+                  <div>
+                    <label class="block font-semibold">CVV</label>
+                    <input type="password" maxlength="3" placeholder="123" class="w-full p-2.5 rounded-xl border border-cream-300 bg-white" />
+                  </div>
+                </div>
+              </div>
+
+              <div id="pay-net" class="pay-panel p-5 rounded-2xl bg-cream-50 border border-cream-200 text-xs space-y-2 hidden">
+                <label class="block font-semibold">Select Your Bank</label>
+                <select class="w-full p-2.5 rounded-xl border border-cream-300 bg-white">
+                  <option>State Bank of India (SBI)</option>
+                  <option>HDFC Bank</option>
+                  <option>ICICI Bank</option>
+                  <option>Axis Bank</option>
+                  <option>Bank of Maharashtra</option>
+                  <option>Kotak Mahindra Bank</option>
+                </select>
+              </div>
+
+              <div id="pay-cod" class="pay-panel p-5 rounded-2xl bg-cream-50 border border-cream-200 text-xs space-y-1 hidden">
+                <p class="font-bold text-warmcharcoal-900">Cash on Delivery Available across Maharashtra & India</p>
+                <p class="text-warmcharcoal-600">Please keep exact cash ready upon delivery by courier. For personalized painted portraits, our team may verify via WhatsApp before shipping.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Order Review Box -->
+        <div class="lg:col-span-4 space-y-4">
+          <div class="bg-white p-6 rounded-3xl border border-cream-200 shadow-warm space-y-4">
+            <h2 class="font-serif text-xl font-bold text-warmcharcoal-900 pb-3 border-b border-cream-200">
+              Review Items in Bag
+            </h2>
+
+            <div id="checkout-items-summary" class="space-y-3 max-h-60 overflow-y-auto divide-y divide-cream-100 pr-1">
+              <!-- Populated via script -->
+            </div>
+
+            <div id="checkout-totals-summary" class="space-y-1.5 text-xs text-warmcharcoal-700 border-t border-cream-200 pt-3">
+              <!-- Populated via script -->
+            </div>
+
+            <button type="submit" class="w-full py-4 bg-terracotta-600 hover:bg-terracotta-700 text-white font-bold text-xs rounded-xl shadow-warm uppercase tracking-wider transition-all">
+              Place Handcrafted Order ✨
+            </button>
+
+            <div class="text-center text-[10px] text-warmcharcoal-400">
+              🔒 256-Bit SSL Encrypted Indian Gateway Simulation
+            </div>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </main>
+
+  <div id="pihu-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let selectedPayMethod = 'UPI (QR Code)';
+      const user = window.PIHU_STORE.getUser();
+
+      // Autofill if user is logged in
+      if (user) {
+        if (user.name) document.getElementById('ship-name').value = user.name;
+        if (user.phone) document.getElementById('ship-phone').value = user.phone;
+        if (user.email) document.getElementById('ship-email').value = user.email;
+        if (user.city) document.getElementById('ship-city').value = user.city;
+        if (user.pincode) document.getElementById('ship-pin').value = user.pincode;
+      }
+
+      // Render items summary
+      function renderCheckoutSummary() {
+        const items = window.PIHU_STORE.getCartDetailed();
+        const totals = window.PIHU_STORE.getCartTotals();
+        const itemsContainer = document.getElementById('checkout-items-summary');
+        const totalsContainer = document.getElementById('checkout-totals-summary');
+
+        if (items.length === 0) {
+          window.location.href = 'cart.html';
+          return;
+        }
+
+        itemsContainer.innerHTML = items.map(item => `
+          <div class="flex gap-3 pt-2 text-xs">
+            <img src="${item.product.images[0]}" class="w-12 h-12 rounded-lg object-cover border border-cream-200 flex-shrink-0" />
+            <div class="flex-1 min-w-0">
+              <p class="font-bold text-warmcharcoal-900 truncate">${item.product.title}</p>
+              <p class="text-[10px] text-warmcharcoal-500">Qty: ${item.quantity} • <span class="text-terracotta-700 font-semibold">Custom Order</span></p>
+              ${item.customizationNotes ? `<p class="text-[9px] text-terracotta-700 truncate">✨ ${item.customizationNotes}</p>` : ''}
+            </div>
+          </div>
+        `).join('');
+
+        totalsContainer.innerHTML = `
+          <div class="flex justify-between"><span>Custom Creations:</span><span class="font-bold text-warmcharcoal-900">${totals.itemsCount} ${totals.itemsCount === 1 ? 'item' : 'items'}</span></div>
+          <div class="flex justify-between"><span>Design Proofing:</span><span class="font-semibold text-emerald-700">Included via WhatsApp</span></div>
+          <div class="flex justify-between"><span>Courier Shipping:</span><span class="font-semibold text-emerald-700 uppercase">Pan-India Courier</span></div>
+          <div class="flex justify-between text-base font-bold text-warmcharcoal-900 pt-2 border-t border-cream-200">
+            <span>Pricing Quote:</span>
+            <span class="text-xs font-bold text-terracotta-700 bg-terracotta-50 px-2.5 py-1 rounded-full border border-terracotta-200">Quote on Request</span>
+          </div>
+        `;
+      }
+
+      renderCheckoutSummary();
+
+      // Payment Tab toggle
+      document.querySelectorAll('.pay-tab').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const tabId = e.target.getAttribute('data-tab');
+          document.querySelectorAll('.pay-tab').forEach(b => {
+            b.className = 'pay-tab p-3 rounded-xl border border-cream-300 text-warmcharcoal-700 text-center hover:bg-cream-50';
+          });
+          e.target.className = 'pay-tab p-3 rounded-xl border-2 border-terracotta-600 bg-terracotta-50 text-terracotta-800 text-center font-bold';
+
+          document.querySelectorAll('.pay-panel').forEach(p => p.classList.add('hidden'));
+          document.getElementById(tabId).classList.remove('hidden');
+
+          if (tabId === 'pay-upi') selectedPayMethod = 'UPI (QR Code)';
+          if (tabId === 'pay-card') selectedPayMethod = 'Credit / Debit Card';
+          if (tabId === 'pay-net') selectedPayMethod = 'Net Banking';
+          if (tabId === 'pay-cod') selectedPayMethod = 'Cash on Delivery';
+        });
+      });
+
+      // Submit Form
+      document.getElementById('checkout-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('ship-name').value;
+        const phone = document.getElementById('ship-phone').value;
+        const email = document.getElementById('ship-email').value;
+        const address = `${document.getElementById('ship-street').value}, ${document.getElementById('ship-city').value}, ${document.getElementById('ship-state').value} ${document.getElementById('ship-pin').value}`;
+
+        const totals = window.PIHU_STORE.getCartTotals();
+        const items = window.PIHU_STORE.getCartDetailed();
+
+        const newOrder = window.PIHU_STORE.placeOrder({
+          customerName: name,
+          customerEmail: email,
+          customerPhone: phone,
+          shippingAddress: address,
+          items: items.map(i => ({
+            id: i.product.id,
+            title: i.product.title,
+            price: i.product.price,
+            quantity: i.quantity,
+            customizationNotes: i.customizationNotes
+          })),
+          subtotal: totals.subtotal,
+          discount: totals.discountAmount,
+          shippingFee: totals.shippingFee,
+          total: totals.total,
+          paymentMethod: selectedPayMethod
+        });
+
+        // Trigger confetti celebration!
+        if (window.confetti) {
+          window.confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 }
+          });
+        }
+
+        // Render Confirmation Screen
+        const container = document.getElementById('checkout-container');
+        container.innerHTML = `
+          <div class="bg-white rounded-3xl p-8 sm:p-12 border border-cream-200 shadow-warm text-center space-y-6 max-w-2xl mx-auto">
+            <div class="w-20 h-20 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto">
+              ✓
+            </div>
+
+            <div>
+              <span class="text-xs uppercase font-bold tracking-widest text-emerald-700">Order Confirmed</span>
+              <h2 class="font-serif text-3xl font-bold text-warmcharcoal-900 mt-1">Thank You, ${name}!</h2>
+              <p class="text-sm text-warmcharcoal-600 mt-2">
+                Your order <strong>${newOrder.id}</strong> has been successfully placed. Artisan Sayali will begin handcrafting your pieces.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-cream-50 border border-cream-200 text-left text-xs space-y-2">
+              <div class="flex justify-between"><span class="text-warmcharcoal-500">Order ID:</span><span class="font-bold text-warmcharcoal-900">${newOrder.id}</span></div>
+              <div class="flex justify-between"><span class="text-warmcharcoal-500">Tracking Code:</span><span class="font-semibold text-terracotta-700">${newOrder.trackingNumber}</span></div>
+              <div class="flex justify-between"><span class="text-warmcharcoal-500">Delivery Address:</span><span class="font-medium text-warmcharcoal-800">${address}</span></div>
+              <div class="flex justify-between"><span class="text-warmcharcoal-500">Payment Method:</span><span class="font-medium text-warmcharcoal-800">${selectedPayMethod}</span></div>
+              <div class="flex justify-between text-sm font-bold border-t border-cream-200 pt-2"><span class="text-warmcharcoal-900">Order Status:</span><span class="text-emerald-700 font-bold">Registered for Handcrafting</span></div>
+            </div>
+
+            <div class="pt-3 flex flex-wrap items-center justify-center gap-4">
+              <a href="https://wa.me/919309851833?text=${encodeURIComponent(`Namaste Sayali! I just submitted custom order ${newOrder.id} on PIHU website for ${totals.itemsCount} creation(s). Client: ${name}, WhatsApp: ${phone}`)}" target="_blank" class="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full text-xs font-bold flex items-center gap-2 shadow-sm">
+                <span>💬 WhatsApp Order Confirmation</span>
+              </a>
+              <a href="index.html" class="px-6 py-3 bg-cream-100 hover:bg-cream-200 text-warmcharcoal-800 rounded-full text-xs font-semibold">
+                Back to Boutique Home
+              </a>
+            </div>
+          </div>
+        `;
+      });
+    });
+  </script>
+</body>
+</html>

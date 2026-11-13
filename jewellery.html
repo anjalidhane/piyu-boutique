@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Handmade Jewellery – PIHU Boutique</title>
+  <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: { 50: '#FDFAF6', 100: '#F8F3EB', 200: '#F2E8DC', 300: '#E7D8C5', 400: '#D8C3AB' },
+            blush: { 50: '#FDF6F6', 100: '#FBECEB', 200: '#F7D7D6', 300: '#EEB5B3', 400: '#E28E8C', 500: '#D26765' },
+            terracotta: { 50: '#FAF2EE', 100: '#F4E0D7', 200: '#E8C0B2', 300: '#DA9E8A', 400: '#CA7860', 500: '#B8583E', 600: '#9E442D', 700: '#803420' },
+            gold: { 50: '#FAF7EE', 100: '#F3ECD2', 200: '#E6D79E', 300: '#D7BF64', 400: '#C8A736', 500: '#B8921C', 600: '#967414' },
+            warmcharcoal: { 600: '#52433F', 700: '#3D322E', 800: '#2C2320', 900: '#1B1513' }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            display: ['"Cinzel"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-cream-50 text-warmcharcoal-800 font-sans antialiased">
+
+  <div id="pihu-header"></div>
+
+  <main class="space-y-12 pb-20">
+    <!-- Category Hero Banner -->
+    <section class="bg-gradient-to-r from-cream-100 via-gold-50 to-cream-100 py-12 md:py-16 border-b border-cream-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gold-50 text-gold-900 text-xs font-semibold border border-gold-300 mb-3">
+          <span>💎 Basra Lustre Pearls • 18K Anti-Tarnish Micro Polish • Handcrafted</span>
+        </div>
+        <h1 class="font-serif text-3xl sm:text-5xl font-bold text-warmcharcoal-900 leading-tight">
+          Handmade Jewellery
+        </h1>
+        <p className="text-sm sm:text-base text-warmcharcoal-600 mt-3 leading-relaxed">
+          Timeless Maharashtrian Naths, royal lotus ruby chokers, beaded bridal necklaces, and linear ear drop pins. Crafted with authentic Indian craftsmanship to pair flawlessly with your Paithani sarees and festive occasions.
+        </p>
+
+        <div class="mt-6 flex items-center justify-center gap-3">
+          <a href="custom-order.html" class="px-6 py-2.5 rounded-full bg-warmcharcoal-900 hover:bg-terracotta-600 text-white text-xs font-bold shadow-sm transition-all flex items-center gap-2">
+            <span>✨ Custom Bridal Suite Inquiry</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter and Control Bar -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-2xl p-4 border border-cream-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
+        <!-- Subcategory Pills -->
+        <div id="jewel-filter-pills" class="flex flex-wrap items-center gap-2 w-full md:w-auto">
+          <!-- Injected via script -->
+        </div>
+
+        <!-- Search & Sort Controls -->
+        <div class="flex items-center gap-3 w-full md:w-auto justify-end">
+          <div class="relative flex-1 md:w-48">
+            <input type="text" id="jewel-search" placeholder="Search jewellery..." class="w-full text-xs pl-8 pr-3 py-2 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-gold-500" />
+            <span class="absolute left-2.5 top-2.5 text-warmcharcoal-400 text-xs">🔍</span>
+          </div>
+
+          <select id="jewel-sort" class="text-xs p-2 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-gold-500 text-warmcharcoal-700 font-medium">
+            <option value="featured">Featured Ornaments</option>
+            <option value="rating">Highest Customer Rating</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div id="jewel-count-label" class="mb-4 text-xs text-warmcharcoal-500">
+        Showing handcrafted jewellery pieces
+      </div>
+
+      <div id="jewel-products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- Populated via script -->
+      </div>
+    </section>
+
+    <!-- Jewellery Longevity Guide -->
+    <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-3xl p-6 sm:p-8 border border-cream-200 shadow-sm space-y-4">
+        <h3 class="font-serif text-xl font-bold text-warmcharcoal-900 flex items-center gap-2">
+          <span>✨</span> Handmade Jewellery Care & Longevity Tips
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2 text-xs text-warmcharcoal-600">
+          <div class="p-3.5 rounded-xl bg-cream-50 border border-cream-200 space-y-1">
+            <strong class="text-warmcharcoal-900 block font-serif text-sm">Last On, First Off</strong>
+            <p>Always put on your perfume, hairspray, and lotions BEFORE wearing your jewellery. Perfume chemicals degrade pearl luster.</p>
+          </div>
+          <div class="p-3.5 rounded-xl bg-cream-50 border border-cream-200 space-y-1">
+            <strong class="text-warmcharcoal-900 block font-serif text-sm">Airtight Pouch</strong>
+            <p>Store each piece in its original zip pouch or velvet box. Avoid humid air exposure.</p>
+          </div>
+          <div class="p-3.5 rounded-xl bg-cream-50 border border-cream-200 space-y-1">
+            <strong class="text-warmcharcoal-900 block font-serif text-sm">Flannel Wipe</strong>
+            <p>After wearing, gently wipe away skin oils with a soft dry flannel or cotton cloth.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="pihu-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let currentSubcat = 'All';
+      let currentSort = 'featured';
+      let currentQuery = '';
+
+      const subcategories = ['All', 'Naths & Nose Pins', 'Necklaces & Sets', 'Earrings & Bugadi'];
+      const pillsContainer = document.getElementById('jewel-filter-pills');
+      const sortSelect = document.getElementById('jewel-sort');
+      const searchInput = document.getElementById('jewel-search');
+      const grid = document.getElementById('jewel-products-grid');
+      const countLabel = document.getElementById('jewel-count-label');
+
+      // Render pills
+      pillsContainer.innerHTML = subcategories.map(cat => `
+        <button class="subcat-pill px-3.5 py-1.5 rounded-full text-xs font-medium transition-colors ${cat === 'All' ? 'bg-gold-500 text-warmcharcoal-950 font-bold' : 'bg-cream-100 text-warmcharcoal-700 hover:bg-cream-200'}" data-cat="${cat}">
+          ${cat}
+        </button>
+      `).join('');
+
+      pillsContainer.addEventListener('click', (e) => {
+        if (e.target.classList.contains('subcat-pill')) {
+          currentSubcat = e.target.getAttribute('data-cat');
+          document.querySelectorAll('.subcat-pill').forEach(btn => {
+            if (btn.getAttribute('data-cat') === currentSubcat) {
+              btn.className = 'subcat-pill px-3.5 py-1.5 rounded-full text-xs font-bold bg-gold-500 text-warmcharcoal-950 shadow-sm';
+            } else {
+              btn.className = 'subcat-pill px-3.5 py-1.5 rounded-full text-xs font-medium bg-cream-100 text-warmcharcoal-700 hover:bg-cream-200';
+            }
+          });
+          renderProducts();
+        }
+      });
+
+      sortSelect.addEventListener('change', (e) => {
+        currentSort = e.target.value;
+        renderProducts();
+      });
+
+      searchInput.addEventListener('input', (e) => {
+        currentQuery = e.target.value.toLowerCase().trim();
+        renderProducts();
+      });
+
+      function renderProducts() {
+        let items = window.PIHU_DATA.products.filter(p => p.category === 'jewellery');
+
+        if (currentSubcat !== 'All') {
+          items = items.filter(p => p.subcategory === currentSubcat);
+        }
+
+        if (currentQuery) {
+          items = items.filter(p => p.title.toLowerCase().includes(currentQuery) || p.description.toLowerCase().includes(currentQuery));
+        }
+
+        if (currentSort === 'price-low') {
+          items.sort((a, b) => a.price - b.price);
+        } else if (currentSort === 'price-high') {
+          items.sort((a, b) => b.price - a.price);
+        } else if (currentSort === 'rating') {
+          items.sort((a, b) => b.rating - a.rating);
+        }
+
+        countLabel.innerHTML = `Showing <strong>${items.length}</strong> handcrafted jewellery pieces`;
+
+        if (items.length === 0) {
+          grid.innerHTML = `
+            <div class="col-span-full py-12 text-center bg-white rounded-3xl border border-cream-200 p-8 space-y-3">
+              <span class="text-3xl block">💎</span>
+              <h3 class="font-serif text-lg font-bold">No jewellery found</h3>
+              <p class="text-xs text-warmcharcoal-500">Try a different subcategory or search term.</p>
+            </div>
+          `;
+          return;
+        }
+
+        grid.innerHTML = items.map(p => `
+          <div class="group relative bg-white rounded-2xl overflow-hidden border border-cream-200 shadow-sm hover:shadow-warm transition-all flex flex-col justify-between">
+            <div class="relative aspect-square w-full overflow-hidden bg-cream-100">
+              <a href="product-details.html?id=${p.id}" class="block w-full h-full">
+                <img src="${p.images[0]}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              </a>
+              ${p.badge ? `<span class="absolute top-2.5 left-2.5 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-cream-50/95 text-terracotta-700 shadow-sm border border-terracotta-200">✨ ${p.badge}</span>` : ''}
+              <button onclick="window.PIHU_STORE.toggleWishlist('${p.id}')" class="absolute top-2.5 right-2.5 p-2 rounded-full bg-white/90 text-warmcharcoal-600 hover:text-red-500 shadow-sm transition-colors" title="Save">
+                ♥
+              </button>
+            </div>
+            <div class="p-4 flex flex-col flex-1 justify-between">
+              <div>
+                <div class="flex items-center justify-between text-[11px] text-warmcharcoal-500 mb-1">
+                  <span class="font-bold text-gold-700 uppercase tracking-wider text-[10px]">${p.subcategory}</span>
+                  <span class="text-gold-500 font-bold">★ ${p.rating}</span>
+                </div>
+                <h3 class="font-serif font-bold text-sm text-warmcharcoal-900 leading-snug line-clamp-2 hover:text-terracotta-600">
+                  <a href="product-details.html?id=${p.id}">${p.title}</a>
+                </h3>
+              </div>
+              <div class="mt-3 pt-3 border-t border-cream-100 flex items-center justify-between">
+                <span class="text-xs font-bold text-gold-800 bg-gold-50 px-2.5 py-1 rounded-full border border-gold-200">
+                  Custom Order
+                </span>
+                <button onclick="window.openQuickView('${p.id}')" class="px-3 py-1.5 rounded-xl bg-gold-500 hover:bg-gold-600 text-warmcharcoal-950 text-xs font-bold transition-colors shadow-sm">
+                  ${p.customizable ? 'Customize' : 'View Details'}
+                </button>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      renderProducts();
+    });
+  </script>
+</body>
+</html>

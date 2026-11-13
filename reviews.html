@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Reviews & Photos – PIHU Boutique</title>
+  <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: { 50: '#FDFAF6', 100: '#F8F3EB', 200: '#F2E8DC', 300: '#E7D8C5', 400: '#D8C3AB' },
+            blush: { 50: '#FDF6F6', 100: '#FBECEB', 200: '#F7D7D6', 300: '#EEB5B3', 400: '#E28E8C', 500: '#D26765' },
+            terracotta: { 50: '#FAF2EE', 100: '#F4E0D7', 200: '#E8C0B2', 300: '#DA9E8A', 400: '#CA7860', 500: '#B8583E', 600: '#9E442D', 700: '#803420' },
+            gold: { 50: '#FAF7EE', 100: '#F3ECD2', 200: '#E6D79E', 300: '#D7BF64', 400: '#C8A736', 500: '#B8921C', 600: '#967414' },
+            warmcharcoal: { 600: '#52433F', 700: '#3D322E', 800: '#2C2320', 900: '#1B1513' }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            display: ['"Cinzel"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-cream-50 text-warmcharcoal-800 font-sans antialiased">
+
+  <div id="pihu-header"></div>
+
+  <main class="space-y-16 pb-20">
+    <!-- Header -->
+    <section class="bg-gradient-to-b from-cream-100 to-cream-50 py-16 border-b border-cream-200 text-center">
+      <div class="max-w-4xl mx-auto px-4">
+        <span class="text-xs font-bold uppercase tracking-widest text-terracotta-600">Loved by 350+ Families</span>
+        <h1 class="font-serif text-4xl sm:text-5xl font-bold text-warmcharcoal-900 mt-2">Customer Reviews & Keepsake Photos</h1>
+        <p class="text-sm sm:text-base text-warmcharcoal-600 mt-3 max-w-2xl mx-auto leading-relaxed">
+          Real stories, celebrations, and customer photos of PIHU hand-painted banners and handmade jewellery from across Maharashtra and India.
+        </p>
+
+        <div class="mt-6 flex justify-center">
+          <button id="open-write-review-btn" class="px-6 py-3 bg-terracotta-600 hover:bg-terracotta-700 text-white rounded-full text-xs font-bold shadow-warm transition-all flex items-center gap-2">
+            <span>✍️ Write a Customer Review</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Score Breakdown Card -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white p-6 sm:p-8 rounded-3xl border border-cream-200 shadow-sm grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        <!-- Big Score -->
+        <div class="md:col-span-4 text-center md:border-r border-cream-200 pr-0 md:pr-8">
+          <span class="font-serif text-6xl font-bold text-warmcharcoal-900">4.9</span>
+          <div class="flex justify-center text-gold-500 text-xl my-2">★★★★★</div>
+          <p class="text-xs font-bold text-warmcharcoal-800">Based on 350+ Verified Orders</p>
+          <p class="text-[11px] text-warmcharcoal-500 mt-0.5">100% Handcrafted & Shipped from Maharashtra</p>
+        </div>
+
+        <!-- Progress Bars -->
+        <div class="md:col-span-8 space-y-2 text-xs">
+          <div class="flex items-center gap-3">
+            <span class="w-12 text-right font-semibold">5 Star</span>
+            <div class="flex-1 bg-cream-100 h-2 rounded-full overflow-hidden">
+              <div class="bg-emerald-500 h-full w-[94%]"></div>
+            </div>
+            <span class="w-10 text-warmcharcoal-500 font-semibold">94%</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-12 text-right font-semibold">4 Star</span>
+            <div class="flex-1 bg-cream-100 h-2 rounded-full overflow-hidden">
+              <div class="bg-emerald-400 h-full w-[6%]"></div>
+            </div>
+            <span class="w-10 text-warmcharcoal-500 font-semibold">6%</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-12 text-right font-semibold">3 Star</span>
+            <div class="flex-1 bg-cream-100 h-2 rounded-full overflow-hidden">
+              <div class="bg-cream-200 h-full w-[0%]"></div>
+            </div>
+            <span class="w-10 text-warmcharcoal-500 font-semibold">0%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customer Photos Carousel / Mosaic -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-4">
+        <h3 class="font-serif text-2xl font-bold text-warmcharcoal-900">Customer Shared Photos</h3>
+        <p class="text-xs text-warmcharcoal-500">Shared by families from their baby showers, naming ceremonies, and weddings.</p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-3">
+        <div class="aspect-square rounded-2xl overflow-hidden border border-cream-200 img-zoom-container">
+          <img src="images/pihu-19.jpg" alt="Dohale Jevan" class="w-full h-full object-cover" />
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-cream-200 img-zoom-container">
+          <img src="images/pihu-10.jpg" alt="Floral Nath" class="w-full h-full object-cover" />
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-cream-200 img-zoom-container">
+          <img src="images/pihu-02.jpg" alt="Baby Cradle Hoop" class="w-full h-full object-cover" />
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-cream-200 img-zoom-container">
+          <img src="images/pihu-06.jpg" alt="Lotus Ruby Set" class="w-full h-full object-cover" />
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-cream-200 img-zoom-container">
+          <img src="images/pihu-17.jpg" alt="Vitthal Kurta" class="w-full h-full object-cover" />
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-cream-200 img-zoom-container">
+          <img src="images/pihu-18.jpg" alt="Embroidered Shirt" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Grid -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div id="reviews-list-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Rendered via script -->
+      </div>
+    </section>
+
+    <!-- Write a Review Modal -->
+    <div id="write-review-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4">
+      <div id="write-review-overlay" class="fixed inset-0 bg-warmcharcoal-900/60 backdrop-blur-sm"></div>
+      <div class="modal-content relative bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-cream-200 z-10 space-y-4">
+        <div class="flex items-center justify-between pb-3 border-b border-cream-200">
+          <h3 class="font-serif text-xl font-bold text-warmcharcoal-900">Share Your Experience with PIHU</h3>
+          <button id="close-write-review-btn" class="p-1 text-warmcharcoal-500 hover:text-warmcharcoal-800">✕</button>
+        </div>
+
+        <form id="submit-review-form" class="space-y-3.5 text-xs">
+          <div>
+            <label class="block font-semibold mb-1">Your Name *</label>
+            <input type="text" id="rev-author" required placeholder="e.g. Meenakshi Kadam" class="w-full p-2.5 rounded-xl border border-cream-300 bg-cream-50" />
+          </div>
+
+          <div>
+            <label class="block font-semibold mb-1">City & State *</label>
+            <input type="text" id="rev-city" required placeholder="e.g. Pune, Maharashtra" class="w-full p-2.5 rounded-xl border border-cream-300 bg-cream-50" />
+          </div>
+
+          <div>
+            <label class="block font-semibold mb-1">Which item did you order?</label>
+            <input type="text" id="rev-prod" placeholder="e.g. Hand-Painted Yashoda Krishna Banner" class="w-full p-2.5 rounded-xl border border-cream-300 bg-cream-50" />
+          </div>
+
+          <div>
+            <label class="block font-semibold mb-1">Rating</label>
+            <select id="rev-rating" class="w-full p-2.5 rounded-xl border border-cream-300 bg-cream-50">
+              <option value="5">★★★★★ (5 Stars - Outstanding Artistry)</option>
+              <option value="4">★★★★☆ (4 Stars - Very Satisfied)</option>
+              <option value="3">★★★☆☆ (3 Stars - Average)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block font-semibold mb-1">Your Review / Message *</label>
+            <textarea id="rev-text" rows="3" required placeholder="Tell us how your event went, how the artwork turned out, and your thoughts on Sayali's craft..." class="w-full p-2.5 rounded-xl border border-cream-300 bg-cream-50 text-xs"></textarea>
+          </div>
+
+          <button type="submit" class="w-full py-3 bg-terracotta-600 hover:bg-terracotta-700 text-white font-bold text-xs rounded-xl shadow-warm uppercase tracking-wider">
+            Submit Customer Review ✨
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <div id="pihu-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('reviews-list-grid');
+      const reviews = window.PIHU_DATA.reviews;
+
+      function renderReviews() {
+        grid.innerHTML = reviews.map(r => `
+          <div class="bg-white p-6 rounded-3xl border border-cream-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-gold-500 font-bold">${'★'.repeat(r.rating)}</span>
+                <span class="text-[11px] text-warmcharcoal-400">${r.date}</span>
+              </div>
+              ${r.productTitle ? `<p class="text-[10px] uppercase font-bold text-terracotta-600 tracking-wider mb-2">${r.productTitle}</p>` : ''}
+              <p class="text-xs text-warmcharcoal-700 leading-relaxed italic font-serif mb-4">"${r.review}"</p>
+            </div>
+
+            <div class="pt-3 border-t border-cream-100 flex items-center gap-3">
+              <img src="${r.avatar || 'images/pihu-01.jpg'}" alt="${r.author}" class="w-11 h-11 rounded-full object-cover border border-cream-300" />
+              <div>
+                <h4 class="text-xs font-bold text-warmcharcoal-900">${r.author}</h4>
+                <p class="text-[10px] text-warmcharcoal-500">${r.city} • <span class="text-emerald-700 font-semibold">Verified Buyer</span></p>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      renderReviews();
+
+      // Modal logic
+      const modal = document.getElementById('write-review-modal');
+      const openBtn = document.getElementById('open-write-review-btn');
+      const closeBtn = document.getElementById('close-write-review-btn');
+      const overlay = document.getElementById('write-review-overlay');
+
+      openBtn.addEventListener('click', () => modal.classList.add('active'));
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+      overlay.addEventListener('click', () => modal.classList.remove('active'));
+
+      document.getElementById('submit-review-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const author = document.getElementById('rev-author').value;
+        const city = document.getElementById('rev-city').value;
+        const prod = document.getElementById('rev-prod').value;
+        const rating = parseInt(document.getElementById('rev-rating').value, 10);
+        const text = document.getElementById('rev-text').value;
+
+        const newReview = {
+          id: `rev-${Date.now()}`,
+          author,
+          city,
+          productTitle: prod,
+          rating,
+          date: 'Just now',
+          review: text,
+          avatar: 'images/pihu-06.jpg'
+        };
+
+        reviews.unshift(newReview);
+        renderReviews();
+        modal.classList.remove('active');
+        window.PIHU_UI.showToast('Thank you! Your review has been published.', 'success');
+        document.getElementById('submit-review-form').reset();
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Account – PIHU Boutique</title>
+  <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: { 50: '#FDFAF6', 100: '#F8F3EB', 200: '#F2E8DC', 300: '#E7D8C5', 400: '#D8C3AB' },
+            blush: { 50: '#FDF6F6', 100: '#FBECEB', 200: '#F7D7D6', 300: '#EEB5B3', 400: '#E28E8C', 500: '#D26765' },
+            terracotta: { 50: '#FAF2EE', 100: '#F4E0D7', 200: '#E8C0B2', 300: '#DA9E8A', 400: '#CA7860', 500: '#B8583E', 600: '#9E442D', 700: '#803420' },
+            gold: { 50: '#FAF7EE', 100: '#F3ECD2', 200: '#E6D79E', 300: '#D7BF64', 400: '#C8A736', 500: '#B8921C', 600: '#967414' },
+            warmcharcoal: { 600: '#52433F', 700: '#3D322E', 800: '#2C2320', 900: '#1B1513' }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            display: ['"Cinzel"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-cream-50 text-warmcharcoal-800 font-sans antialiased">
+
+  <div id="pihu-header"></div>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 pb-24">
+    <!-- Container for either Auth Forms or User Profile -->
+    <div id="account-view-container">
+      <!-- Populated dynamically -->
+    </div>
+  </main>
+
+  <div id="pihu-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderAccountView();
+      window.addEventListener('user-updated', renderAccountView);
+
+      function renderAccountView() {
+        const user = window.PIHU_STORE.getUser();
+        const container = document.getElementById('account-view-container');
+
+        if (user) {
+          // Render Profile & Orders view
+          const orders = window.PIHU_STORE.getOrders();
+          container.innerHTML = `
+            <div class="space-y-8">
+              <!-- Profile Header Card -->
+              <div class="bg-white p-6 sm:p-8 rounded-3xl border border-cream-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-4 text-center sm:text-left">
+                  <div class="w-16 h-16 rounded-full bg-terracotta-100 text-terracotta-700 font-bold text-2xl flex items-center justify-center border-2 border-terracotta-300">
+                    ${user.name.charAt(0)}
+                  </div>
+                  <div>
+                    <span class="text-[10px] uppercase font-bold tracking-widest text-terracotta-600 px-2 py-0.5 rounded-full bg-terracotta-50 border border-terracotta-200 inline-block mb-1">
+                      ${user.role === 'admin' ? 'Artisan / Administrator' : 'Valued Customer'}
+                    </span>
+                    <h2 class="font-serif text-2xl font-bold text-warmcharcoal-900">${user.name}</h2>
+                    <p class="text-xs text-warmcharcoal-500">${user.email} • ${user.phone}</p>
+                    <p class="text-xs text-warmcharcoal-400 mt-0.5">${user.city}, ${user.state || 'Maharashtra'}</p>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-2">
+                  ${user.role === 'admin' ? `
+                    <a href="admin.html" class="px-4 py-2 bg-terracotta-600 hover:bg-terracotta-700 text-white rounded-xl text-xs font-bold shadow-sm">
+                      📊 Admin Dashboard
+                    </a>
+                  ` : ''}
+                  <button onclick="window.PIHU_STORE.logout()" class="px-4 py-2 border border-red-300 text-red-600 hover:bg-red-50 rounded-xl text-xs font-semibold">
+                    Sign Out
+                  </button>
+                </div>
+              </div>
+
+              <!-- Past Orders -->
+              <div class="space-y-4">
+                <h3 class="font-serif text-2xl font-bold text-warmcharcoal-900">Your Handcrafted Orders & Status</h3>
+                
+                <div class="space-y-4">
+                  ${orders.map(o => `
+                    <div class="bg-white p-5 rounded-2xl border border-cream-200 shadow-sm space-y-3">
+                      <div class="flex flex-wrap items-center justify-between gap-2 border-b border-cream-100 pb-2">
+                        <div>
+                          <span class="font-bold text-warmcharcoal-900 text-xs">${o.id}</span>
+                          <span class="text-warmcharcoal-400 text-[11px] ml-2">Ordered on ${o.date}</span>
+                        </div>
+                        <span class="px-2.5 py-1 rounded-full text-[11px] font-bold ${
+                          o.status === 'Delivered' ? 'bg-emerald-100 text-emerald-800' : 'bg-gold-100 text-gold-900'
+                        }">
+                          ● ${o.status}
+                        </span>
+                      </div>
+
+                      <div class="space-y-2">
+                        ${o.items.map(it => `
+                          <div class="flex justify-between text-xs">
+                            <span class="font-medium text-warmcharcoal-800">${it.title} (x${it.quantity})</span>
+                            <span class="font-semibold text-terracotta-700 bg-terracotta-50 px-2 py-0.5 rounded border border-terracotta-200">Custom Order</span>
+                          </div>
+                        `).join('')}
+                      </div>
+
+                      <div class="pt-2 border-t border-cream-100 flex flex-wrap items-center justify-between text-xs text-warmcharcoal-500">
+                        <span>Tracking: <strong class="text-terracotta-700">${o.trackingNumber || 'Processing'}</strong></span>
+                        <span class="font-bold text-warmcharcoal-900">${o.paymentMethod || 'Confirmed via WhatsApp'}</span>
+                      </div>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            </div>
+          `;
+        } else {
+          // Render Login / Register tabs
+          container.innerHTML = `
+            <div class="bg-white rounded-3xl border border-cream-200 shadow-warm max-w-lg mx-auto overflow-hidden">
+              <!-- Tabs -->
+              <div class="flex border-b border-cream-200 bg-cream-50/70 text-xs font-bold uppercase tracking-wider">
+                <button id="auth-tab-login" class="flex-1 py-4 text-center border-b-2 border-terracotta-600 text-terracotta-700 bg-white">
+                  Sign In
+                </button>
+                <button id="auth-tab-register" class="flex-1 py-4 text-center border-b-2 border-transparent text-warmcharcoal-600 hover:text-terracotta-600">
+                  Create Account
+                </button>
+              </div>
+
+              <!-- Quick Demo Fill -->
+              <div class="p-4 bg-cream-100/60 border-b border-cream-200 text-center text-xs">
+                <span class="text-warmcharcoal-500 mr-2">Quick Demo:</span>
+                <button onclick="fillAdminDemo()" class="underline font-bold text-terracotta-700 hover:text-terracotta-900 mr-3">
+                  Admin (Sayali)
+                </button>
+                <button onclick="fillCustomerDemo()" class="underline font-bold text-gold-700 hover:text-gold-900">
+                  Customer Demo
+                </button>
+              </div>
+
+              <!-- Login Form -->
+              <form id="login-form" class="p-6 sm:p-8 space-y-4">
+                <div>
+                  <label class="block text-xs font-semibold text-warmcharcoal-800 mb-1">Email Address</label>
+                  <input type="email" id="login-email" required placeholder="sayali@pihuhandmade.com" class="w-full text-xs p-3 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-terracotta-500" />
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-warmcharcoal-800 mb-1">Password</label>
+                  <input type="password" id="login-password" required value="password123" class="w-full text-xs p-3 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-terracotta-500" />
+                </div>
+                <button type="submit" class="w-full py-3.5 bg-terracotta-600 hover:bg-terracotta-700 text-white font-bold text-xs rounded-xl shadow-warm transition-all">
+                  Sign In to Account →
+                </button>
+              </form>
+
+              <!-- Register Form (Hidden by default) -->
+              <form id="register-form" class="p-6 sm:p-8 space-y-3.5 hidden">
+                <div>
+                  <label class="block text-xs font-semibold text-warmcharcoal-800 mb-1">Full Name *</label>
+                  <input type="text" id="reg-name" required placeholder="Snehal Kulkarni" class="w-full text-xs p-3 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-terracotta-500" />
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-warmcharcoal-800 mb-1">Email Address *</label>
+                  <input type="email" id="reg-email" required placeholder="snehal@example.com" class="w-full text-xs p-3 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-terracotta-500" />
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-warmcharcoal-800 mb-1">Phone / WhatsApp *</label>
+                  <input type="tel" id="reg-phone" required placeholder="+91 94231 67890" class="w-full text-xs p-3 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-terracotta-500" />
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-warmcharcoal-800 mb-1">City</label>
+                  <input type="text" id="reg-city" placeholder="Kolhapur, Maharashtra" class="w-full text-xs p-3 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-terracotta-500" />
+                </div>
+                <button type="submit" class="w-full py-3.5 bg-terracotta-600 hover:bg-terracotta-700 text-white font-bold text-xs rounded-xl shadow-warm transition-all mt-2">
+                  Create Customer Account ✨
+                </button>
+              </form>
+            </div>
+          `;
+
+          // Hook tab clicks
+          const tabLogin = document.getElementById('auth-tab-login');
+          const tabReg = document.getElementById('auth-tab-register');
+          const formLogin = document.getElementById('login-form');
+          const formReg = document.getElementById('register-form');
+
+          tabLogin.addEventListener('click', () => {
+            tabLogin.className = 'flex-1 py-4 text-center border-b-2 border-terracotta-600 text-terracotta-700 bg-white';
+            tabReg.className = 'flex-1 py-4 text-center border-b-2 border-transparent text-warmcharcoal-600 hover:text-terracotta-600';
+            formLogin.classList.remove('hidden');
+            formReg.classList.add('hidden');
+          });
+
+          tabReg.addEventListener('click', () => {
+            tabReg.className = 'flex-1 py-4 text-center border-b-2 border-terracotta-600 text-terracotta-700 bg-white';
+            tabLogin.className = 'flex-1 py-4 text-center border-b-2 border-transparent text-warmcharcoal-600 hover:text-terracotta-600';
+            formReg.classList.remove('hidden');
+            formLogin.classList.add('hidden');
+          });
+
+          // Login submission
+          formLogin.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const pass = document.getElementById('login-password').value;
+            window.PIHU_STORE.login(email, pass);
+            window.PIHU_UI.showToast('Logged in successfully!', 'success');
+          });
+
+          // Register submission
+          formReg.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('reg-name').value;
+            const email = document.getElementById('reg-email').value;
+            const phone = document.getElementById('reg-phone').value;
+            const city = document.getElementById('reg-city').value;
+            window.PIHU_STORE.register({ name, email, phone, city });
+            window.PIHU_UI.showToast('Account created successfully!', 'success');
+          });
+        }
+      }
+
+      window.fillAdminDemo = function() {
+        const email = document.getElementById('login-email');
+        if (email) email.value = 'sayali@pihuhandmade.com';
+      };
+
+      window.fillCustomerDemo = function() {
+        const email = document.getElementById('login-email');
+        if (email) email.value = 'snehal@example.com';
+      };
+    });
+  </script>
+</body>
+</html>

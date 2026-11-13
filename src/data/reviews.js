@@ -1,0 +1,80 @@
+export const REVIEWS = [
+  {
+    id: "rev-1",
+    author: "Pooja Deshmukh",
+    city: "Pune, Maharashtra",
+    rating: 5,
+    date: "2 days ago",
+    productTitle: "Custom Hand-Painted Yashoda Krishna Dohale Jevan Banner",
+    productId: "fabric-01",
+    verifiedPurchase: true,
+    review: "Sayali did an absolute wonder with our Dohale Jevan banner! The colors of Bal Krishna and Yashoda Mata were so soft and divine. All our guests took photos in front of it. Delivered securely to Pune within 4 days. Highly recommended boutique!",
+    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80",
+    customerPhoto: "/images/pihu-19.jpg"
+  },
+  {
+    id: "rev-2",
+    author: "Snehal Kulkarni",
+    city: "Kolhapur, Maharashtra",
+    rating: 5,
+    date: "1 week ago",
+    productTitle: "Traditional Maharashtrian Kundan & Pearl Floral Nath",
+    productId: "jewel-01",
+    verifiedPurchase: true,
+    review: "The Nath is exquisite! Lightweight, sits comfortably on the nose without painful pinching, and the pearls have a rich luster. It gave my Nauvari saree the exact royal Peshwai touch I wanted for Diwali.",
+    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+    customerPhoto: "/images/pihu-10.jpg"
+  },
+  {
+    id: "rev-3",
+    author: "Aditya & Sayali Patil",
+    city: "Satara, Maharashtra",
+    rating: 5,
+    date: "2 weeks ago",
+    productTitle: "Custom Baby Cradle Welcome Hoop with Pearl Tassels",
+    productId: "fabric-02",
+    verifiedPurchase: true,
+    review: "Ordered this for our niece's naming ceremony. Sayali personalized our family sketch and added the prettiest hanging pearls and pink tassels. Truly a heirloom keepsake to cherish forever.",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+    customerPhoto: "/images/pihu-02.jpg"
+  },
+  {
+    id: "rev-4",
+    author: "Radhika Joshi",
+    city: "Mumbai, Maharashtra",
+    rating: 5,
+    date: "3 weeks ago",
+    productTitle: "Royal Lotus Ruby & Antique Gold Choker Set",
+    productId: "jewel-02",
+    verifiedPurchase: true,
+    review: "Such fine craftsmanship in the gold beading and lotus centerpiece! Packaging was so premium with a handwritten thank-you card. It feels like wearing fine bridal jewellery without paying exorbitant gold prices.",
+    avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80",
+    customerPhoto: "/images/pihu-06.jpg"
+  },
+  {
+    id: "rev-5",
+    author: "Prasad Gaikwad",
+    city: "Sangli, Maharashtra",
+    rating: 5,
+    date: "1 month ago",
+    productTitle: "Hand-Painted Vitthal Pure Cotton Kurta",
+    productId: "fabric-03",
+    verifiedPurchase: true,
+    review: "Wore this for our Pandharpur Wari yatra. The fabric paint didn't fade even after two gentle washes. 100% breathable cotton and the Vitthal silhouette attracted compliments from everyone.",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80",
+    customerPhoto: "/images/pihu-17.jpg"
+  },
+  {
+    id: "rev-6",
+    author: "Ananya Mehra",
+    city: "Bengaluru, Karnataka",
+    rating: 5,
+    date: "1 month ago",
+    productTitle: "Custom Hand-Embroidered Love Message Shirt",
+    productId: "fabric-04",
+    verifiedPurchase: true,
+    review: "Gifted this customized shirt with 'I Love You' embroidered on the placket and a little heart on the collar to my fiancé for our anniversary. He loved the discreet and thoughtful gesture!",
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
+    customerPhoto: "/images/pihu-18.jpg"
+  }
+];

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom Order Wizard – PIHU Boutique</title>
+  <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: { 50: '#FDFAF6', 100: '#F8F3EB', 200: '#F2E8DC', 300: '#E7D8C5', 400: '#D8C3AB' },
+            blush: { 50: '#FDF6F6', 100: '#FBECEB', 200: '#F7D7D6', 300: '#EEB5B3', 400: '#E28E8C', 500: '#D26765' },
+            terracotta: { 50: '#FAF2EE', 100: '#F4E0D7', 200: '#E8C0B2', 300: '#DA9E8A', 400: '#CA7860', 500: '#B8583E', 600: '#9E442D', 700: '#803420' },
+            gold: { 50: '#FAF7EE', 100: '#F3ECD2', 200: '#E6D79E', 300: '#D7BF64', 400: '#C8A736', 500: '#B8921C', 600: '#967414' },
+            warmcharcoal: { 600: '#52433F', 700: '#3D322E', 800: '#2C2320', 900: '#1B1513' }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            display: ['"Cinzel"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-cream-50 text-warmcharcoal-800 font-sans antialiased">
+
+  <div id="pihu-header"></div>
+
+  <main class="space-y-12 pb-20">
+    <!-- Header -->
+    <section class="bg-gradient-to-r from-cream-100 via-blush-50 to-cream-100 py-12 md:py-16 border-b border-cream-200 text-center">
+      <div class="max-w-4xl mx-auto px-4">
+        <span class="text-xs font-bold uppercase tracking-widest text-terracotta-600">Bespoke Artisan Studio Service</span>
+        <h1 class="font-serif text-3xl sm:text-5xl font-bold text-warmcharcoal-900 mt-2">Custom Order Request Wizard</h1>
+        <p class="text-sm sm:text-base text-warmcharcoal-600 mt-3 max-w-2xl mx-auto leading-relaxed">
+          Have a specific vision, sketch, or personal memory you want painted on fabric or designed into jewellery? Tell artisan Sayali what you need below.
+        </p>
+      </div>
+    </section>
+
+    <!-- Wizard Form Container -->
+    <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Container for Active Wizard or Success Card -->
+      <div id="wizard-container" class="bg-white rounded-3xl border border-cream-200 shadow-warm overflow-hidden">
+        <!-- Progress Bar -->
+        <div class="bg-cream-50/80 px-6 py-4 border-b border-cream-200">
+          <div class="flex items-center justify-between max-w-xl mx-auto text-xs font-semibold">
+            <div id="step-pill-1" class="flex items-center gap-2 text-terracotta-700">
+              <span class="w-6 h-6 rounded-full bg-terracotta-600 text-white flex items-center justify-center text-xs font-bold">1</span>
+              <span>Craft Type</span>
+            </div>
+            <span class="text-cream-300">───</span>
+            <div id="step-pill-2" class="flex items-center gap-2 text-warmcharcoal-400">
+              <span class="w-6 h-6 rounded-full bg-cream-200 text-warmcharcoal-600 flex items-center justify-center text-xs font-bold">2</span>
+              <span>Base Item</span>
+            </div>
+            <span class="text-cream-300">───</span>
+            <div id="step-pill-3" class="flex items-center gap-2 text-warmcharcoal-400">
+              <span class="w-6 h-6 rounded-full bg-cream-200 text-warmcharcoal-600 flex items-center justify-center text-xs font-bold">3</span>
+              <span>Personalization</span>
+            </div>
+            <span class="text-cream-300">───</span>
+            <div id="step-pill-4" class="flex items-center gap-2 text-warmcharcoal-400">
+              <span class="w-6 h-6 rounded-full bg-cream-200 text-warmcharcoal-600 flex items-center justify-center text-xs font-bold">4</span>
+              <span>Photo & Submit</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Body -->
+        <form id="custom-wizard-form" class="p-6 sm:p-10 space-y-8">
+          <!-- STEP 1 -->
+          <div id="wizard-step-1" class="space-y-6">
+            <div>
+              <h3 class="font-serif text-2xl font-bold text-warmcharcoal-900">Step 1: Which craft are you looking for?</h3>
+              <p class="text-xs text-warmcharcoal-600 mt-1">Select the primary handmade craft domain for your custom design.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <label class="craft-option p-5 rounded-2xl border-2 border-terracotta-600 bg-terracotta-50/50 cursor-pointer block">
+                <input type="radio" name="craftType" value="Customize Fabric Painting" checked class="hidden" />
+                <span class="text-2xl block mb-2">🎨</span>
+                <h4 class="font-serif font-bold text-base text-warmcharcoal-900">Fabric Painting</h4>
+                <p class="text-xs text-warmcharcoal-600 mt-1">Baby shower banners, portrait fabrics, kurtas, tees, embroidered items</p>
+              </label>
+
+              <label class="craft-option p-5 rounded-2xl border-2 border-cream-200 hover:border-cream-300 cursor-pointer block">
+                <input type="radio" name="craftType" value="Handmade Jewellery" class="hidden" />
+                <span class="text-2xl block mb-2">💎</span>
+                <h4 class="font-serif font-bold text-base text-warmcharcoal-900">Handmade Jewellery</h4>
+                <p class="text-xs text-warmcharcoal-600 mt-1">Maharashtrian naths, bridal chokers, beaded necklace suites</p>
+              </label>
+
+              <label class="craft-option p-5 rounded-2xl border-2 border-cream-200 hover:border-cream-300 cursor-pointer block">
+                <input type="radio" name="craftType" value="Combo Gift Hamper" class="hidden" />
+                <span class="text-2xl block mb-2">🎁</span>
+                <h4 class="font-serif font-bold text-base text-warmcharcoal-900">Combo Hamper</h4>
+                <p class="text-xs text-warmcharcoal-600 mt-1">Curated mix of custom painted cloth + matching traditional jewellery</p>
+              </label>
+            </div>
+          </div>
+
+          <!-- STEP 2 -->
+          <div id="wizard-step-2" class="space-y-6 hidden">
+            <div>
+              <h3 class="font-serif text-2xl font-bold text-warmcharcoal-900">Step 2: Choose your base product</h3>
+              <p class="text-xs text-warmcharcoal-600 mt-1">Pick a starting template or specify a unique item.</p>
+            </div>
+
+            <div id="product-base-options" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              <!-- Dynamically populated based on craftType -->
+            </div>
+          </div>
+
+          <!-- STEP 3 -->
+          <div id="wizard-step-3" class="space-y-6 hidden">
+            <div>
+              <h3 class="font-serif text-2xl font-bold text-warmcharcoal-900">Step 3: Personalization & Milestone Details</h3>
+              <p class="text-xs text-warmcharcoal-600 mt-1">What words, names, or special colors would you like hand-crafted?</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+              <div>
+                <label class="block font-semibold text-warmcharcoal-800 mb-1">Names / Initials to paint or embroider *</label>
+                <input type="text" id="cust-names" required placeholder="e.g. तृप्ती आणि सागर ची वृंदा" class="w-full p-3 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-terracotta-500" />
+              </div>
+
+              <div>
+                <label class="block font-semibold text-warmcharcoal-800 mb-1">Occasion / Event Type</label>
+                <select id="cust-occasion" class="w-full p-3 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-terracotta-500">
+                  <option value="Baby Shower (Dohale Jevan)">Baby Shower (Dohale Jevan)</option>
+                  <option value="Naming Ceremony (Barse)">Naming Ceremony (Barse)</option>
+                  <option value="Wedding / Haldi Ceremony">Wedding / Haldi Ceremony</option>
+                  <option value="Anniversary / Birthday Surprise">Anniversary / Birthday Surprise</option>
+                  <option value="Devotional / Festival / Wari">Devotional / Festival / Wari</option>
+                  <option value="Other Custom Occasion">Other Custom Occasion</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block font-semibold text-warmcharcoal-800 mb-1">Occasion Date / Delivery Needed By</label>
+                <input type="date" id="cust-date" class="w-full p-3 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-terracotta-500" />
+              </div>
+
+              <div>
+                <label class="block font-semibold text-warmcharcoal-800 mb-1">Color Theme Preference</label>
+                <input type="text" id="cust-color" placeholder="e.g. Traditional Red & Gold, Blush Pink, Yellow" class="w-full p-3 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-terracotta-500" />
+              </div>
+
+              <div class="sm:col-span-2">
+                <label class="block font-semibold text-warmcharcoal-800 mb-1">Size / Dimensions (Kurta Size, Hoop Size, Banner Feet)</label>
+                <input type="text" id="cust-size" placeholder="e.g. 3ft x 3ft banner, Kurta size 40 (M), or clip-on nath" class="w-full p-3 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-terracotta-500" />
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 4 -->
+          <div id="wizard-step-4" class="space-y-6 hidden">
+            <div>
+              <h3 class="font-serif text-2xl font-bold text-warmcharcoal-900">Step 4: Reference Photo & Contact Details</h3>
+              <p class="text-xs text-warmcharcoal-600 mt-1">Upload any photo or sketch you'd like us to draw inspiration from.</p>
+            </div>
+
+            <!-- Upload dropzone -->
+            <div class="p-6 rounded-2xl border-2 border-dashed border-terracotta-300 bg-cream-50/60 text-center">
+              <div id="photo-preview-wrap" class="flex flex-col items-center gap-2">
+                <img id="wizard-photo-preview" src="images/pihu-19.jpg" alt="Preview" class="w-28 h-28 rounded-2xl object-cover border-2 border-white shadow-md" />
+                <label class="px-4 py-1.5 rounded-full bg-white border border-cream-300 text-xs font-semibold cursor-pointer hover:bg-cream-100 transition-colors">
+                  Change / Upload Photo
+                  <input type="file" id="wizard-file-input" accept="image/*" class="hidden" />
+                </label>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs pt-2">
+              <div>
+                <label class="block font-semibold text-warmcharcoal-800 mb-1">Your Full Name *</label>
+                <input type="text" id="cust-client" required placeholder="e.g. Snehal Kulkarni" class="w-full p-3 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-terracotta-500" />
+              </div>
+
+              <div>
+                <label class="block font-semibold text-warmcharcoal-800 mb-1">WhatsApp / Mobile Number *</label>
+                <input type="tel" id="cust-phone" required placeholder="e.g. +91 94231 67890" class="w-full p-3 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-terracotta-500" />
+              </div>
+
+              <div>
+                <label class="block font-semibold text-warmcharcoal-800 mb-1">Delivery City & Pincode *</label>
+                <input type="text" id="cust-city" required placeholder="e.g. Kolhapur 416003" class="w-full p-3 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-terracotta-500" />
+              </div>
+
+              <div>
+                <label class="block font-semibold text-warmcharcoal-800 mb-1">Custom Order Scope</label>
+                <select id="cust-budget" class="w-full p-3 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-terracotta-500">
+                  <option value="Classic Artisan Keepsake">Classic Artisan Keepsake</option>
+                  <option value="Deluxe Personalized Edition">Deluxe Personalized Edition</option>
+                  <option value="Grand Celebration / Bridal Suite">Grand Celebration / Bridal Suite</option>
+                  <option value="Custom Quote on WhatsApp Consultation">Custom Quote on WhatsApp Consultation</option>
+                </select>
+              </div>
+
+              <div class="sm:col-span-2">
+                <label class="block font-semibold text-warmcharcoal-800 mb-1">Any specific artisan instructions for Sayali?</label>
+                <textarea id="cust-notes" rows="2" placeholder="e.g. Add small yellow flower borders around the letters..." class="w-full p-3 rounded-xl border border-cream-300 bg-cream-50 focus:outline-none focus:ring-1 focus:ring-terracotta-500 text-xs"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation Controls -->
+          <div class="pt-6 border-t border-cream-200 flex items-center justify-between">
+            <button type="button" id="prev-step-btn" class="px-5 py-2.5 rounded-full border border-cream-300 text-warmcharcoal-700 text-xs font-semibold hover:bg-cream-100 hidden">
+              ← Back
+            </button>
+            <div id="spacer-div"></div>
+
+            <button type="button" id="next-step-btn" class="px-6 py-3 rounded-full bg-terracotta-600 hover:bg-terracotta-700 text-white text-xs font-bold shadow-warm">
+              Continue to Step 2 →
+            </button>
+
+            <div id="submit-actions-group" class="hidden flex items-center gap-2">
+              <button type="button" id="whatsapp-send-btn" class="px-4 py-3 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-sm">
+                💬 WhatsApp Send
+              </button>
+              <button type="submit" class="px-7 py-3 rounded-full bg-terracotta-600 hover:bg-terracotta-700 text-white text-xs font-bold shadow-warm">
+                Submit Request ✨
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div id="pihu-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let currentStep = 1;
+      let selectedCraft = 'Customize Fabric Painting';
+      let selectedProductBase = 'Dohale Jevan Baby Shower Banner';
+      let previewPhotoUrl = 'images/pihu-19.jpg';
+
+      const step1El = document.getElementById('wizard-step-1');
+      const step2El = document.getElementById('wizard-step-2');
+      const step3El = document.getElementById('wizard-step-3');
+      const step4El = document.getElementById('wizard-step-4');
+
+      const prevBtn = document.getElementById('prev-step-btn');
+      const nextBtn = document.getElementById('next-step-btn');
+      const submitGroup = document.getElementById('submit-actions-group');
+      const productBaseOptions = document.getElementById('product-base-options');
+      const photoPreview = document.getElementById('wizard-photo-preview');
+      const fileInput = document.getElementById('wizard-file-input');
+
+      // Craft type radio toggle
+      document.querySelectorAll('input[name="craftType"]').forEach(r => {
+        r.addEventListener('change', (e) => {
+          selectedCraft = e.target.value;
+          document.querySelectorAll('.craft-option').forEach(card => {
+            card.className = 'craft-option p-5 rounded-2xl border-2 border-cream-200 hover:border-cream-300 cursor-pointer block';
+          });
+          e.target.closest('.craft-option').className = 'craft-option p-5 rounded-2xl border-2 border-terracotta-600 bg-terracotta-50/50 cursor-pointer block';
+          populateBaseOptions();
+        });
+      });
+
+      function populateBaseOptions() {
+        const isJewel = selectedCraft === 'Handmade Jewellery';
+        const items = isJewel ? [
+          { title: 'Traditional Maharashtrian Floral Nath', img: 'images/pihu-10.jpg', tag: 'Handcrafted to Order' },
+          { title: 'Royal Lotus Ruby Choker Set', img: 'images/pihu-06.jpg', tag: 'Handcrafted to Order' },
+          { title: 'Handcrafted Golden Beaded Choker', img: 'images/pihu-11.jpg', tag: 'Handcrafted to Order' },
+          { title: 'Sayali Special Pearl & Ruby Bridal Choker', img: 'images/pihu-13.jpg', tag: 'Handcrafted to Order' },
+          { title: 'Gold Beaded Linear Drop Pins / Bugadi', img: 'images/pihu-16.jpg', tag: 'Handcrafted to Order' },
+          { title: 'Bespoke Complete Bridal Suite', img: 'images/pihu-13.jpg', tag: 'Custom Bridal Suite' }
+        ] : [
+          { title: 'Dohale Jevan Baby Shower Banner', img: 'images/pihu-19.jpg', tag: 'Handcrafted to Order' },
+          { title: 'Baby Naming (Barse) Cradle Welcome Hoop', img: 'images/pihu-02.jpg', tag: 'Handcrafted to Order' },
+          { title: 'Vitthal / Devotional Cotton Kurta', img: 'images/pihu-17.jpg', tag: 'Handcrafted to Order' },
+          { title: 'Personalized Portrait Painting on Fabric', img: 'images/pihu-25.jpg', tag: 'Custom Portrait Art' },
+          { title: 'Custom Embroidered Love Message Shirt', img: 'images/pihu-18.jpg', tag: 'Handcrafted to Order' },
+          { title: 'Bal Ganesha Nursery Hoop Art', img: 'images/pihu-08.jpg', tag: 'Handcrafted to Order' },
+          { title: 'Hand-Embroidered Couple Pocket Hankies', img: 'images/pihu-07.jpg', tag: 'Handcrafted to Order' }
+        ];
+
+        selectedProductBase = items[0].title;
+        previewPhotoUrl = items[0].img;
+        photoPreview.src = previewPhotoUrl;
+
+        productBaseOptions.innerHTML = items.map((it, idx) => `
+          <div class="base-option p-3.5 rounded-2xl border flex items-center gap-3 cursor-pointer ${idx === 0 ? 'border-terracotta-600 bg-terracotta-50' : 'border-cream-200 hover:bg-cream-50'}" data-title="${it.title}" data-img="${it.img}">
+            <img src="${it.img}" class="w-14 h-14 rounded-xl object-cover border border-cream-300" />
+            <div class="flex-1 min-w-0">
+              <h4 class="text-xs font-bold text-warmcharcoal-900 leading-snug">${it.title}</h4>
+              <p class="text-[11px] text-terracotta-700 font-semibold mt-0.5">✨ ${it.tag}</p>
+            </div>
+          </div>
+        `).join('');
+
+        document.querySelectorAll('.base-option').forEach(el => {
+          el.addEventListener('click', () => {
+            selectedProductBase = el.getAttribute('data-title');
+            previewPhotoUrl = el.getAttribute('data-img');
+            photoPreview.src = previewPhotoUrl;
+            document.querySelectorAll('.base-option').forEach(b => b.className = 'base-option p-3.5 rounded-2xl border border-cream-200 hover:bg-cream-50 flex items-center gap-3 cursor-pointer');
+            el.className = 'base-option p-3.5 rounded-2xl border border-terracotta-600 bg-terracotta-50 flex items-center gap-3 cursor-pointer';
+          });
+        });
+      }
+
+      populateBaseOptions();
+
+      // Image upload simulation
+      fileInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          previewPhotoUrl = URL.createObjectURL(file);
+          photoPreview.src = previewPhotoUrl;
+        }
+      });
+
+      // Wizard Nav
+      function showStep(s) {
+        currentStep = s;
+        step1El.classList.toggle('hidden', s !== 1);
+        step2El.classList.toggle('hidden', s !== 2);
+        step3El.classList.toggle('hidden', s !== 3);
+        step4El.classList.toggle('hidden', s !== 4);
+
+        prevBtn.classList.toggle('hidden', s === 1);
+        nextBtn.classList.toggle('hidden', s === 4);
+        submitGroup.classList.toggle('hidden', s !== 4);
+
+        nextBtn.textContent = `Continue to Step ${s + 1} →`;
+
+        // Update step pills
+        for (let i = 1; i <= 4; i++) {
+          const pill = document.getElementById(`step-pill-${i}`);
+          if (pill) {
+            pill.className = `flex items-center gap-2 ${i === s ? 'text-terracotta-700 font-bold' : (i < s ? 'text-emerald-700' : 'text-warmcharcoal-400')}`;
+          }
+        }
+      }
+
+      nextBtn.addEventListener('click', () => {
+        if (currentStep < 4) showStep(currentStep + 1);
+      });
+
+      prevBtn.addEventListener('click', () => {
+        if (currentStep > 1) showStep(currentStep - 1);
+      });
+
+      // WhatsApp direct
+      document.getElementById('whatsapp-send-btn').addEventListener('click', () => {
+        const client = document.getElementById('cust-client').value || 'Customer';
+        const phone = document.getElementById('cust-phone').value || '';
+        const names = document.getElementById('cust-names').value || '';
+        const occasion = document.getElementById('cust-occasion').value;
+        const date = document.getElementById('cust-date').value || 'Flexible';
+        const notes = document.getElementById('cust-notes').value || 'None';
+
+        const text = `*New Custom Order Request - PIHU Boutique*%0A%0A` +
+          `*Client:* ${client}%0A` +
+          `*Phone:* ${phone}%0A` +
+          `*Category:* ${selectedCraft}%0A` +
+          `*Product:* ${selectedProductBase}%0A` +
+          `*Occasion:* ${occasion} on ${date}%0A` +
+          `*Names to paint/engrave:* ${names}%0A` +
+          `*Notes:* ${notes}`;
+
+        window.open(`https://wa.me/919309851833?text=${text}`, '_blank');
+      });
+
+      // Form Submit
+      document.getElementById('custom-wizard-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const client = document.getElementById('cust-client').value;
+        const phone = document.getElementById('cust-phone').value;
+        const names = document.getElementById('cust-names').value;
+        const occasion = document.getElementById('cust-occasion').value;
+        const date = document.getElementById('cust-date').value;
+        const color = document.getElementById('cust-color').value;
+        const budget = document.getElementById('cust-budget').value;
+        const notes = document.getElementById('cust-notes').value;
+
+        const newReq = window.PIHU_STORE.addCustomRequest({
+          clientName: client,
+          phone: phone,
+          email: 'custom@customer.com',
+          category: selectedCraft,
+          itemType: selectedProductBase,
+          details: `Names: ${names} | Occasion: ${occasion} (${date}) | Color: ${color} | Notes: ${notes}`,
+          referenceImage: previewPhotoUrl,
+          budget: budget
+        });
+
+        // Render success screen
+        const container = document.getElementById('wizard-container');
+        container.innerHTML = `
+          <div class="p-8 sm:p-12 text-center space-y-6">
+            <span class="w-20 h-20 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto">✓</span>
+            <div>
+              <span class="text-xs uppercase font-bold tracking-widest text-emerald-700">Request Registered: ${newReq.id}</span>
+              <h2 class="font-serif text-3xl font-bold text-warmcharcoal-900 mt-1">Thank You, ${client}!</h2>
+              <p class="text-sm text-warmcharcoal-600 max-w-md mx-auto mt-2">
+                Artisan Sayali has received your custom order request for <strong>${selectedProductBase}</strong>. We will review your specifications and contact you on WhatsApp (+91 ${phone}) within 24 hours.
+              </p>
+            </div>
+            <div class="pt-4 flex flex-wrap items-center justify-center gap-4">
+              <a href="https://wa.me/919309851833" target="_blank" class="px-6 py-3 bg-emerald-600 text-white rounded-full text-xs font-bold">
+                💬 Chat on WhatsApp with Sayali
+              </a>
+              <a href="index.html" class="px-6 py-3 bg-cream-100 text-warmcharcoal-800 rounded-full text-xs font-bold hover:bg-cream-200">
+                Back to Boutique Home
+              </a>
+            </div>
+          </div>
+        `;
+      });
+    });
+  </script>
+</body>
+</html>
