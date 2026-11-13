@@ -227,26 +227,27 @@ window.PIYU_DATA = {
     },
     {
       id: "fabric-10",
-      title: "Handcrafted Aari Zardosi Bridal Blouse Neckline",
+      title: "Hand-Painted Pichwai Krishna Flute & Lotus Canvas Art",
       category: "fabric",
-      subcategory: "Custom Blouses & Couture",
-      price: 3499,
-      originalPrice: 4500,
-      rating: 4.9,
-      reviewsCount: 19,
+      subcategory: "Devotional & Canvas Art",
+      price: 1899,
+      originalPrice: 2499,
+      rating: 5.0,
+      reviewsCount: 28,
       inStock: true,
-      featured: false,
-      badge: "Bridal Couture",
+      featured: true,
+      badge: "Artisan Special",
       images: [
-        "images/piyu-14.jpg"
+        "images/piyu-26.jpg",
+        "images/piyu-23.jpg"
       ],
-      shortDesc: "Rich crimson raw silk blouse piece with opulent handmade gold bullion beads, moti, and leaf motifs.",
-      description: "Make your bridal or festival saree look regal with this custom hand-embroidered blouse piece. Intricately beaded with antique gold cutdana, pearls, and zari leaves framing the U-neckline.",
-      materials: "Pure Raw Silk, Glass Seed Beads, Brass Zari Wire, Glass Pearls",
-      careInstructions: "Strictly dry clean only.",
+      shortDesc: "Traditional Pichwai styled hand-painted artwork featuring Lord Krishna's divine flute amidst blooming pink lotuses.",
+      description: "Infuse your home shrine or living room with divine harmony. Masterfully hand-painted on organic khadi cloth using vibrant water-resistant textile acrylics, inspired by ancient Nathdwara Pichwai art.",
+      materials: "Handloom Khadi Fabric, Artist Acrylic Pigments, Gold Foil Accents",
+      careInstructions: "Dust with dry soft cloth or keep framed under glass.",
       customizable: true,
       customFields: [
-        { id: "silk_color", label: "Silk Base Color", type: "select", options: ["Bridal Crimson Red", "Emerald Green", "Royal Navy", "Mustard Yellow"] }
+        { id: "canvas_size", label: "Select Display Size", type: "select", options: ["12x16 inches", "16x20 inches", "20x24 inches"] }
       ]
     },
     {
@@ -478,6 +479,209 @@ window.PIYU_DATA = {
       materials: "High Luster Imitation Pearls, Glass Ruby, Silver Base with Gold Plating",
       careInstructions: "Clean with dry cloth.",
       customizable: false
+    },
+
+    // AARI WORK EMBROIDERY PRODUCTS (DEDICATED SECTION)
+    {
+      id: "aari-01",
+      title: "Handcrafted Aari Zardosi Bridal Blouse Neckline (Crimson Silk)",
+      category: "aari",
+      subcategory: "Bridal Blouse Necklines",
+      price: 3499,
+      originalPrice: 4500,
+      rating: 5.0,
+      reviewsCount: 31,
+      inStock: true,
+      featured: true,
+      badge: "Heirloom Bridal",
+      images: [
+        "images/piyu-14.jpg"
+      ],
+      shortDesc: "Rich crimson raw silk blouse piece with opulent handmade gold bullion beads, moti, and leaf motifs.",
+      description: "Make your bridal or festival saree look regal with this custom hand-embroidered blouse piece. Intricately beaded with antique gold cutdana, pearls, and zari leaves framing the U-neckline.",
+      materials: "Pure Raw Silk, Glass Seed Beads, Brass Zari Wire, Glass Pearls",
+      careInstructions: "Strictly dry clean only.",
+      customizable: true,
+      customFields: [
+        { id: "silk_color", label: "Silk Base Color", type: "select", options: ["Bridal Crimson Red", "Emerald Green", "Royal Navy", "Mustard Yellow"] },
+        { id: "neck_style", label: "Neckline Cut", type: "select", options: ["Deep U-Neck (Front & Back)", "Sweetheart Neckline", "Pot Neck with Dori Tassels"] }
+      ]
+    },
+    {
+      id: "aari-02",
+      title: "Regal Emerald Green Zardosi & Pearl Bridal Blouse Set",
+      category: "aari",
+      subcategory: "Full Bridal Blouse Sets",
+      price: 4899,
+      originalPrice: 6200,
+      rating: 5.0,
+      reviewsCount: 24,
+      inStock: true,
+      featured: true,
+      badge: "Artisan Masterpiece",
+      images: [
+        "images/aari-blouse-02.jpg",
+        "images/piyu-14.jpg"
+      ],
+      shortDesc: "Magnificent emerald green raw silk blouse with dense Aari needlework, multi-row pearl borders, and handcrafted jhumka latkans.",
+      description: "A showstopping bridal creation handcrafted over 40+ artisan hours on the wooden Khatla frame. Adorned with raised zardosi floral vines, micro pearls, French knot accents, and custom double-drop pearl tassels.",
+      materials: "Heavy Bangalore Raw Silk, Gold Kasab Thread, Seed Pearls, Cutdana Beads",
+      careInstructions: "Dry clean only. Wrap in muslin cloth when storing.",
+      customizable: true,
+      customFields: [
+        { id: "chest_size", label: "Bust Measurement (Inches)", type: "select", options: ["32", "34", "36", "38", "40", "42", "44 (Custom)"] },
+        { id: "latkan_style", label: "Back Dori Tassels", type: "select", options: ["Handmade Pearl Jhumkas (Featured)", "Golden Fabric Bells", "Silk Thread Pom-Poms"] }
+      ]
+    },
+    {
+      id: "aari-03",
+      title: "Custom Maggam Bridal Blouse Sleeve Border & Cutwork Motif",
+      category: "aari",
+      subcategory: "Sleeve Borders & Cutwork",
+      price: 2799,
+      originalPrice: 3600,
+      rating: 4.9,
+      reviewsCount: 19,
+      inStock: true,
+      featured: true,
+      badge: "Trending Design",
+      images: [
+        "images/piyu-14.jpg",
+        "images/aari-blouse-02.jpg"
+      ],
+      shortDesc: "Intricate elbow-length sleeve embroidery with scalloped cutwork edge, antique zardosi motifs, and pearl droplets.",
+      description: "Designed specifically for Paithani and Kanjivaram silk sarees. Highlights your blouse sleeves with elaborate peacock or temple arch motifs, framed with micro beads and delicate cutwork.",
+      materials: "Raw Silk, Antique Gold Zari, Metallic Bullion Wire",
+      careInstructions: "Dry clean only.",
+      customizable: true,
+      customFields: [
+        { id: "sleeve_length", label: "Sleeve Length", type: "select", options: ["Elbow Length (11 inches)", "Short Sleeves (6 inches)", "3/4th Sleeves (14 inches)"] }
+      ]
+    },
+    {
+      id: "aari-04",
+      title: "Bespoke Paithani Border Handcrafted Aari Neckline",
+      category: "aari",
+      subcategory: "Traditional Blouses",
+      price: 3899,
+      originalPrice: 4999,
+      rating: 5.0,
+      reviewsCount: 22,
+      inStock: true,
+      featured: false,
+      badge: "Bespoke",
+      images: [
+        "images/aari-blouse-02.jpg"
+      ],
+      shortDesc: "Traditional Marathi bridal neckline harmonized with authentic Paithani saree motifs, gold zari, and crystal stones.",
+      description: "Sayali crafts each piece to flawlessly match your wedding saree border. Features traditional Asavali flower climbers, parrot motifs, and gold zari chain stitching that elevate your bridal grandeur.",
+      materials: "Pure Silk Fabric, Kasab Zari, Hand-Cut Mirrors, Pearls",
+      careInstructions: "Dry clean only.",
+      customizable: true,
+      customFields: [
+        { id: "fabric_send_option", label: "Fabric Supply", type: "select", options: ["PIYU supplies pure raw silk", "I will send my own saree blouse piece to Sayali Studio"] }
+      ]
+    },
+
+    // MEHENDI ARTISTRY PACKAGES & DESIGNS (DEDICATED SECTION)
+    {
+      id: "mehendi-01",
+      title: "Royal Indian Bridal Mehendi Suite (Full Arms & Feet)",
+      category: "mehendi",
+      subcategory: "Bridal Packages",
+      price: 4999,
+      originalPrice: 6500,
+      rating: 5.0,
+      reviewsCount: 44,
+      inStock: true,
+      featured: true,
+      badge: "Bridal Signature",
+      images: [
+        "images/mehendi-bridal-01.jpg"
+      ],
+      shortDesc: "Grand bridal henna suite with custom Doli, Radha-Krishna or Bride-Groom portrait figures, intricate jali, and deep dark natural stain.",
+      description: "Transform your wedding day with Sayali's bespoke bridal mehendi artistry. Prepared with 100% natural, triple-filtered organic Sojat henna infused with pure Nilgiri eucalyptus essential oil. Includes personalized bride and groom portraits, wedding dates, customized hashtags, intricate jali, and full arm & feet coverage.",
+      materials: "100% Organic Sojat Henna, Pure Nilgiri Eucalyptus Oil, Clove Infusion (No Chemicals/No PPD)",
+      careInstructions: "Leave on skin for 6-8 hours. Scrape off gently without water; apply mustard/coconut oil for dark mahogany stain.",
+      customizable: true,
+      customFields: [
+        { id: "event_date", label: "Wedding / Mehendi Ceremony Date", type: "text", required: true },
+        { id: "figure_choice", label: "Custom Figures to Include", type: "select", options: ["Bride & Groom with Doli (Featured)", "Radha-Krishna Devotional", "Royal Peacock & Mandala Suite"] }
+      ]
+    },
+    {
+      id: "mehendi-02",
+      title: "Modern Arabic Floral Fusion Mehendi",
+      category: "mehendi",
+      subcategory: "Arabic & Contemporary",
+      price: 1299,
+      originalPrice: 1799,
+      rating: 5.0,
+      reviewsCount: 38,
+      inStock: true,
+      featured: true,
+      badge: "Trending",
+      images: [
+        "images/mehendi-arabic-02.jpg"
+      ],
+      shortDesc: "Chic and modern free-flowing Arabic floral trails with shaded petals, delicate dots, and bold leafy vine borders.",
+      description: "Perfect for engagements, festive occasions, and bridesmaid styling. Bold dark contours combined with delicate petal shading that elongates the fingers and flatters traditional as well as contemporary attire.",
+      materials: "Triple-Filtered Organic Henna Paste, Tea Tree Oil",
+      careInstructions: "Keep dry for first 12 hours for intense dark color.",
+      customizable: true,
+      customFields: [
+        { id: "coverage_style", label: "Coverage Choice", type: "select", options: ["Back of Both Hands & Wrist (Featured)", "Palm of Both Hands", "Elbow-Length Extended Trail"] }
+      ]
+    },
+    {
+      id: "mehendi-03",
+      title: "Dohale Jevan Baby Shower Themed Mehendi",
+      category: "mehendi",
+      subcategory: "Ceremonial Themes",
+      price: 1899,
+      originalPrice: 2499,
+      rating: 5.0,
+      reviewsCount: 29,
+      inStock: true,
+      featured: true,
+      badge: "Baby Shower Special",
+      images: [
+        "images/mehendi-baby-shower-03.jpg"
+      ],
+      shortDesc: "Auspicious baby shower henna featuring a sweet sleeping baby in a cradle (Palna), baby footprints, kalash, and lotus motifs.",
+      description: "Specially designed for mom-to-be during Maharashtra's Dohale Jevan ceremony. 100% skin-safe, zero-chemical natural henna guaranteed gentle for pregnant mothers. Symbolizes blessings, love, and joyful anticipation of the newborn.",
+      materials: "Gentle Pregnancy-Safe Organic Henna, Natural Sugar & Lemon Glaze",
+      careInstructions: "Safe and soothing for mom-to-be.",
+      customizable: true,
+      customFields: [
+        { id: "baby_text", label: "Custom Names / Auspicious Blessings", type: "text", required: true }
+      ]
+    },
+    {
+      id: "mehendi-04",
+      title: "Engagement & Sangeet Guest Henna Booking (Group Package)",
+      category: "mehendi",
+      subcategory: "Event Packages",
+      price: 3499,
+      originalPrice: 4500,
+      rating: 4.9,
+      reviewsCount: 23,
+      inStock: true,
+      featured: false,
+      badge: "Party Package",
+      images: [
+        "images/mehendi-bridal-01.jpg",
+        "images/mehendi-arabic-02.jpg"
+      ],
+      shortDesc: "Dedicated henna service for family, friends, and bridesmaids at your pre-wedding celebrations.",
+      description: "Book artisan Sayali and team for your family function, Diwali party, Karva Chauth, or Sangeet evening. Covers up to 10-15 guest hands with quick, intricate floral, mandala, and Arabic patterns.",
+      materials: "Natural Organic Henna Cones",
+      careInstructions: "Convenient on-location studio service in Sangli / Satara / Kolhapur or studio booking.",
+      customizable: true,
+      customFields: [
+        { id: "guest_count", label: "Estimated Number of Guests", type: "select", options: ["Up to 10 Guests", "10 - 20 Guests", "20+ Guests (Custom Quote)"] },
+        { id: "location", label: "Event City / Venue", type: "text", required: true }
+      ]
     }
   ],
 
@@ -542,10 +746,30 @@ window.PIYU_DATA = {
       productTitle: "Custom Hand-Embroidered Love Message Shirt",
       review: "Gifted this customized shirt with 'I Love You' embroidered on the placket and a little heart on the collar to my fiancé for our anniversary. He loved the discreet and thoughtful gesture!",
       avatar: "images/piyu-18.jpg"
+    },
+    {
+      id: "rev-7",
+      author: "Kalyani Bhosale",
+      city: "Sangli, Maharashtra",
+      rating: 5,
+      date: "1 month ago",
+      productTitle: "Handcrafted Aari Zardosi Bridal Blouse Neckline",
+      review: "The Aari work on my bridal blouse piece was breathtaking! Sayali matched the antique gold zardosi exactly to my crimson Paithani saree border. The finish and bead knotting is so durable and regal.",
+      avatar: "images/piyu-14.jpg"
+    },
+    {
+      id: "rev-8",
+      author: "Dr. Tejaswini Shinde",
+      city: "Satara, Maharashtra",
+      rating: 5,
+      date: "1 month ago",
+      productTitle: "Royal Indian Bridal Mehendi Suite (Full Arms & Feet)",
+      review: "Booked Sayali for my wedding Mehendi. The 100% natural organic henna left the most gorgeous dark mahogany stain by my wedding morning! The Doli and portrait figures were so neat and detailed. All my relatives were asking for her contact.",
+      avatar: "images/mehendi-bridal-01.jpg"
     }
   ],
 
-  // INITIAL ORDERS DATASET (FOR ADMIN & PROFILE)
+  // INITIAL ORDERS DATASET (FOR PROFILE)
   orders: [
     {
       id: "ORD-9482",

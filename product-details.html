@@ -186,8 +186,20 @@
       // Populate elements
       document.title = `${product.title} – PIYU Boutique`;
       document.getElementById('breadcrumb-title').textContent = product.title;
-      document.getElementById('breadcrumb-cat').textContent = product.category === 'fabric' ? 'Fabric Painting' : 'Handmade Jewellery';
-      document.getElementById('breadcrumb-cat').href = product.category === 'fabric' ? 'fabric-painting.html' : 'jewellery.html';
+      let catUrl = 'fabric-painting.html';
+      let catName = 'Fabric Painting';
+      if (product.category === 'jewellery') {
+        catUrl = 'jewellery.html';
+        catName = 'Handmade Jewellery';
+      } else if (product.category === 'aari') {
+        catUrl = 'aari-work.html';
+        catName = 'Aari & Maggam Work';
+      } else if (product.category === 'mehendi') {
+        catUrl = 'mehendi.html';
+        catName = 'Bridal Mehendi Art';
+      }
+      document.getElementById('breadcrumb-cat').textContent = catName;
+      document.getElementById('breadcrumb-cat').href = catUrl;
 
       document.getElementById('detail-main-img').src = product.images[0];
       document.getElementById('detail-title').textContent = product.title;

@@ -85,26 +85,33 @@
               <p class="text-xs text-warmcharcoal-600 mt-1">Select the primary handmade craft domain for your custom design.</p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <label class="craft-option p-5 rounded-2xl border-2 border-terracotta-600 bg-terracotta-50/50 cursor-pointer block">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <label class="craft-option p-4 rounded-2xl border-2 border-terracotta-600 bg-terracotta-50/50 cursor-pointer block">
                 <input type="radio" name="craftType" value="Customize Fabric Painting" checked class="hidden" />
                 <span class="text-2xl block mb-2">🎨</span>
                 <h4 class="font-serif font-bold text-base text-warmcharcoal-900">Fabric Painting</h4>
-                <p class="text-xs text-warmcharcoal-600 mt-1">Baby shower banners, portrait fabrics, kurtas, tees, embroidered items</p>
+                <p class="text-xs text-warmcharcoal-600 mt-1">Dohale Jevan banners, portrait canvas, kurtas, baby hoops</p>
               </label>
 
-              <label class="craft-option p-5 rounded-2xl border-2 border-cream-200 hover:border-cream-300 cursor-pointer block">
+              <label class="craft-option p-4 rounded-2xl border-2 border-cream-200 hover:border-cream-300 cursor-pointer block">
                 <input type="radio" name="craftType" value="Handmade Jewellery" class="hidden" />
-                <span class="text-2xl block mb-2">💎</span>
+                <span class="text-2xl block mb-2">✨</span>
                 <h4 class="font-serif font-bold text-base text-warmcharcoal-900">Handmade Jewellery</h4>
-                <p class="text-xs text-warmcharcoal-600 mt-1">Maharashtrian naths, bridal chokers, beaded necklace suites</p>
+                <p class="text-xs text-warmcharcoal-600 mt-1">Maharashtrian naths, bridal chokers, beaded necklace sets</p>
               </label>
 
-              <label class="craft-option p-5 rounded-2xl border-2 border-cream-200 hover:border-cream-300 cursor-pointer block">
-                <input type="radio" name="craftType" value="Combo Gift Hamper" class="hidden" />
-                <span class="text-2xl block mb-2">🎁</span>
-                <h4 class="font-serif font-bold text-base text-warmcharcoal-900">Combo Hamper</h4>
-                <p class="text-xs text-warmcharcoal-600 mt-1">Curated mix of custom painted cloth + matching traditional jewellery</p>
+              <label class="craft-option p-4 rounded-2xl border-2 border-cream-200 hover:border-cream-300 cursor-pointer block">
+                <input type="radio" name="craftType" value="Aari & Maggam Work" class="hidden" />
+                <span class="text-2xl block mb-2">🪡</span>
+                <h4 class="font-serif font-bold text-base text-warmcharcoal-900">Aari & Maggam Work</h4>
+                <p class="text-xs text-warmcharcoal-600 mt-1">Bridal blouse necklines, zardosi sleeves, Paithani cutwork</p>
+              </label>
+
+              <label class="craft-option p-4 rounded-2xl border-2 border-cream-200 hover:border-cream-300 cursor-pointer block">
+                <input type="radio" name="craftType" value="Bridal & Festive Mehendi" class="hidden" />
+                <span class="text-2xl block mb-2">🌿</span>
+                <h4 class="font-serif font-bold text-base text-warmcharcoal-900">Bridal Mehendi</h4>
+                <p class="text-xs text-warmcharcoal-600 mt-1">Full bridal arms/feet, baby shower henna, Arabic fusion</p>
               </label>
             </div>
           </div>
@@ -277,23 +284,42 @@
       });
 
       function populateBaseOptions() {
-        const isJewel = selectedCraft === 'Handmade Jewellery';
-        const items = isJewel ? [
-          { title: 'Traditional Maharashtrian Floral Nath', img: 'images/piyu-10.jpg', tag: 'Handcrafted to Order' },
-          { title: 'Royal Lotus Ruby Choker Set', img: 'images/piyu-06.jpg', tag: 'Handcrafted to Order' },
-          { title: 'Handcrafted Golden Beaded Choker', img: 'images/piyu-11.jpg', tag: 'Handcrafted to Order' },
-          { title: 'Sayali Special Pearl & Ruby Bridal Choker', img: 'images/piyu-13.jpg', tag: 'Handcrafted to Order' },
-          { title: 'Gold Beaded Linear Drop Pins / Bugadi', img: 'images/piyu-16.jpg', tag: 'Handcrafted to Order' },
-          { title: 'Bespoke Complete Bridal Suite', img: 'images/piyu-13.jpg', tag: 'Custom Bridal Suite' }
-        ] : [
-          { title: 'Dohale Jevan Baby Shower Banner', img: 'images/piyu-19.jpg', tag: 'Handcrafted to Order' },
-          { title: 'Baby Naming (Barse) Cradle Welcome Hoop', img: 'images/piyu-02.jpg', tag: 'Handcrafted to Order' },
-          { title: 'Vitthal / Devotional Cotton Kurta', img: 'images/piyu-17.jpg', tag: 'Handcrafted to Order' },
-          { title: 'Personalized Portrait Painting on Fabric', img: 'images/piyu-25.jpg', tag: 'Custom Portrait Art' },
-          { title: 'Custom Embroidered Love Message Shirt', img: 'images/piyu-18.jpg', tag: 'Handcrafted to Order' },
-          { title: 'Bal Ganesha Nursery Hoop Art', img: 'images/piyu-08.jpg', tag: 'Handcrafted to Order' },
-          { title: 'Hand-Embroidered Couple Pocket Hankies', img: 'images/piyu-07.jpg', tag: 'Handcrafted to Order' }
-        ];
+        let items = [];
+        if (selectedCraft === 'Aari & Maggam Work') {
+          items = [
+            { title: 'Handcrafted Aari Zardosi Bridal Blouse Neckline', img: 'images/piyu-14.jpg', tag: 'Handcrafted on Khatla Frame' },
+            { title: 'Regal Emerald Green Zardosi & Pearl Blouse Set', img: 'images/aari-blouse-02.jpg', tag: 'Full Bridal Suite' },
+            { title: 'Custom Maggam Bridal Blouse Sleeve Border', img: 'images/piyu-14.jpg', tag: 'Elbow / 3/4th Sleeve' },
+            { title: 'Bespoke Paithani Border Handcrafted Aari Blouse', img: 'images/aari-blouse-02.jpg', tag: 'Saree-Matched Design' }
+          ];
+        } else if (selectedCraft === 'Bridal & Festive Mehendi') {
+          items = [
+            { title: 'Royal Indian Bridal Mehendi Suite (Full Arms & Feet)', img: 'images/mehendi-bridal-01.jpg', tag: 'Bride & Groom Portraits' },
+            { title: 'Modern Arabic Floral Fusion Mehendi', img: 'images/mehendi-arabic-02.jpg', tag: 'Shaded Botanical Trails' },
+            { title: 'Dohale Jevan Baby Shower Themed Mehendi', img: 'images/mehendi-baby-shower-03.jpg', tag: 'Palna & Footprints Theme' },
+            { title: 'Engagement & Sangeet Guest Henna Booking', img: 'images/mehendi-bridal-01.jpg', tag: 'Group Event Service' }
+          ];
+        } else if (selectedCraft === 'Handmade Jewellery') {
+          items = [
+            { title: 'Traditional Maharashtrian Floral Nath', img: 'images/piyu-10.jpg', tag: 'Handcrafted to Order' },
+            { title: 'Royal Lotus Ruby Choker Set', img: 'images/piyu-06.jpg', tag: 'Handcrafted to Order' },
+            { title: 'Handcrafted Golden Beaded Choker', img: 'images/piyu-11.jpg', tag: 'Handcrafted to Order' },
+            { title: 'Sayali Special Pearl & Ruby Bridal Choker', img: 'images/piyu-13.jpg', tag: 'Handcrafted to Order' },
+            { title: 'Gold Beaded Linear Drop Pins / Bugadi', img: 'images/piyu-16.jpg', tag: 'Handcrafted to Order' },
+            { title: 'Bespoke Complete Bridal Suite', img: 'images/piyu-13.jpg', tag: 'Custom Bridal Suite' }
+          ];
+        } else {
+          items = [
+            { title: 'Dohale Jevan Baby Shower Banner', img: 'images/piyu-19.jpg', tag: 'Handcrafted to Order' },
+            { title: 'Baby Naming (Barse) Cradle Welcome Hoop', img: 'images/piyu-02.jpg', tag: 'Handcrafted to Order' },
+            { title: 'Vitthal / Devotional Cotton Kurta', img: 'images/piyu-17.jpg', tag: 'Handcrafted to Order' },
+            { title: 'Hand-Painted Pichwai Krishna Flute Canvas Art', img: 'images/piyu-26.jpg', tag: 'Handloom Canvas Art' },
+            { title: 'Personalized Portrait Painting on Fabric', img: 'images/piyu-25.jpg', tag: 'Custom Portrait Art' },
+            { title: 'Custom Embroidered Love Message Shirt', img: 'images/piyu-18.jpg', tag: 'Handcrafted to Order' },
+            { title: 'Bal Ganesha Nursery Hoop Art', img: 'images/piyu-08.jpg', tag: 'Handcrafted to Order' },
+            { title: 'Hand-Embroidered Couple Pocket Hankies', img: 'images/piyu-07.jpg', tag: 'Handcrafted to Order' }
+          ];
+        }
 
         selectedProductBase = items[0].title;
         previewPhotoUrl = items[0].img;

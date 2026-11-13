@@ -76,11 +76,12 @@ window.PIYU_UI = (function() {
       { name: 'Home', url: 'index.html' },
       { name: 'Fabric Painting', url: 'fabric-painting.html' },
       { name: 'Handmade Jewellery', url: 'jewellery.html' },
+      { name: 'Aari Work', url: 'aari-work.html' },
+      { name: 'Mehendi Art', url: 'mehendi.html' },
       { name: 'Custom Order', url: 'custom-order.html', highlight: true },
       { name: 'About Us', url: 'about.html' },
       { name: 'Reviews', url: 'reviews.html' },
-      { name: 'Contact', url: 'contact.html' },
-      { name: 'Admin', url: 'admin.html', adminOnly: true }
+      { name: 'Contact', url: 'contact.html' }
     ];
 
     headerPlaceholder.innerHTML = `
@@ -98,8 +99,8 @@ window.PIYU_UI = (function() {
           </div>
 
           <div class="hidden lg:flex items-center gap-3 text-[11px]">
-            <a href="admin.html" class="hover:text-gold-200 transition-colors flex items-center gap-1">
-              📊 Admin Portal
+            <a href="https://wa.me/919309851833" target="_blank" class="hover:text-gold-200 transition-colors flex items-center gap-1 font-semibold">
+              💬 Artisan Direct WhatsApp
             </a>
           </div>
         </div>
@@ -139,9 +140,8 @@ window.PIYU_UI = (function() {
             </a>
 
             <!-- Desktop Nav Links -->
-            <nav class="hidden lg:flex items-center space-x-6">
+            <nav class="hidden lg:flex items-center space-x-5">
               ${links.map(l => {
-                if (l.adminOnly && (!user || user.role !== 'admin')) return '';
                 const isActive = currentPath === l.url || (l.url === 'index.html' && (currentPath === '' || currentPath === '/'));
                 return `
                   <a href="${l.url}" class="text-xs font-semibold uppercase tracking-wider transition-colors relative py-1 ${
@@ -300,14 +300,14 @@ window.PIYU_UI = (function() {
 
             <!-- Shop Collections -->
             <div class="space-y-3">
-              <h3 class="text-xs font-bold uppercase tracking-wider text-gold-300">Collections</h3>
+              <h3 class="text-xs font-bold uppercase tracking-wider text-gold-300">Artisanal Crafts</h3>
               <ul class="space-y-2 text-xs text-cream-300/80">
+                <li><a href="fabric-painting.html" class="hover:text-gold-300">🎨 Customize Fabric Painting</a></li>
+                <li><a href="jewellery.html" class="hover:text-gold-300">✨ Handmade Jewellery</a></li>
+                <li><a href="aari-work.html" class="hover:text-gold-300">🪡 Aari & Maggam Work</a></li>
+                <li><a href="mehendi.html" class="hover:text-gold-300">🌿 Bridal & Festive Mehendi</a></li>
                 <li><a href="fabric-painting.html" class="hover:text-gold-300">Dohale Jevan Banners</a></li>
-                <li><a href="fabric-painting.html" class="hover:text-gold-300">Vitthal Devotional Kurtas</a></li>
-                <li><a href="fabric-painting.html" class="hover:text-gold-300">Baby Welcome Hoops</a></li>
                 <li><a href="jewellery.html" class="hover:text-gold-300">Maharashtrian Naths</a></li>
-                <li><a href="jewellery.html" class="hover:text-gold-300">Lotus Ruby Chokers</a></li>
-                <li><a href="jewellery.html" class="hover:text-gold-300">Beaded Bugadi Ear Pins</a></li>
               </ul>
             </div>
 
@@ -319,7 +319,7 @@ window.PIYU_UI = (function() {
                 <li><a href="about.html" class="hover:text-gold-300">About Artisan Sayali</a></li>
                 <li><a href="reviews.html" class="hover:text-gold-300">Customer Reviews & Photos</a></li>
                 <li><a href="contact.html" class="hover:text-gold-300">Contact & Studio FAQs</a></li>
-                <li><a href="admin.html" class="hover:text-gold-300 text-terracotta-400 font-semibold">Admin Dashboard</a></li>
+                <li><a href="https://wa.me/919309851833" target="_blank" class="hover:text-gold-300 text-emerald-400 font-semibold">WhatsApp Inquiry: +91 9309851833</a></li>
               </ul>
             </div>
 

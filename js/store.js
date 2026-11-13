@@ -57,13 +57,13 @@ window.PIYU_STORE = (function() {
   if (!localStorage.getItem(USER_KEY)) {
     setStorage(USER_KEY, {
       id: "usr-01",
-      name: "Sayali Shinde (Artisan / Admin)",
-      email: "sayali@piyuhandmade.com",
-      phone: "+91 9309851833",
-      city: "Kherade Vangi",
+      name: "Snehal Kulkarni",
+      email: "snehal@example.com",
+      phone: "+91 94231 67890",
+      city: "Kolhapur",
       state: "Maharashtra",
-      pincode: "415305",
-      role: "admin"
+      pincode: "416003",
+      role: "customer"
     });
   }
 
@@ -238,16 +238,15 @@ window.PIYU_STORE = (function() {
     },
 
     login: function(email, password) {
-      const isAdmin = (email || '').toLowerCase().includes('admin') || (email || '').toLowerCase().includes('sayali');
       const user = {
         id: `usr-${Date.now()}`,
-        name: isAdmin ? "Sayali Shinde (Artisan / Admin)" : (email.split('@')[0] || "Valued Customer"),
+        name: email.split('@')[0] || "Valued Customer",
         email: email,
-        phone: "+91 9309851833",
+        phone: "+91 94231 67890",
         city: "Pune",
         state: "Maharashtra",
         pincode: "411001",
-        role: isAdmin ? "admin" : "customer"
+        role: "customer"
       };
       setStorage(USER_KEY, user);
       window.dispatchEvent(new CustomEvent('user-updated'));
@@ -263,7 +262,7 @@ window.PIYU_STORE = (function() {
         city: data.city || "Mumbai",
         state: data.state || "Maharashtra",
         pincode: data.pincode || "400001",
-        role: (data.email || '').includes('admin') ? "admin" : "customer"
+        role: "customer"
       };
       setStorage(USER_KEY, user);
       window.dispatchEvent(new CustomEvent('user-updated'));
